@@ -1,0 +1,184 @@
+---
+title: "Big 3 Results"
+author: "Ben Gonzalez"
+date: '2023-10-19'
+output: html_document
+---
+
+# Big Three Results {-}
+
+<center><h1>
+Statistical Significance - Confidence Intervals - Effect Size
+</h1>
+</center>
+
+
+
+
+```{r echo=FALSE, include=TRUE}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sample Standard Deviation Formula {-}
+
+$$\large
+S\;=\;\sqrt{\frac{\sum(X\;-\;{\overline{X}})^2}{N\;-1}}
+$$
+
+```{r}
+
+N <- length(mtcars$hp)
+deviations <- mtcars$hp-mean(mtcars$hp)
+
+s <- deviations^2
+
+m_plus<- sum(s)/(N-1)
+
+sd_plus <- sqrt(m_plus)
+print(sd_plus)
+
+sqrt((sum((mtcars$hp-mean(mtcars$hp))^2))/(length(mtcars$hp)-1))
+
+sd(mtcars$hp)
+```
+
+
+
+
+## Standard Error Formula {-}
+
+$$\large
+SE\;\;=\frac{\sigma}{\sqrt{n}}
+$$
+$$
+SE\;=Standard\;Error
+\\
+\sigma\;=sample\;standard\;deviation
+\\
+n\;=number\;of\;samples
+$$
+
+## How to calculate the standard error of a sample {-}
+
+```{r}
+#standard deviation/squareroot(n)
+
+# length(mtcars$hp)
+# nrow(mtcars)
+
+###Shortcut to calculate the standard error of a sample
+###The length function is utilized to find the number of observations in a data set
+sd(mtcars$hp)/sqrt(length(mtcars$hp))
+
+
+####Another shortcut to calculate the standard error of a sample
+###The nrow function is utilized to find the number of observations in a data set
+sd(mtcars$hp)/sqrt(nrow(mtcars))
+
+####Long way to calculate the standard error of a sample
+print(sqrt(sum((mtcars$hp - mean(mtcars$hp)) ^ 2/(length(mtcars$hp) - 1)))
+      /sqrt(length(mtcars$hp)))
+
+```
+
+
+## Computing Confidence Intervals {-}
+
+
+<br>
+<br>
+
+## Confidence Interval Formula {-}
+
+The confidence interval (C.I.) according to (Hatcher, 2013) gives us a range of values for the population parameter being estimated.
+
+Computed for:
+
++ mean
++ difference between means
++ correlation coefficients
++ etc.
+
+## Lower Bound of the C.I. for a Sample Mean {-}
+
+$$\large
+CI\;=\;\overline{X}\;\pm\;(SE_{m})(t_{crit})
+$$
+
+$$
+CI\;=Confidence\;Interval
+\\
+\overline{X}\;=\;observed\;sample\;mean
+\\
+SE_{m}\;=standard\;error\;of\;the\;mean
+\\
+t_{crit}\;=\;the\;critical\;value\;of\;the\;t\;statistic
+$$
+
+```{r}
+###Calculate the mean of the hp
+mean_hp <- mean(mtcars$hp)
+print(paste0("Mean of horsepower: ",mean_hp))
+###Calculate the sd of the hp
+sd_hp <- sd(mtcars$hp)
+print(paste0("Standard deviation of horsepoweer: ",sd_hp))
+
+###Calculate the square root of the hp
+n<- sqrt(length(mtcars$hp))
+print(n)
+
+###Confidence level of 0.95% e.g. two-tailed with 2.5%
+t_value <- 1.96
+###How to calculate the t-value properly
+###Take the p-value: 0.05 and the degrees of freedom: 32-1
+tval <- qt((1-0.95)/2, df=32-1)
+print(paste0("t-critical value: ",tval))
+
+###Standard error of the sample mean
+se_sample_mean <- (sd(mtcars$hp)/sqrt(length(mtcars$hp)))
+print(paste0("Standard Error of the Sample Mean",se_sample_mean))
+
+sd(mtcars$hp)/sqrt(length(mtcars$hp))
+ci_lower_bound <-mean(mtcars$hp)-(se_sample_mean*tval)
+
+ci_upper_bound<- mean(mtcars$hp)+(se_sample_mean*tval)
+print(ci_lower_bound)
+
+print(ci_upper_bound)
+
+# head(HumanResourcesDataAA5221_all_zscores[,c(1,11,2,12)]) %>%
+#   kbl(row.names = T) %>%
+#   kable_styling(row_label_position = "l", full_width = F) %>% 
+#   footnote(general = "Head of data frame.") %>% 
+#   add_header_above(c(" " = 1, "Satisfaction Level" = 2, "Last Evaluation" = 2))
+
+
+```
+
+
+## Utilizing the linear model formula in R {-}
+
+## Here we can also calculate the $CI$ by utilizing the linear model funciton. {-}
+
+
+```{r}
+mean(mtcars$hp)+(1.96*12.1203)
+# Calculate the mean and standard error
+l.model <- lm(hp ~ 1, mtcars)
+summary(l.model)
+
+# Calculate the confidence interval
+confint(l.model, level=0.95)
+
+```
+
+---
+
+<center><h2>References</h2></center>
+
+Hatcher, L. (2013). *Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.*
+
+https://www.statology.org/t-distribution-table/
+
+https://www.scribbr.com/frequently-asked-questions/critical-value-of-t-in-r/#:~:text=You%20can%20use%20the%20qt,the%20significance%20level%20by%20two.
