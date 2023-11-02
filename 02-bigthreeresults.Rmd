@@ -150,14 +150,12 @@ print(ci_upper_bound)
 
 ```
 
+## Computing C.I. using the the $lm()$ function in R
 
-## Utilizing the linear model formula in R to computer C.I.
-
-Here we can also calculate the $CI$ by utilizing the linear model function or lm().
+Here we can also calculate the $CI$ by utilizing the linear model function or lm(). This is a quick and efficient way to calculate a C.I. for our data.
 
 
 ```{r}
-mean(mtcars$hp)+(1.96*12.1203)
 # Calculate the mean and standard error
 l.model <- lm(hp ~ 1, mtcars)
 summary(l.model)

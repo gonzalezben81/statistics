@@ -4,16 +4,13 @@ standard-error-formula
 how-to-calculate-the-standard-error-of-a-sample
 computing-confidence-intervals
 calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean
-utilizing-the-linear-model-formula-in-r-to-computer-c.i.
+computing-c.i.-using-the-the-lm-function-in-r
 chi-square-correlation
 chi-square
-chi-square-assumptions-1
 chi-square-test-of-association
 observed
 expected
 correlation
-correlation-assumptions
-index-of-effect-size-table
 correlation-between-student-absences-and-first-period-grade
 correlation-between-student-absences-and-final-grade
 point-biserial-correlation-assumptions

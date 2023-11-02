@@ -47,14 +47,6 @@ student <- student[,-c(1)]
 <!-- :::::::::::::: -->
 
 
-## Chi-square Assumptions {-}
-
-+ Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
-<br>
-+ Used with Nominal or Categorical data.
-<br>
-+ We can utilize Steven's four scales of measurements to check our data.
-
 ## Steven's four scales of measurement {-}
 
 <br>
@@ -133,7 +125,7 @@ tr {
 
 ## Student Peformance Data Set Information {-}
 
-Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:
+Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) data sets:
 
 
 <!-- :::::::::::::: {.columns} -->
@@ -198,6 +190,8 @@ print(paste('There are ',nrow(student),' observations in our student data set.',
 ## Chi-square
 
 
+### Chi-Square Formula {-}
+
 $$
 x^2\;=\;\sum\frac{(O_{i}\;-\;E_{i})^2}{E_{i}}
 \\
@@ -210,7 +204,7 @@ O_{i}=\;observed\;value
 E_{i}=\;expected\;value
 $$
 
-### Chi-square Assumptions
+### Chi-square Assumptions {-}
 
 + Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
 <br>
@@ -320,19 +314,21 @@ We can see that our $X^2$ value is 1.401 and the p-value is $p>.05$. We check ou
 
 ## Correlation
 
-$$\Large
-r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\sum(y_{i}-\bar{y})^2}}$$
-
-### Correlation Assumptions
+### Correlation Assumptions {-}
 
 The following assumptions are in place when utilizing the Pearson’s $r$ when calculating a correlation coefficient.
 <br>
 
 + **Interval or ratio scale** – both variables should be quantitative variables. Both should be assessed on an interval or ratio scale.
 + **Normally-distributed sampling distribution** – sampling distribution of the statistic should be normally distributed. Likely to be met if the sample data are approximately normal or the sample is large.
-+ **Random Sample from bivariate normal distribution** – the data points used to compute the Pearson $r$ are the pairs of scores on the predictor and criterion variables. The data points should be a random sample drawn from a bivariate normal distribution. 
++ **Random Sample from bivariate normal distribution** – the data points used to compute the Pearson $r$ are the pairs of scores on the predictor and criterion variables. The data points should be a random sample drawn from a bivariate normal distribution.
 
-## Index of Effect Size Table
+### Correlation Formula {-}
+
+$$\Large
+r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\sum(y_{i}-\bar{y})^2}}$$
+
+### Index of Effect Size Table {-}
 
 + Index of effect size – a statistic that conveys the strength of the association between a predictor variable and criterion variable.
 + $r$ – the larger the absolute value of the correlation coefficient the larger the “effect”.
