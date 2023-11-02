@@ -1,20 +1,4 @@
----
-title: "Partial Correlation"
-author: "Ben Gonzalez"
-date: '2023-10-06'
-always_allow_html: true
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    toc_depth: 4
-    collapsed: true
-    smooth_scroll: true
----
-
-# Partial Correlation {-}
-
-## Partial Correlation Formula
+# Partial Correlation
 
 
 ```{r echo=FALSE, include=TRUE}
@@ -27,25 +11,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-$$\Huge
-r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_{yz}^2)}}$$
-
-## Partial Correlation
+## Partial Correlation Assumptions {-}
 
 Partial correlation allows us to control for variables that may be confounding variables in a data set. This allows us to see what the correlation between two variables would be if we control for a single variable. We can also control for more than one variable.
 
 + *First order partial coefficient* – is a correlation between two variables with just *one* additional variable partialed out of both.
 + *Higher order partial correlation* – is a correlation between two variables with *more than one control variable* partialed out by both.
 
+## Partial Correlation Formula {-}
+
+$$\Huge
+r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_{yz}^2)}}$$
 
 
-```{r}
 
-```
-
-
-
-## Partial Correlation Overview
+## Partial Correlation Overview {-}
 
 When performing a single-order partial correlation we can simple do this by running a correlation on each variable in question. For our purposes we are utilizing the following variables horsepower (hp), mile pers gallon (mpg) and lastly cylinders (cy). If you would like to follow along we are utilizing the mtcars data set that is built into R.
 
@@ -79,7 +59,7 @@ render_graph(a_graph)
 ---
 
 
-## Take a look at the structure of the mtcars data set
+## Take a look at the structure of the mtcars data set {-}
 
 ```{r, echo=FALSE}
 str(mtcars)
@@ -101,8 +81,10 @@ A data frame with 32 observations on 11 (numeric) variables.
 + Column 10  =	gear - Number of forward gears
 + Column 11  =	carb - Number of carburetors
 
+## Partial Correlation Calculation
 
-## Correlation between Predictor and Criterion or X and Y
+
+### Correlation between Predictor and Criterion or X and Y
 
 Here we find the correlation between our mpg and hp
 
@@ -112,7 +94,7 @@ cor.test(mtcars$mpg,mtcars$hp)
 ```
 
 
-## Correlation between Predictor and Control or X and Z
+### Correlation between Predictor and Control or X and Z
 
 Here we find the correlation between our hp and cyl
 
@@ -122,7 +104,7 @@ cor.test(mtcars$hp,mtcars$cyl)
 ```
 
 
-## Correlation between Criterion and Control or Y and Z
+### Correlation between Criterion and Control or Y and Z
 
 Here we find the correlation between our mpg and cyl
 
@@ -132,7 +114,7 @@ cor.test(mtcars$mpg,mtcars$cyl)
 ```
 
 
-## Partial Correlation: Putting it altogether
+### Partial Correlation: Putting it altogether
 
 
 ```{r}
@@ -151,7 +133,7 @@ print(yz)
 ```
 
 
-## Calculate the numerator of the formula
+### Calculate the numerator of the formula
 
 $$\large
 r_{xy} - r_{xz}  \cdot r_{yz}
@@ -168,7 +150,7 @@ print(top_of_formula)
 ```
 
 
-## Calculate the denominator of the formula
+### Calculate the denominator of the formula
 
 
 $$\large

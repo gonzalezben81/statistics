@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Example data to follow along with | Statistics</title>
+  <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Example data to follow along with | Statistics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="github-repo" content="gonzalezben81/statistics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Example data to follow along with | Statistics" />
+  
+  <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  
+
+<meta name="author" content="Ben Gonzalez" />
+
+
+<meta name="date" content="2023-11-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="big-three-results.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/clipboard-1.7.1/clipboard.min.js"></script>
+<link href="libs/primer-tooltips-1.4.0/build.css" rel="stylesheet" />
+<link href="libs/klippy-0.0.0.9500/css/klippy.min.css" rel="stylesheet" />
+<script src="libs/klippy-0.0.0.9500/js/klippy.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics and Other Ideas</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="example-data-to-follow-along-with.html"><a href="example-data-to-follow-along-with.html"><i class="fa fa-check"></i>Example data to follow along with</a></li>
+<li class="chapter" data-level="1" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>1</b> Big Three Results</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i><b>1.1</b> Sample Standard Deviation Formula</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i><b>1.1.1</b> Standard Error Formula</a></li>
+<li class="chapter" data-level="1.1.2" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the standard error of a sample</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>1.2</b> Computing Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>1.2.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="big-three-results.html"><a href="big-three-results.html#utilizing-the-linear-model-formula-in-r-to-computer-c.i."><i class="fa fa-check"></i><b>1.3</b> Utilizing the linear model formula in R to computer C.I.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-square &amp; Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i>Steven’s four scales of measurement</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#student-peformance-data-set-information"><i class="fa fa-check"></i>Student Peformance Data Set Information</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i>Look at the structure of our data</a></li>
+<li class="chapter" data-level="2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>2.1</b> Chi-square</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions-1"><i class="fa fa-check"></i><b>2.1.1</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.1.2</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="2.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>2.1.3</b> Observed</a></li>
+<li class="chapter" data-level="2.1.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>2.1.4</b> Expected</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>2.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-assumptions"><i class="fa fa-check"></i><b>2.2.1</b> Correlation Assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#index-of-effect-size-table"><i class="fa fa-check"></i><b>2.3</b> Index of Effect Size Table</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>2.3.1</b> Correlation between student absences and first period grade</a></li>
+<li class="chapter" data-level="2.3.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>2.3.2</b> Correlation between student absences and final grade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.4</b> Point-biserial Correlation Assumptions</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>2.4.1</b> Point-biserial correlation: Student gender and final grade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>2.5</b> Biserial Correlation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.5.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
+<li class="chapter" data-level="2.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.5.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
+<li class="chapter" data-level="2.5.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>2.5.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>2.6</b> Spearman Correlation</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>2.6.1</b> Spearman Correlation: Study time and final grade</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>2.6.2</b> Spearman Correlation: Travel time and final grade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.7</b> Phi - measurement of the degree of association between two binary variables</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>2.7.1</b> Phi coefficient:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-assumptions"><i class="fa fa-check"></i>Partial Correlation Assumptions</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-formula"><i class="fa fa-check"></i>Partial Correlation Formula</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-overview"><i class="fa fa-check"></i>Partial Correlation Overview</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i>Take a look at the structure of the mtcars data set</a></li>
+<li class="chapter" data-level="3.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.1</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="3.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>3.2</b> Partial Correlation Calculation</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="3.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="3.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>3.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="3.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.2.4</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="3.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.2.5</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="3.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.2.6</b> Calculate the denominator of the formula</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.3</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="3.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>3.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
+<li class="chapter" data-level="3.5" data-path="partial-correlation.html"><a href="partial-correlation.html#references"><i class="fa fa-check"></i><b>3.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-terminology"><i class="fa fa-check"></i>Bivariate Regression Terminology</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#regression-generic-analysis-model"><i class="fa fa-check"></i>Regression: Generic Analysis Model</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i>Assumptions of Bivariate Regression</a></li>
+<li class="chapter" data-level="4.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.1</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="4.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.2</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="4.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>4.3</b> Calculating the Residual</a></li>
+<li class="chapter" data-level="4.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.4</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="4.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>4.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.7</b> Utilize the lm function in R to automate our work</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>4.7.1</b> Print the residuals of the model</a></li>
+<li class="chapter" data-level="4.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>4.7.2</b> Print the coefficients of the model</a></li>
+<li class="chapter" data-level="4.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>4.7.3</b> Putting it altogether</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>4.8</b> Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="4.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>4.9.1</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="4.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.9.2</b> Squaring the correlation coefficient</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="example-data-to-follow-along-with" class="section level1 unnumbered hasAnchor">
+<h1>Example data to follow along with<a href="example-data-to-follow-along-with.html#example-data-to-follow-along-with" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Detroit Data Set: A data frame with 14 Columns with 13 Observations</p>
+<p>This is the data set called ‘DETROIT’ in the book ‘Subset selection in regression’ by Alan J. Miller published in the Chapman &amp; Hall series of monographs on Statistics &amp; Applied Probability, no. 40. The data are unusual in that a subset of three predictors can be found which gives a very much better fit to the data than the subsets found from the Efroymson stepwise algorithm, or from forward selection or backward elimination. The original data were given in appendix A of `Regression analysis and its application: A data-oriented approach’ by Gunst &amp; Mason, Statistics textbooks and monographs no. 24, Marcel Dekker. It has caused problems because some copies of the Gunst &amp; Mason book do not contain all of the data, and because Miller does not say which variables he used as predictors and which is the dependent variable. (HOM was the dependent variable, and the predictors were FTP … WE)</p>
+<p>Source: <a href="http://lib.stat.cmu.edu/datasets/detroit" class="uri">http://lib.stat.cmu.edu/datasets/detroit</a></p>
+<hr />
+<p>The necessary files to run statistical analyis on the Detroit data set presented in this book.</p>
+<a href="data:application/zip;base64,UEsDBBQAAgAIAJYlX1fVWOeujQIAAN8EAAALAAAAZGV0cm9pdC5jc3Ylk8luHDEMRO8B8hNzFghR3KTjwHDsAF6CrP//J3nsuXB6Ws1iqap4u43bt98/qH+e3/vn/f5Bffv+RH35SXl6e7737793ysfj+OXzL/X1uV93ef3sw/tTN91//bx9/XLT21g5xWKoDo8QHmpTl4acPY6Jj4hdix/bokPN5IzVh6oluseWHHZEa9hMXgC7GvbIHjV8T1lDI8Vp5o/T0ROAiw2qF/1qXU3m4dFlLlDPcFpBhYomqAZqLZk0ARk9bOjZ/fWaR6LG8aarR0tH5IKAul3Ay3hUyaYbi6uKKWglYSD7A/nkcDGYBZ1rLfCX0QRwz5vOiDgMDSQD1Bq0WootG7pw6A74F6DxAOWV9XULGlMFpHW4bAyAfC9HwVzXVdIvVEeOQDysQBAmhkwMsSnbgc3WVsW8bzUSSCQ6KmsNS4CRrlDBM+Y6IxsJT6E2WgkNPENkb7nishIXzwG4GvhxEdgE2tjIJBI5UlPC2zcbDmkUyZ3tK7MauFACnqvhxBKxmsjiG1WgN9CHQJ3RE+MkVRVpF9eGplSM/na4LSUDeU5zpcU7ap067W8WZuOPiheAKtG8z42IcMu6Lpjaau8rT9UcbRQ30gzcKkY1xbbPZT3CXigJ4uWfYtLitHF1AkxmnL4WhEA3loNQDKkaZVdINfCwELZDY1Rvfg2Nnah4Om4bYOzstClbZyxEHHLTG4DoY2MDTArlGJi9d7ZrEoZCWAOZc4JP+q+wt8OyCKz3szHdevOU1bNKSUj29xdQbOv1ROn+iri1Z2XzBBLVFS1cuURl5QgboWbhuTtqO3tw5VnZPzuz45MdjXnp0Vx4kdkZ76U17AVptyUXNKsjhH9xCnSsXhtYQ8gRcJKP/1BLAQIeAxQAAgAIAJYlX1fVWOeujQIAAN8EAAALAAAAAAAAAAEAAACkgQAAAABkZXRyb2l0LmNzdlBLBQYAAAAAAQABADkAAAC2AgAAAAA=" download="detroit.zip">Download Detroit data</a>
+<hr />
+<p>Student Performance Data Set: A data frame with 392 rows and 33 variables:</p>
+<p>This data approach looks at student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographics, social and school related features and it was collected utilizing school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), While G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details)</p>
+<p>Source: <a href="http://archive.ics.uci.edu/ml/datasets/Student+Performance" class="uri">http://archive.ics.uci.edu/ml/datasets/Student+Performance</a></p>
+<hr />
+<p>The necessary files to run statistical analysis on the Student data set presented in this book.</p>
+<a href="data:application/zip;base64,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" download="student.zip">Download Student data</a>
+<hr />
+<p>Mtcars Data Set: A data frame with 32 rows and 12 variables:</p>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+<hr />
+<p>The necessary files to run statistical analysis on the mtcars data set presented in this book.</p>
+<a href="data:application/zip;base64,UEsDBBQAAgAIAAEAYlcqgsVkXgMAAPcGAAAKAAAAbXRjYXJzLmNzdnWVT2/bOBDF7/kUhM4sIf4TqeOunWB3kQJBW3SLvTE24QhQRC8lu0g/fd9QsmV0sxcqofTjm3kzQ1cVr16PB6y7tx7rvhuPeLzQss9hwuM7Lf+OcYfHecQSXrEcYshEhfxc3VUfw499YJ++mYoryRsum5pLWXMtWq5Eo7AhTMOxyQ03N9+zv8PhXcY7y6UTtVqhbZjG08CcrEHgC+zK2vNWA/EWjIaOF43ksiDyrvoj5SFOzLBt7s6RhISBlLJ+kQKvhZLQaoUBAjV9A34+pjyF53SCBzjacXxOYSI4LSQtBC1hEqruqq+h78IwA5SXUji9pvhcQwB2aqHUqrU9jVPMDAeDMUIvIsrYEhsW67i0wptFhAyMeceUqbfIySAnRGEaxAertWhaig4u1kXEUFQzoG+sMzWeLWm0as4Gb9pfCU9BtUKVAjmBVekLQrl7xDsjZkU2FZni/59pf2GMrT/fV6VLkL1ySBaflQI5bmjBeZf09Q30WJT0fyEtnKZXzXsQxWeR03sU/bcym7Dv+j7s2EMf4/Q9pT3QukRpnILDVFd0IE4r/dr6tUaP3bBL/cA2aZi6IQ5T6FeYCkwNBNKo0kNerejmJb+NPZriz9djzF0BTWk/YwBqClcRq02RNTfsQxcmJpWvuFalMxw1btOQj0gYaVOvu9shGTCMm+7cYcR1PTMWjFVgkJzETFkqm1ULhfb4kt7SBCzlBIMA0twClNT0FiC1uPC6jFa7qt1wQygTaekFZkLytlQAMRqcgJ1a3kxJ2h8i27yEvo/DIeZSQkuzgnpJW1/my5bLxrt1IH/7uGF/hXPsu+Fad12bAl2mWNu5j67QJryGnNg/5KPU81Day1C6cuXQCcLI1fknKjT1Spfjc5f3y+SgaPXlzij3jZ+Lht65ypWifZMfWjhCccDI9loziSLYy9gsNj6lPO5eImul+aAANYuJmrf4AgnBD2nIClduUEsqj2k6jez+lNMxXEvdWjgvJaXk0BXC4k9gs1bBHlLesyfcaTEH9lg89MUPCV0zlxpGOupRu6hRI8acQ+7YthtSscLRhVByJytwVamiaK9QQ78MI1Smjv2eciCpUixcgpoYa5bb0IhmYTxu3NSfE5NG3S83PFmB6Gs0pJCSZHz5Zbh2709QSwECHgMUAAIACAABAGJXKoLFZF4DAAD3BgAACgAAAAAAAAABAAAApIEAAAAAbXRjYXJzLmNzdlBLBQYAAAAAAQABADgAAACGAwAAAAA=" download="mtcars.zip">Download mtcars data</a>
+<hr />
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="big-three-results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/gonzalezben81/statistics/edit/BRANCH/01-introduction.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

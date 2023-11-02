@@ -1,0 +1,35 @@
+\backmatter
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+```{r include=FALSE}
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'htmlwidgets', 'webshot', 'DT',
+  'miniUI', 'tufte', 'servr', 'citr', 'rticles','dplyr'
+), 'packages.bib')
+```
+
+Hatcher, L. (2013). *Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.*
+
+***Student Peformance*** (2014). https://archive.ics.uci.edu/dataset/320/student+performance
+
+https://www.r-bloggers.com/2021/07/how-to-calculate-phi-coefficient-in-r/
+
+William Revelle (2023). _psych: Procedures for Psychological,
+  Psychometric, and Personality Research_. Northwestern University,
+  Evanston, Illinois. R package version 2.3.9,
+  <https://CRAN.R-project.org/package=psych>
+
+https://www.garyfisk.com/pspp/44ChiSquareGoodness.html
+
+https://www.statology.org/t-distribution-table/
+
+https://www.scribbr.com/frequently-asked-questions/critical-value-of-t-in-r/#:~:text=You%20can%20use%20the%20qt,the%20significance%20level%20by%20two.
+
+Motor Trend Car Road Tests: The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+
+Henderson and Velleman (1981). dataset: Motor Trend Car Road Tests. R package version 4.3.1
+
+Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.

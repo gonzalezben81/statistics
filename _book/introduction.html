@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | Bivariate Regression</title>
+  <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | Bivariate Regression" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="github-repo" content="gonzalezben81/statistics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Bivariate Regression" />
+  
+  <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  
+
+<meta name="author" content="Ben Gonzalez" />
+
+
+<meta name="date" content="2023-10-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="chi-square-and-correlation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics and Other Ideas</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#get-started"><i class="fa fa-check"></i><b>1.2</b> Get started</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#usage"><i class="fa fa-check"></i><b>1.3</b> Usage</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#new-session"><i class="fa fa-check"></i><b>1.4</b> Two rendering approaches</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#some-tips"><i class="fa fa-check"></i><b>1.5</b> Some tips</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-Square and Correlation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i><b>2.1</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="2.2" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i><b>2.2</b> Steven’s four scales of measurement</a></li>
+<li class="chapter" data-level="2.3" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#student-peformance-data-set-information"><i class="fa fa-check"></i><b>2.3</b> Student Peformance Data Set Information</a></li>
+<li class="chapter" data-level="2.4" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i><b>2.4</b> Look at the structure of our data</a></li>
+<li class="chapter" data-level="2.5" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#chi-square"><i class="fa fa-check"></i><b>2.5</b> Chi-square</a></li>
+<li class="chapter" data-level="2.6" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#chi-square-assumptions-1"><i class="fa fa-check"></i><b>2.6</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="2.7" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.7</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="2.8" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#observed"><i class="fa fa-check"></i><b>2.8</b> Observed</a></li>
+<li class="chapter" data-level="2.9" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#correlation"><i class="fa fa-check"></i><b>2.9</b> Correlation</a></li>
+<li class="chapter" data-level="2.10" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#index-of-effect-size-table"><i class="fa fa-check"></i><b>2.10</b> Index of Effect Size Table</a></li>
+<li class="chapter" data-level="2.11" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>2.11</b> Correlation between student absences and final grade</a></li>
+<li class="chapter" data-level="2.12" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.12</b> Point-biserial Correlation Assumptions</a></li>
+<li class="chapter" data-level="2.13" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>2.13</b> Biserial Correlation</a></li>
+<li class="chapter" data-level="2.14" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>2.14</b> Spearman Correlation</a></li>
+<li class="chapter" data-level="2.15" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.15</b> Phi Coefficient - measurement of the degree of association between two binary variables</a></li>
+<li class="chapter" data-level="2.16" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>2.16</b> Phi coefficient:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-formula"><i class="fa fa-check"></i><b>3.1</b> Partial Correlation Formula</a></li>
+<li class="chapter" data-level="3.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-1"><i class="fa fa-check"></i><b>3.2</b> Partial Correlation</a></li>
+<li class="chapter" data-level="3.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-overview"><i class="fa fa-check"></i><b>3.3</b> Partial Correlation Overview</a></li>
+<li class="chapter" data-level="3.4" data-path="partial-correlation.html"><a href="partial-correlation.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.4</b> Take a look at the structure of the mtcars data set</a></li>
+<li class="chapter" data-level="3.5" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.5</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="3.6" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>3.6</b> Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="3.7" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>3.7</b> Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="3.8" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>3.8</b> Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="3.9" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.9</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="3.10" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.10</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="3.11" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.11</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="3.12" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.12</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="3.13" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>3.13</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i><b>4.1</b> Assumptions of Bivariate Regression</a></li>
+<li class="chapter" data-level="4.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.2</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="4.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.3</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="4.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-residual"><i class="fa fa-check"></i><b>4.4</b> Calculate the Residual</a></li>
+<li class="chapter" data-level="4.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.5</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="4.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.6</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.7</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="4.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.8</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.9</b> Utilize the lm function in R to automate our work</a></li>
+<li class="chapter" data-level="4.10" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>4.10</b> Putting it altogether</a></li>
+<li class="chapter" data-level="4.11" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>4.11</b> Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="4.12" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.12</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="4.13" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.13</b> Squaring the correlation coefficient</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bivariate Regression</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This book is a guide to authoring books and technical documents with R Markdown <span class="citation">(<a href="#ref-R-rmarkdown">Allaire et al. 2023</a>)</span> and the R package <strong>bookdown</strong> <span class="citation">(<a href="#ref-R-bookdown">Xie 2023a</a>)</span>. It focuses on the features specific to writing books, long-form articles, or reports, such as:</p>
+<ul>
+<li>how to typeset equations, theorems, figures and tables, and cross-reference them;</li>
+<li>how to generate multiple output formats such as HTML, PDF, and e-books for a single book;</li>
+<li>how to customize the book templates and style different elements in a book;</li>
+<li>editor support (in particular, the RStudio IDE); and</li>
+<li>how to publish a book.</li>
+</ul>
+<p>It is not a comprehensive introduction to R Markdown or the <strong>knitr</strong> package <span class="citation">(<a href="#ref-R-knitr">Xie 2023b</a>)</span>, on top of which <strong>bookdown</strong> was built. To learn more about R Markdown, please check out the online documentation <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>. For <strong>knitr</strong>, please see <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span>. You do not have to be an expert of the R language <span class="citation">(<a href="#ref-R-base">R Core Team 2023</a>)</span> to read this book, but you are expected to have some basic knowledge about R Markdown and <strong>knitr</strong>. For beginners, you may get started with the cheatsheets at <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a>. The appendix of this book contains brief introductions to these software packages. To be able to customize the book templates and themes, you should be familiar with LaTeX, HTML and CSS.</p>
+<div id="motivation" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Motivation<a href="introduction.html#motivation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Markdown is a wonderful language to write relatively simple documents that contain elements like sections, paragraphs, lists, links, and images, etc. Pandoc (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) has greatly extended the <a href="http://daringfireball.net/projects/markdown/">original Markdown syntax,</a> and added quite a few useful new features, such as footnotes, citations, and tables. More importantly, Pandoc makes it possible to generate output documents of a large variety of formats from Markdown, including HTML, LaTeX/PDF, Word, and slides.</p>
+<p>There are still a few useful features missing in Pandoc’s Markdown at the moment that are necessary to write a relatively complicated document like a book, such as automatic numbering of figures and tables in the HTML output, cross-references of figures and tables, and fine control of the appearance of figures (e.g., currently it is impossible to specify the alignment of images using the Markdown syntax). These are some of the problems that we have addressed in the <strong>bookdown</strong> package.</p>
+<p>Under the constraint that we want to produce the book in multiple output formats, it is nearly impossible to cover all possible features specific to these diverse output formats. For example, it may be difficult to reinvent a certain complicated LaTeX environment in the HTML output using the (R) Markdown syntax. Our main goal is not to replace <em>everything</em> with Markdown, but to cover <em>most</em> common functionalities required to write a relatively complicated document, and make the syntax of such functionalities consistent across all output formats, so that you only need to learn one thing and it works for all output formats.</p>
+<p>Another goal of this project is to make it easy to produce books that look visually pleasant. Some nice existing examples include GitBook (<a href="https://www.gitbook.com" class="uri">https://www.gitbook.com</a>), Tufte CSS (<a href="http://edwardtufte.github.io/tufte-css/" class="uri">http://edwardtufte.github.io/tufte-css/</a>), and Tufte-LaTeX (<a href="https://tufte-latex.github.io/tufte-latex/" class="uri">https://tufte-latex.github.io/tufte-latex/</a>). We hope to integrate these themes and styles into <strong>bookdown</strong>, so authors do not have to dive into the details of how to use a certain LaTeX class or how to configure CSS for HTML output.</p>
+</div>
+<div id="get-started" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Get started<a href="introduction.html#get-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The easiest way for beginners to get started with writing a book with R Markdown and <strong>bookdown</strong> is through the demo <code>bookdown-demo</code> on GitHub:</p>
+<ol style="list-style-type: decimal">
+<li><p>Download the GitHub repository <a href="https://github.com/rstudio/bookdown-demo" class="uri">https://github.com/rstudio/bookdown-demo</a> as a <a href="https://github.com/rstudio/bookdown-demo/archive/main.zip">Zip file,</a> then unzip it locally.</p></li>
+<li><p>Install the RStudio IDE. Note that you need a version higher than 1.0.0. Please <a href="https://posit.co/download/rstudio-desktop/">download the latest version</a> if your RStudio version is lower than 1.0.0.</p></li>
+<li><p>Install the R package <strong>bookdown</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" tabindex="-1"></a><span class="co"># stable version on CRAN</span></span>
+<span id="cb1-2"><a href="introduction.html#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;bookdown&#39;</span>)</span>
+<span id="cb1-3"><a href="introduction.html#cb1-3" tabindex="-1"></a><span class="co"># or development version on GitHub</span></span>
+<span id="cb1-4"><a href="introduction.html#cb1-4" tabindex="-1"></a><span class="co"># remotes::install_github(&#39;rstudio/bookdown&#39;)</span></span></code></pre></div></li>
+<li><p>Open the <code>bookdown-demo</code> repository you downloaded in RStudio by clicking <code>bookdown-demo.Rproj</code>.</p></li>
+<li><p>Open the R Markdown file <code>index.Rmd</code> and click the button <code>Build Book</code> on the <code>Build</code> tab of RStudio.</p></li>
+</ol>
+
+<div class="rmdnote">
+If you are planning on printing your book to PDF, you will need a LaTeX distribution. We recommend that you install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.
+</div>
+<p>Now you should see the index page of this book demo in the RStudio Viewer. You may add or change the R Markdown files, and hit the <code>Knit</code> button again to preview the book. If you prefer not to use RStudio, you may also compile the book through the command line. See the next section for details.</p>
+<p>Although you see quite a few files in the <code>bookdown-demo</code> example, most of them are not essential to a book. If you feel overwhelmed by the number of files, you can use this minimal example instead, which is essentially one file <code>index.Rmd</code>: <a href="https://github.com/yihui/bookdown-minimal" class="uri">https://github.com/yihui/bookdown-minimal</a>. The <code>bookdown-demo</code> example contains some advanced settings that you may want to learn later, such as how to customize the LaTeX preamble, tweak the CSS, and build the book on GitHub, etc.</p>
+</div>
+<div id="usage" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Usage<a href="introduction.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A typical <strong>bookdown</strong> book contains multiple chapters, and one chapter lives in one R Markdown file, with the filename extension <code>.Rmd</code>. Each R Markdown file must start immediately with the chapter title using the first-level heading, e.g., <code># Chapter Title</code>. All R Markdown files must be encoded in UTF-8, especially when they contain multi-byte characters such as Chinese, Japanese, and Korean. Here is an example (the bullets are the filenames, followed by the file content):</p>
+<ul>
+<li><p>index.Rmd</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="introduction.html#cb2-1" tabindex="-1"></a><span class="fu"># Preface {-}</span></span>
+<span id="cb2-2"><a href="introduction.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="introduction.html#cb2-3" tabindex="-1"></a>In this book, we will introduce an interesting</span>
+<span id="cb2-4"><a href="introduction.html#cb2-4" tabindex="-1"></a>method.</span></code></pre></div></li>
+<li><p>01-intro.Rmd</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="introduction.html#cb3-1" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb3-2"><a href="introduction.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="introduction.html#cb3-3" tabindex="-1"></a>This chapter is an overview of the methods that</span>
+<span id="cb3-4"><a href="introduction.html#cb3-4" tabindex="-1"></a>we propose to solve an **important problem**.</span></code></pre></div></li>
+<li><p>02-literature.Rmd</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="introduction.html#cb4-1" tabindex="-1"></a><span class="fu"># Literature</span></span>
+<span id="cb4-2"><a href="introduction.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="introduction.html#cb4-3" tabindex="-1"></a>Here is a review of existing methods.</span></code></pre></div></li>
+<li><p>03-method.Rmd</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="introduction.html#cb5-1" tabindex="-1"></a><span class="fu"># Methods</span></span>
+<span id="cb5-2"><a href="introduction.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="introduction.html#cb5-3" tabindex="-1"></a>We describe our methods in this chapter.</span></code></pre></div></li>
+<li><p>04-application.Rmd</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="introduction.html#cb6-1" tabindex="-1"></a><span class="fu"># Applications</span></span>
+<span id="cb6-2"><a href="introduction.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="introduction.html#cb6-3" tabindex="-1"></a>Some _significant_ applications are demonstrated</span>
+<span id="cb6-4"><a href="introduction.html#cb6-4" tabindex="-1"></a>in this chapter.</span>
+<span id="cb6-5"><a href="introduction.html#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="introduction.html#cb6-6" tabindex="-1"></a><span class="fu">## Example one</span></span>
+<span id="cb6-7"><a href="introduction.html#cb6-7" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="introduction.html#cb6-8" tabindex="-1"></a><span class="fu">## Example two</span></span></code></pre></div></li>
+<li><p>05-summary.Rmd</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="introduction.html#cb7-1" tabindex="-1"></a><span class="fu"># Final Words</span></span>
+<span id="cb7-2"><a href="introduction.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="introduction.html#cb7-3" tabindex="-1"></a>We have finished a nice book.</span></code></pre></div></li>
+</ul>
+<p>By default, <strong>bookdown</strong> merges all Rmd files by the order of filenames, e.g., <code>01-intro.Rmd</code> will appear before <code>02-literature.Rmd</code>. Filenames that start with an underscore <code>_</code> are skipped. If there exists an Rmd file named <code>index.Rmd</code>, it will always be treated as the first file when merging all Rmd files. The reason for this special treatment is that the HTML file <code>index.html</code> to be generated from <code>index.Rmd</code> is usually the default index file when you view a website, e.g., you are actually browsing <a href="http://yihui.org/index.html" class="uri">http://yihui.org/index.html</a> when you open <a href="http://yihui.org/" class="uri">http://yihui.org/</a>.</p>
+<p>You can override the above behavior by including a configuration file named <code>_bookdown.yml</code> in the book directory. It is a YAML file (<a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), and R Markdown users should be familiar with this format since it is also used to write the metadata in the beginning of R Markdown documents (you can learn more about YAML in Section <a href="#r-markdown"><strong>??</strong></a>). You can use a field named <code>rmd_files</code> to define your own list and order of Rmd files for the book. For example,</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="introduction.html#cb8-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
+<p>In this case, <strong>bookdown</strong> will use the list of files you defined in this YAML field (<code>index.Rmd</code> will be added to the list if it exists, and filenames starting with underscores are always ignored). If you want both HTML and LaTeX/PDF output from the book, and use different Rmd files for HTML and LaTeX output, you may specify these files for the two output formats separately, e.g.,</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="introduction.html#cb9-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="introduction.html#cb9-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span>
+<span id="cb9-3"><a href="introduction.html#cb9-3" tabindex="-1"></a><span class="at">  </span><span class="fu">latex</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
+<p>Although we have been talking about R Markdown files, the chapter files do not actually have to be R Markdown. They can be plain Markdown files (<code>.md</code>), and do not have to contain R code chunks at all. You can certainly use <strong>bookdown</strong> to compose novels or poems!</p>
+<p>At the moment, the major output formats that you may use include <code>bookdown::pdf_book</code>, <code>bookdown::gitbook</code>, <code>bookdown::html_book</code>, and <code>bookdown::epub_book</code>. There is a <code>bookdown::render_book()</code> function similar to <code>rmarkdown::render()</code>, but it was designed to render <em>multiple</em> Rmd documents into a book using the output format functions. You may either call this function from command line directly, or click the relevant buttons in the RStudio IDE. Here are some command-line examples:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction.html#cb10-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::gitbook&#39;</span>)</span>
+<span id="cb10-2"><a href="introduction.html#cb10-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::pdf_book&#39;</span>)</span>
+<span id="cb10-3"><a href="introduction.html#cb10-3" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">gitbook</span>(<span class="at">lib_dir =</span> <span class="st">&#39;libs&#39;</span>))</span>
+<span id="cb10-4"><a href="introduction.html#cb10-4" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">pdf_book</span>(<span class="at">keep_tex =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<p>To use <code>render_book</code> and the output format functions in the RStudio IDE, you can define a YAML field named <code>site</code> that takes the value <code>bookdown::bookdown_site</code>,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and the output format functions can be used in the <code>output</code> field, e.g.,</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="introduction.html#cb11-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="introduction.html#cb11-2" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bookdown::bookdown_site&quot;</span></span>
+<span id="cb11-3"><a href="introduction.html#cb11-3" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="introduction.html#cb11-4" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb11-5"><a href="introduction.html#cb11-5" tabindex="-1"></a><span class="at">    </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;book_assets&quot;</span></span>
+<span id="cb11-6"><a href="introduction.html#cb11-6" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
+<span id="cb11-7"><a href="introduction.html#cb11-7" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb11-8"><a href="introduction.html#cb11-8" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>Then you can click the <code>Build Book</code> button in the <code>Build</code> pane in RStudio to compile the Rmd files into a book, or click the <code>Knit</code> button on the toolbar to preview the current chapter.</p>
+<p>More <strong>bookdown</strong> configuration options in <code>_bookdown.yml</code> are explained in Section <a href="#configuration"><strong>??</strong></a>. Besides these configurations, you can also specify some Pandoc-related configurations in the YAML metadata of the <em>first</em> Rmd file of the book, such as the title, author, and date of the book, etc. For example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="introduction.html#cb12-1" tabindex="-1"></a><span class="pp">--- </span></span>
+<span id="cb12-2"><a href="introduction.html#cb12-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Authoring A Book with R Markdown&quot;</span></span>
+<span id="cb12-3"><a href="introduction.html#cb12-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
+<span id="cb12-4"><a href="introduction.html#cb12-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`r Sys.Date()`&quot;</span></span>
+<span id="cb12-5"><a href="introduction.html#cb12-5" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bookdown::bookdown_site&quot;</span></span>
+<span id="cb12-6"><a href="introduction.html#cb12-6" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb12-7"><a href="introduction.html#cb12-7" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb12-8"><a href="introduction.html#cb12-8" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb12-9"><a href="introduction.html#cb12-9" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;book.bib&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;packages.bib&quot;</span><span class="kw">]</span></span>
+<span id="cb12-10"><a href="introduction.html#cb12-10" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
+<span id="cb12-11"><a href="introduction.html#cb12-11" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb12-12"><a href="introduction.html#cb12-12" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="new-session" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Two rendering approaches<a href="introduction.html#new-session" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Merging all chapters into one Rmd file and knitting it is one way to render the book in <strong>bookdown</strong>. There is actually another way: you may knit each chapter in a <em>separate</em> R session, and <strong>bookdown</strong> will merge the Markdown output of all chapters to render the book. We call these two approaches “Merge and Knit” (M-K) and “Knit and Merge” (K-M), respectively. The differences between them may seem subtle, but can be fairly important depending on your use cases.</p>
+<ul>
+<li>The most significant difference is that M-K runs <em>all</em> code chunks in all chapters in the same R session, whereas K-M uses separate R sessions for individual chapters. For M-K, the state of the R session from previous chapters is carried over to later chapters (e.g., objects created in previous chapters are available to later chapters, unless you deliberately deleted them); for K-M, all chapters are isolated from each other.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> If you want each chapter to compile from a clean state, use the K-M approach. It can be very tricky and difficult to restore a running R session to a completely clean state if you use the M-K approach. For example, even if you detach/unload packages loaded in a previous chapter, R will not clean up the S3 methods registered by these packages.</li>
+<li>Because <strong>knitr</strong> does not allow duplicate chunk labels in a source document, you need to make sure there are no duplicate labels in your book chapters when you use the M-K approach, otherwise <strong>knitr</strong> will signal an error when knitting the merged Rmd file. Note that this means there must not be duplicate labels throughout the whole book. The K-M approach only requires no duplicate labels within any single Rmd file.</li>
+<li>K-M does not allow Rmd files to be in subdirectories, but M-K does.</li>
+</ul>
+<p>The default approach in <strong>bookdown</strong> is M-K. To switch to K-M, you either use the argument <code>new_session = TRUE</code> when calling <code>render_book()</code>, or set <code>new_session: yes</code> in the configuration file <code>_bookdown.yml</code>.</p>
+<p>You can configure the <code>book_filename</code> option in <code>_bookdown.yml</code> for the K-M approach, but it should be a Markdown filename, e.g., <code>_main.md</code>, although the filename extension does not really matter, and you can even leave out the extension, e.g., just set <code>book_filename: _main</code>. All other configurations work for both M-K and K-M.</p>
+</div>
+<div id="some-tips" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Some tips<a href="introduction.html#some-tips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Typesetting under the paging constraint (e.g., for LaTeX/PDF output) can be an extremely tedious and time-consuming job. I’d recommend you not to look at your PDF output frequently, since most of the time you are very unlikely to be satisfied: text may overflow into the page margin, figures may float too far away, and so on. Do not try to make things look right <em>immediately</em>, because you may be disappointed over and over again as you keep on revising the book, and things may be messed up again even if you only made some minor changes (see <a href="http://bit.ly/tbrLtx" class="uri">http://bit.ly/tbrLtx</a> for a nice illustration).</p>
+<p>If you want to preview the book, preview the HTML output. Work on the PDF version after you have finished the content of the book, and are very sure no major revisions will be required.</p>
+<p>If certain code chunks in your R Markdown documents are time-consuming to run, you may cache them by adding the chunk option <code>cache = TRUE</code> in the chunk header, and you are recommended to label such code chunks as well, e.g.,</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="introduction.html#cb13-1" tabindex="-1"></a><span class="in">```{r important-computing, cache=TRUE}</span></span></code></pre></div>
+<p>In Chapter <a href="#editing"><strong>??</strong></a>, we will talk about how to quickly preview a book as you edit . In short, you can use the <code>preview_chapter()</code> function to render a single chapter instead of the whole book. The function <code>serve_book()</code> makes it easy to live-preview HTML book pages: whenever you modify an Rmd file, the book can be recompiled and the browser can be automatically refreshed accordingly.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-rmarkdown" class="csl-entry">
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.
+</div>
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2023a. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry">
+———. 2023b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>This function calls <code>bookdown::render_book()</code>.<a href="introduction.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Of course, no one can stop you from writing out some files in one chapter, and reading them in another chapter. It is hard to isolate these kinds of side-effects.<a href="introduction.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chi-square-and-correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/gonzalezben81/statistics/edit/BRANCH/01-bigthreeresults.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

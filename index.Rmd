@@ -4,45 +4,13 @@ author: "Ben Gonzalez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+description: "The following are tutorials and explanations for individuals who are beginners to statistics."
+github-repo: gonzalezben81/statistics
 ---
 
-<!-- # Bivariate Regression -->
 
-<!-- # Chi-Square and Correlation -->
+# Preface {-}
 
-<!-- # Partial Correlation -->
-
-<!-- # Bivariate Regression -->
-
-
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-##### Preview book
-
-
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+This book is for those wanting to learn introductory to advanced statistics. The aim of this book is to provide a solid foundation for understanding statistical concepts. The data sets utilized in this book are freely available and come with this book. 

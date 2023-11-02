@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bivariate Regression | References</title>
+  <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bivariate Regression | References" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  <meta name="github-repo" content="gonzalezben81/statistics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bivariate Regression | References" />
+  
+  <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
+  
+
+<meta name="author" content="Ben Gonzalez" />
+
+
+<meta name="date" content="2023-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="partial-correlation-1.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics and Other Ideas</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bivariate Regression</a></li>
+<li class="chapter" data-level="2" data-path="chi-square-and-correlation.html"><a href="chi-square-and-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-Square and Correlation</a></li>
+<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a></li>
+<li class="chapter" data-level="4" data-path="bivariate-regression-1.html"><a href="bivariate-regression-1.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i>Big Three Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i>Sample Standard Deviation Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i>Standard Error Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i>How to calculate the standard error of a sample</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i>Computing Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#confidence-interval-formula"><i class="fa fa-check"></i>Confidence Interval Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#lower-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i>Lower Bound of the C.I. for a Sample Mean</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#utilizing-the-linear-model-formula-in-r"><i class="fa fa-check"></i>Utilizing the linear model formula in R</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#here-we-can-also-calculate-the-ci-by-utilizing-the-linear-model-funciton."><i class="fa fa-check"></i>Here we can also calculate the <span class="math inline">\(CI\)</span> by utilizing the linear model funciton.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html"><i class="fa fa-check"></i>Chi-Square and Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i>Steven’s four scales of measurement</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#student-peformance-data-set-information"><i class="fa fa-check"></i>Student Peformance Data Set Information</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i>Look at the structure of our data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#chi-square"><i class="fa fa-check"></i>Chi-square</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#chi-square-assumptions-1"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#chi-square-test-of-association"><i class="fa fa-check"></i>Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#observed"><i class="fa fa-check"></i>Observed</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#correlation"><i class="fa fa-check"></i>Correlation</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#index-of-effect-size-table"><i class="fa fa-check"></i>Index of Effect Size Table</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i>Correlation between student absences and final grade</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i>Point-biserial Correlation Assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#biserial-correlation"><i class="fa fa-check"></i>Biserial Correlation</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#spearman-correlation"><i class="fa fa-check"></i>Spearman Correlation</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i>Phi Coefficient - measurement of the degree of association between two binary variables</a></li>
+<li class="chapter" data-level="" data-path="chi-square-and-correlation-1.html"><a href="chi-square-and-correlation-1.html#phi-coefficient"><i class="fa fa-check"></i>Phi coefficient:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html"><i class="fa fa-check"></i>Partial Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#partial-correlation-formula"><i class="fa fa-check"></i>Partial Correlation Formula</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#partial-correlation-2"><i class="fa fa-check"></i>Partial Correlation</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#partial-correlation-overview"><i class="fa fa-check"></i>Partial Correlation Overview</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i>Take a look at the structure of the mtcars data set</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i>Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i>Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i>Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i>Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i>Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i>Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i>Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i>Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="" data-path="partial-correlation-1.html"><a href="partial-correlation-1.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i>Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html"><i class="fa fa-check"></i>Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i>Assumptions of Bivariate Regression</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#bivariate-regression-formula"><i class="fa fa-check"></i>Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i>Scatterplot of the data set</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#calculate-the-residual"><i class="fa fa-check"></i>Calculate the Residual</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i>Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i>Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i>Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i>Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i>Utilize the lm function in R to automate our work</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#putting-it-altogether"><i class="fa fa-check"></i>Putting it altogether</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i>Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i>Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression-2.html"><a href="bivariate-regression-2.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i>Squaring the correlation coefficient</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bivariate-regression-2" class="section level1 unnumbered hasAnchor">
+<h1>Bivariate Regression<a href="bivariate-regression-2.html#bivariate-regression-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Bivariate Regression Terminology</p>
+<ul>
+<li><p><strong>Regression</strong> – is the process of estimating a best-fitting line that summarizes the relationship between a predictor variable (Independent Variable) and a criterion variable (Dependent Variable).</p></li>
+<li><p><strong>Regression Analysis</strong> – researchers fit a regression line to a sample of data, estimate the parameters of the regression equation (i.e., the constant and regression coefficient), and use the resulting equation to predict scores on a criterion variable.</p></li>
+<li><p><strong>Bivariate</strong> – means that the analyses discussed include just 2 variables, a predictor variable (the X variable), and a criterion variable (the Y variable).</p></li>
+<li><p><strong>Linear</strong> – refers to the fact, when the Y scores are plotted against the X scores, it should be possible to fit a best-fitting straight line through the center of the scores, as opposed to a best-fitting curved line.</p></li>
+</ul>
+<p>Regression: Generic Analysis Model</p>
+<hr />
+<center>
+<div id="htmlwidget-45dab0e570256ba64468" style="width:672px;height:200px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45dab0e570256ba64468">{"x":{"diagram":"\n  digraph graph2 {\n  \n  graph [layout = dot, rankdir = LR]\n  \n  # node definitions with substituted label text\n  node [shape = square]\n  Predictor [label = \"Predictor (IV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  Criterion [label = \"Criterion (DV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  \n  Predictor -> Criterion\n  }\n  \n  [1]: Interval\n  [2]: Ratio\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</center>
+<hr />
+<!-- <center> -->
+<!-- ### Bivariate Regression -->
+<!-- </center> -->
+<div id="assumptions-of-bivariate-regression" class="section level2 unnumbered hasAnchor">
+<h2>Assumptions of Bivariate Regression<a href="bivariate-regression-2.html#assumptions-of-bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Linearity</strong> – should be able to fit a best-fitting straight line through the scatterplot.</p></li>
+<li><p><strong>Independence</strong> – each observation included in the sample should be drawn independently from the population of interest. Researchers should not have taken repeated measures on the same variable from the same participant.</p></li>
+<li><p><strong>Homogeneity of Variance (Homoscedasticity)</strong> – the variance of the Y scores should remain fairly constant at all values of X.</p></li>
+<li><p><strong>Normality</strong> – residuals of prediction should be normally distributed.
+Bivariate Normality – for any specific score on one of the variables, scores on the other variable should follow a normal distribution.</p></li>
+</ul>
+<center>
+</div>
+<div id="bivariate-regression-formula" class="section level2 unnumbered hasAnchor">
+<h2>Bivariate Regression Formula<a href="bivariate-regression-2.html#bivariate-regression-formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</center>
+<p>Here we have the formula for the bivariate regression equation.
+The regression equation takes the following form:
+<span class="math display">\[\Large
+Regression\;Equation:\;\;\;\hat{y} = a + \beta(X)
+\]</span>
+<span class="math display">\[
+\hat{y}\;\;–\;the\;predicted\;score\;on\;the\;criterion\;variable
+\]</span>
+<span class="math display">\[
+a\;–\;the\;constant\;or\;the\;intercept\;of\;the\;regression\;equation.
+\]</span>
+<span class="math display">\[
+\beta\;–\;the\;unstandardized\;regression\;coefficient.\\Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-unit\;change\;in\;X\;\\when\;both\;variables\;are\;in\;raw\;score\;form.\;Also\;known\;as\;the\;regression\;weight\;or\;slope.
+\]</span></p>
+<!-- $$\Large -->
+<!-- \hat{y} = a + \beta(X) -->
+<!-- $$ -->
+</div>
+<div id="scatterplot-of-the-data-set" class="section level2 unnumbered hasAnchor">
+<h2>Scatterplot of the data set<a href="bivariate-regression-2.html#scatterplot-of-the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we plot our data to get a good look at the shape of the data set.</p>
+<ul>
+<li><strong>Scatterplot</strong> – a graph that illustrates the nature of the relationship between two quantitative variables.</li>
+<li><strong>X Axis</strong> – Predictor Variable - hp</li>
+<li><strong>Y Axis</strong> – Criterion Variable - mpg</li>
+</ul>
+<p>We can utilize the following plot function to create a basic scatterplot in R.
+<br></p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="bivariate-regression-2.html#cb109-1" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb109-2"><a href="bivariate-regression-2.html#cb109-2" tabindex="-1"></a><span class="fu">with</span>(<span class="at">data =</span> mtcars,<span class="fu">plot</span>(<span class="at">x =</span> hp,<span class="at">y =</span> mpg,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">main=</span><span class="st">&quot;Mtcars&quot;</span>))</span></code></pre></div>
+<p><br></p>
+<pre><code>## The following object is masked from package:ggplot2:
+## 
+##     mpg</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+<div id="calculate-the-residual" class="section level2 unnumbered hasAnchor">
+<h2>Calculate the Residual<a href="bivariate-regression-2.html#calculate-the-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we compute the residual by taking the actual y value and subtract the predicted y value. The residual for each observation is the difference between the predicted values of y and the actual values of y. Calculating the residual helps us to see if we have overpredicted or underpredicted for <span class="math inline">\(\hat{y}\)</span>.</p>
+<p><span class="math display">\[\Large
+Residual = actual\;y\;value - predicted\;y\;value
+\]</span></p>
+<p><span class="math display">\[\Large
+r_{1} = y_{i} - \hat{y_{i}}
+\]</span></p>
+<pre><code>## [1] &quot;Predicted y Values&quot;</code></pre>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##           22.593750           22.593750           23.753631           22.593750 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##           18.158912           22.934891           13.382932           25.868707 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##           23.617174           21.706782           21.706782           17.817770 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##           17.817770           17.817770           16.112064           15.429781 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##           14.406357           25.595794           26.550990           25.664022 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##           23.480718           19.864619           19.864619           13.382932 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##           18.158912           25.595794           23.890087           22.389065 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##           12.086595           18.158912            7.242387           22.661978</code></pre>
+<pre><code>## [1] &quot;Actual y Values&quot;</code></pre>
+<pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
+## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
+## [31] 15.0 21.4</code></pre>
+<pre><code>## [1] &quot;Manually Calculated Residuals&quot;</code></pre>
+<pre><code>##                     mtcars$mpg - mpg_prediction$fitted.values
+## Mazda RX4                                         -1.59374995
+## Mazda RX4 Wag                                     -1.59374995
+## Datsun 710                                        -0.95363068
+## Hornet 4 Drive                                    -1.19374995
+## Hornet Sportabout                                  0.54108812
+## Valiant                                           -4.83489134
+## Duster 360                                         0.91706759
+## Merc 240D                                         -1.46870730
+## Merc 230                                          -0.81717412
+## Merc 280                                          -2.50678234
+## Merc 280C                                         -3.90678234
+## Merc 450SE                                        -1.41777049
+## Merc 450SL                                        -0.51777049
+## Merc 450SLC                                       -2.61777049
+## Cadillac Fleetwood                                -5.71206353
+## Lincoln Continental                               -5.02978075
+## Chrysler Imperial                                  0.29364342
+## Fiat 128                                           6.80420581
+## Honda Civic                                        3.84900992
+## Toyota Corolla                                     8.23597754
+## Toyota Corona                                     -1.98071757
+## Dodge Challenger                                  -4.36461883
+## AMC Javelin                                       -4.66461883
+## Camaro Z28                                        -0.08293241
+## Pontiac Firebird                                   1.04108812
+## Fiat X1-9                                          1.70420581
+## Porsche 914-2                                      2.10991276
+## Lotus Europa                                       8.01093488
+## Ford Pantera L                                     3.71340487
+## Ferrari Dino                                       1.54108812
+## Maserati Bora                                      7.75761261
+## Volvo 142E                                        -1.26197823</code></pre>
+<pre><code>## [1] &quot;Residual Values&quot;</code></pre>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##         -1.59374995         -1.59374995         -0.95363068         -1.19374995 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##          0.54108812         -4.83489134          0.91706759         -1.46870730 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##         -0.81717412         -2.50678234         -3.90678234         -1.41777049 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##         -0.51777049         -2.61777049         -5.71206353         -5.02978075 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##          0.29364342          6.80420581          3.84900992          8.23597754 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##         -1.98071757         -4.36461883         -4.66461883         -0.08293241 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##          1.04108812          1.70420581          2.10991276          8.01093488 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
+</div>
+<div id="calculate-the-mean-of-the-y-values" class="section level2 unnumbered hasAnchor">
+<h2>Calculate the mean of the Y Values<a href="bivariate-regression-2.html#calculate-the-mean-of-the-y-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we find the mean of our criterion (y) value of mpg.</p>
+<p><span class="math display">\[\Large
+\bar{y} = \frac{\sum{y}}{n}
+\]</span></p>
+<p>We can utilize the <strong><em>mean</em></strong> function to the calculate the mean of mpg (miles per gallon).</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="bivariate-regression-2.html#cb119-1" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<pre><code>## [1] 20.09062</code></pre>
+</div>
+<div id="coefficient-of-determination-or-r2" class="section level2 unnumbered hasAnchor">
+<h2>Coefficient of Determination or <span class="math inline">\({R^2}\)</span><a href="bivariate-regression-2.html#coefficient-of-determination-or-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Coefficient of Determination</strong> – indicates the percent of <strong>variance in the criterion</strong> variable <strong>that is accounted for by the predictor</strong> variable.</p>
+<hr />
+<p><span class="math display">\[
+Coefficient\;of\;Determination:\;\;R^2 =\;1-\; \frac{sum\;squared\;regression\;(SSR)}{sum\;squares\;total\;(SST)}
+\]</span></p>
+<p><span class="math display">\[
+=1- \frac{\sum(y_{i}\;-\;\hat{y_{i}})^2}{\sum(y_{i}\;-\;\overline{y})^2}
+\\
+\\
+y_{i} = actual\;y\;values
+\\
+\hat{y_i} = predicted\;y\;values
+\\
+\overline{y} = mean\;of\;y
+\\
+\sum\;or\;sigma = sum
+\]</span></p>
+<hr />
+</div>
+<div id="calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="section level2 unnumbered hasAnchor">
+<h2>Calculate the numerator of the formula - Sum Squared Regression (SSR)<a href="bivariate-regression-2.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+\sum(y_{i}\;-\;\hat{y_{i}})^2
+\]</span></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="bivariate-regression-2.html#cb121-1" tabindex="-1"></a>top_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>(mpg_prediction<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb121-2"><a href="bivariate-regression-2.html#cb121-2" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
+<pre><code>## [1] 447.6743</code></pre>
+<p>Calculate the denominator of the formula - Sum Squares Total (SST)</p>
+<hr />
+<p><span class="math display">\[
+\sum(y_{i}\;-\;\overline{y})^2
+\]</span></p>
+<hr />
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="bivariate-regression-2.html#cb123-1" tabindex="-1"></a>bottom_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>((mtcars<span class="sc">$</span>mpg<span class="sc">-</span><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb123-2"><a href="bivariate-regression-2.html#cb123-2" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
+<pre><code>## [1] 1126.047</code></pre>
+<hr />
+<p><span class="math display">\[
+R^2 = 1- \frac{447.6743}{1126.047}
+\]</span>
+<span class="math display">\[
+R^2 = 1- 0.3975627
+\]</span>
+<span class="math display">\[
+R^2 = 0.6024373
+\\
+R^2 = 0.6024
+\]</span></p>
+<hr />
+</div>
+<div id="calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="section level2 unnumbered hasAnchor">
+<h2>Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span><a href="bivariate-regression-2.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<hr />
+<p><span class="math display">\[
+Adj.R^2\;or\;R^2_{adj} = 1 - (1-R^2)\;\cdot\;(n-1)/(n-p-1)
+\\
+Adj.R^2\;or\;R^2_{adj} = 1 - (1-0.6024373)\;\cdot\;(32-1)/(32-1-1)
+\\
+R^2 = coefficient\;of\;determination
+\\
+n = number\;of\;observations
+\\
+p=number\;of\;predictors
+\]</span></p>
+<hr />
+<hr />
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="bivariate-regression-2.html#cb125-1" tabindex="-1"></a>adj.r.squared <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.6024373</span>) <span class="sc">*</span> ((<span class="dv">32</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>(<span class="dv">32-1-1</span>))</span>
+<span id="cb125-2"><a href="bivariate-regression-2.html#cb125-2" tabindex="-1"></a><span class="fu">print</span>(adj.r.squared)</span></code></pre></div>
+<pre><code>## [1] 0.5891852</code></pre>
+</div>
+<div id="utilize-the-lm-function-in-r-to-automate-our-work" class="section level2 unnumbered hasAnchor">
+<h2>Utilize the lm function in R to automate our work<a href="bivariate-regression-2.html#utilize-the-lm-function-in-r-to-automate-our-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we can utilize the <strong><em>lm</em></strong> function in R to perform our bivariate regression (simple linear regression). This will allow us to save the model to a variable and then utilize the <strong>$</strong> (dollar sign) operator in R. The <strong>$</strong> (dollar sign) operator allows us to pull out things we need such as the residuals and fitted values that are returned from the summary function.</p>
+<p>Print the residuals of the model</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="bivariate-regression-2.html#cb127-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb127-2"><a href="bivariate-regression-2.html#cb127-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>residuals)</span></code></pre></div>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##         -1.59374995         -1.59374995         -0.95363068         -1.19374995 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##          0.54108812         -4.83489134          0.91706759         -1.46870730 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##         -0.81717412         -2.50678234         -3.90678234         -1.41777049 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##         -0.51777049         -2.61777049         -5.71206353         -5.02978075 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##          0.29364342          6.80420581          3.84900992          8.23597754 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##         -1.98071757         -4.36461883         -4.66461883         -0.08293241 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##          1.04108812          1.70420581          2.10991276          8.01093488 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
+<p>Print the coefficients of the model</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="bivariate-regression-2.html#cb129-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb129-2"><a href="bivariate-regression-2.html#cb129-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>coefficients)</span></code></pre></div>
+<pre><code>## (Intercept)          hp 
+## 30.09886054 -0.06822828</code></pre>
+<p>Print the fitted values of the model</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="bivariate-regression-2.html#cb131-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb131-2"><a href="bivariate-regression-2.html#cb131-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>fitted.values)</span></code></pre></div>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##           22.593750           22.593750           23.753631           22.593750 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##           18.158912           22.934891           13.382932           25.868707 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##           23.617174           21.706782           21.706782           17.817770 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##           17.817770           17.817770           16.112064           15.429781 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##           14.406357           25.595794           26.550990           25.664022 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##           23.480718           19.864619           19.864619           13.382932 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##           18.158912           25.595794           23.890087           22.389065 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##           12.086595           18.158912            7.242387           22.661978</code></pre>
+</div>
+<div id="putting-it-altogether" class="section level2 unnumbered hasAnchor">
+<h2>Putting it altogether<a href="bivariate-regression-2.html#putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we can print out the summary of the model utilizing the <strong><em>summary</em></strong> function in R; <code>summary(mpg_hp_model)</code>. We can also plot the predicted y values with the actual y values. Then we can draw a line between each of the predicted values and the actual values.This helps us visualize the amount of variation that is present between the predicted vs the actual values of y.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="bivariate-regression-2.html#cb133-1" tabindex="-1"></a>mpg_hp_model <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb133-2"><a href="bivariate-regression-2.html#cb133-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(mpg_hp_model))</span></code></pre></div>
+</div>
+<div id="plot-our-residuals-and-a-best-fitting-line" class="section level2 unnumbered hasAnchor">
+<h2>Plot our residuals and a best fitting line<a href="bivariate-regression-2.html#plot-our-residuals-and-a-best-fitting-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we can utilize the <code>ggplot2</code> package to plot our model. We can also plot the residuals along with a best fitting line.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="bivariate-regression-2.html#cb134-1" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(hp,mpg))<span class="sc">+</span></span>
+<span id="cb134-2"><a href="bivariate-regression-2.html#cb134-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb134-3"><a href="bivariate-regression-2.html#cb134-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb134-4"><a href="bivariate-regression-2.html#cb134-4" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mpg, <span class="at">ymin =</span> mpg<span class="sc">-</span>resid),<span class="at">color=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ hp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7121 -2.1122 -0.8854  1.5819  8.2360 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 30.09886    1.63392  18.421  &lt; 2e-16 ***
+## hp          -0.06823    0.01012  -6.742 1.79e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.863 on 30 degrees of freedom
+## Multiple R-squared:  0.6024, Adjusted R-squared:  0.5892 
+## F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) wil be.</p>
+<p><span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-0.06823(X)
+\]</span></p>
+<p><span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-0.06823(335)
+\]</span>
+<span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-22.85705
+\]</span>
+<span class="math display">\[
+\hat{y} = 7.24
+\]</span></p>
+<hr />
+</div>
+<div id="squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="section level2 unnumbered hasAnchor">
+<h2>Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span><a href="bivariate-regression-2.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>According to Hatcher (2013) we can simply square the correlation provided we are looking at only one predictor variable and one dependent variable. When we square the correlation coefficient this will give us the coefficient of determination.</p>
+<p>Correlation coefficient of hp and mpg</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="bivariate-regression-2.html#cb137-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<pre><code>## [1] -0.7761684</code></pre>
+<p><span class="math inline">\({r} = -0.7761684\)</span></p>
+</div>
+<div id="squaring-the-correlation-coefficient" class="section level2 unnumbered hasAnchor">
+<h2>Squaring the correlation coefficient<a href="bivariate-regression-2.html#squaring-the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we can square the correlation coefficient <span class="math inline">\({r}\)</span> and it will give us the coefficient of determination or <span class="math inline">\({R^2}\)</span></p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="bivariate-regression-2.html#cb139-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.6024373</code></pre>
+<p><span class="math inline">\({R^2} = 0.6024373\)</span></p>
+<p>Here we can see we get the same value for the coefficient of determination <span class="math inline">\({R^2}\)</span> by squaring the correlation as if we had utilized the <strong><em>lm</em></strong> function. However the <strong><em>lm</em></strong> function has advantages as it provides us with our p-value, F-statistic, and the intercept and the unstandardized regression coefficient.</p>
+<center>
+Data Set Description
+</center>
+<p>Motor Trend Car Road Tests</p>
+<p>Description:</p>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+<center>
+<h2>
+References
+</h2>
+</center>
+<p>Hatcher, L. (2013). <strong><em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></strong></p>
+<p>Henderson and Velleman (1981). dataset: Motor Trend Car Road Tests. R package version 4.3.1</p>
+<p>Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="partial-correlation-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-Bivariate-Regression.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

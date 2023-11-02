@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Utilizing the linear model formula in R | Bivariate Regression</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Utilizing the linear model formula in R | Bivariate Regression" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Utilizing the linear model formula in R | Bivariate Regression" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Ben Gonzalez" />
+
+
+<meta name="date" content="2023-10-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lower-bound-of-the-c.i.-for-a-sample-mean.html"/>
+<link rel="next" href="blocks.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#chi-square-and-correlation"><i class="fa fa-check"></i><b>1.1</b> Chi-Square and Correlation</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#partial-correlation"><i class="fa fa-check"></i><b>1.1.1</b> Partial Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.2</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sample-standard-deviation-formula.html"><a href="sample-standard-deviation-formula.html"><i class="fa fa-check"></i><b>2</b> Sample Standard Deviation Formula</a></li>
+<li class="chapter" data-level="3" data-path="standard-error-formula.html"><a href="standard-error-formula.html"><i class="fa fa-check"></i><b>3</b> Standard Error Formula</a></li>
+<li class="chapter" data-level="4" data-path="how-to-calculate-the-standard-error-of-a-sample.html"><a href="how-to-calculate-the-standard-error-of-a-sample.html"><i class="fa fa-check"></i><b>4</b> How to calculate the standard error of a sample</a></li>
+<li class="chapter" data-level="5" data-path="computing-confidence-intervals.html"><a href="computing-confidence-intervals.html"><i class="fa fa-check"></i><b>5</b> Computing Confidence Intervals</a></li>
+<li class="chapter" data-level="6" data-path="confidence-interval-formula.html"><a href="confidence-interval-formula.html"><i class="fa fa-check"></i><b>6</b> Confidence Interval Formula</a></li>
+<li class="chapter" data-level="7" data-path="lower-bound-of-the-c.i.-for-a-sample-mean.html"><a href="lower-bound-of-the-c.i.-for-a-sample-mean.html"><i class="fa fa-check"></i><b>7</b> Lower Bound of the C.I. for a Sample Mean</a></li>
+<li class="chapter" data-level="8" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html"><i class="fa fa-check"></i><b>8</b> Utilizing the linear model formula in R</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#chi-square-assumptions"><i class="fa fa-check"></i><b>8.0.1</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="8.0.2" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#student-peformance-data-set-information"><i class="fa fa-check"></i><b>8.0.2</b> Student Peformance Data Set Information</a></li>
+<li class="chapter" data-level="8.0.3" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i><b>8.0.3</b> Look at the structure of our data</a></li>
+<li class="chapter" data-level="8.0.4" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#chi-square"><i class="fa fa-check"></i><b>8.0.4</b> Chi-square</a></li>
+<li class="chapter" data-level="8.0.5" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#chi-square-assumptions-1"><i class="fa fa-check"></i><b>8.0.5</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="8.0.6" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>8.0.6</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="8.0.7" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#correlation"><i class="fa fa-check"></i><b>8.0.7</b> Correlation</a></li>
+<li class="chapter" data-level="8.0.8" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#correlation-assumptions"><i class="fa fa-check"></i><b>8.0.8</b> Correlation Assumptions</a></li>
+<li class="chapter" data-level="8.0.9" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>8.0.9</b> Point-biserial Correlation Assumptions</a></li>
+<li class="chapter" data-level="8.0.10" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#biserial-correlation"><i class="fa fa-check"></i><b>8.0.10</b> Biserial Correlation</a></li>
+<li class="chapter" data-level="8.0.11" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#spearman-correlation"><i class="fa fa-check"></i><b>8.0.11</b> Spearman Correlation</a></li>
+<li class="chapter" data-level="8.0.12" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>8.0.12</b> Phi Coefficient - measurement of the degree of association between two binary variables</a></li>
+<li class="chapter" data-level="8.0.13" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#phi-coefficient"><i class="fa fa-check"></i><b>8.0.13</b> Phi coefficient:</a></li>
+<li class="chapter" data-level="8.0.14" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-formula"><i class="fa fa-check"></i><b>8.0.14</b> Partial Correlation Formula</a></li>
+<li class="chapter" data-level="8.0.15" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-1"><i class="fa fa-check"></i><b>8.0.15</b> Partial Correlation</a></li>
+<li class="chapter" data-level="8.0.16" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-overview"><i class="fa fa-check"></i><b>8.0.16</b> Partial Correlation Overview</a></li>
+<li class="chapter" data-level="8.0.17" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i><b>8.0.17</b> Take a look at the structure of the mtcars data set</a></li>
+<li class="chapter" data-level="8.0.18" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>8.0.18</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="8.0.19" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>8.0.19</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="8.0.20" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>8.0.20</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="8.0.21" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>8.0.21</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="8.0.22" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>8.0.22</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="8.0.23" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#bivariate-regression-terminology"><i class="fa fa-check"></i><b>8.0.23</b> Bivariate Regression Terminology</a></li>
+<li class="chapter" data-level="8.0.24" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i><b>8.0.24</b> Assumptions of Bivariate Regression</a></li>
+<li class="chapter" data-level="8.0.25" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>8.0.25</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="8.0.26" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>8.0.26</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="8.0.27" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-residual"><i class="fa fa-check"></i><b>8.0.27</b> Calculate the Residual</a></li>
+<li class="chapter" data-level="8.0.28" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>8.0.28</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="8.0.29" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>8.0.29</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="8.0.30" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>8.0.30</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="8.0.31" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>8.0.31</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+<li class="chapter" data-level="8.0.32" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>8.0.32</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="8.0.33" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>8.0.33</b> Utilize the lm function in R to automate our work</a></li>
+<li class="chapter" data-level="8.0.34" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>8.0.34</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="8.0.35" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>8.0.35</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="8.0.36" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>8.0.36</b> Squaring the correlation coefficient</a></li>
+<li class="chapter" data-level="8.0.37" data-path="utilizing-the-linear-model-formula-in-r.html"><a href="utilizing-the-linear-model-formula-in-r.html#data-set-description"><i class="fa fa-check"></i><b>8.0.37</b> Data Set Description</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>9</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>9.1</b> Equations</a></li>
+<li class="chapter" data-level="9.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>9.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="9.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>9.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>10</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>10.1</b> Publishing</a></li>
+<li class="chapter" data-level="10.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>10.2</b> 404 pages</a></li>
+<li class="chapter" data-level="10.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>10.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bivariate Regression</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="utilizing-the-linear-model-formula-in-r" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Utilizing the linear model formula in R<a href="utilizing-the-linear-model-formula-in-r.html#utilizing-the-linear-model-formula-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Here we can also calculate the <span class="math inline">\(CI\)</span> by utilizing the linear model funciton.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb35-1" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>hp)<span class="sc">+</span>(<span class="fl">1.96</span><span class="sc">*</span><span class="fl">12.1203</span>)</span></code></pre></div>
+<pre><code>## [1] 170.4433</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb37-1" tabindex="-1"></a><span class="co"># Calculate the mean and standard error</span></span>
+<span id="cb37-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb37-2" tabindex="-1"></a>l.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(hp <span class="sc">~</span> <span class="dv">1</span>, mtcars)</span>
+<span id="cb37-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb37-3" tabindex="-1"></a><span class="fu">summary</span>(l.model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hp ~ 1, data = mtcars)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -94.69 -50.19 -23.69  33.31 188.31 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   146.69      12.12    12.1 2.79e-13 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 68.56 on 31 degrees of freedom</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb39-1" tabindex="-1"></a><span class="co"># Calculate the confidence interval</span></span>
+<span id="cb39-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb39-2" tabindex="-1"></a><span class="fu">confint</span>(l.model, <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>##                2.5 %   97.5 %
+## (Intercept) 121.9679 171.4071</code></pre>
+<hr />
+<center>
+<h2>
+References
+</h2>
+</center>
+<p>Hatcher, L. (2013). <em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></p>
+<p><a href="https://www.statology.org/t-distribution-table/" class="uri">https://www.statology.org/t-distribution-table/</a></p>
+<p><a href="https://www.scribbr.com/frequently-asked-questions/critical-value-of-t-in-r/#" class="uri">https://www.scribbr.com/frequently-asked-questions/critical-value-of-t-in-r/#</a>:~:text=You%20can%20use%20the%20qt,the%20significance%20level%20by%20two.</p>
+
+<!-- :::::::::::::: {.columns} -->
+<!-- ::: {.column width="30%"} -->
+<!-- ```{r} -->
+<!-- mtcars %>% -->
+<!--     select(disp, mpg) %>% -->
+<!--     sample_n(10) %>% -->
+<!--     kbl() %>% -->
+<!--     kable_styling() -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="5%"} -->
+<!-- \ -->
+<!-- ::: -->
+<!-- ::: {.column width="65%"} -->
+<!-- \ -->
+<!-- ```{r, fig.height=4, fig.width=7} -->
+<!-- mtcars %>% -->
+<!--     ggplot(aes(x=disp, y=mpg)) + -->
+<!--     geom_point() -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::::::::::::: -->
+<div id="chi-square-assumptions" class="section level3 hasAnchor" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Chi-square Assumptions<a href="utilizing-the-linear-model-formula-in-r.html#chi-square-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
+<br></li>
+<li>Used with Nominal or Categorical data.
+<br></li>
+<li>We can utilize Steven’s four scales of measurements to check our data.</li>
+</ul>
+<div id="stevens-four-scales-of-measurement" class="section level4 hasAnchor" number="8.0.1.1">
+<h4><span class="header-section-number">8.0.1.1</span> Steven’s four scales of measurement<a href="utilizing-the-linear-model-formula-in-r.html#stevens-four-scales-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 80%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+Characteristic of Scale
+</th>
+<th onclick="sortTable(2)">
+Nominal
+</th>
+<th onclick="sortTable(2)">
+Ordinal
+</th>
+<th onclick="sortTable(2)">
+Interval
+</th>
+<th onclick="sortTable(2)">
+Ratio
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">
+Applies names or numbers to categories?
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Orders categories according to quantity?
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Displays equal intervals between consecutive numbers?
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Diplays a “true zero point?”
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="student-peformance-data-set-information" class="section level3 hasAnchor" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Student Peformance Data Set Information<a href="utilizing-the-linear-model-formula-in-r.html#student-peformance-data-set-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="attributes-for-both-student-mat.csv-math-course-and-student-por.csv-portuguese-language-course-datasets" class="section level5 hasAnchor" number="8.0.2.0.1">
+<h5><span class="header-section-number">8.0.2.0.1</span> Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:<a href="utilizing-the-linear-model-formula-in-r.html#attributes-for-both-student-mat.csv-math-course-and-student-por.csv-portuguese-language-course-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>1 school - student’s school (binary: ‘GP’ - Gabriel Pereira or ‘MS’ - Mousinho da Silveira)</li>
+<li>2 sex - student’s sex (binary: ‘F’ - female or ‘M’ - male)</li>
+<li>3 age - student’s age (numeric: from 15 to 22)</li>
+<li>4 address - student’s home address type (binary: ‘U’ - urban or ‘R’ - rural)</li>
+<li>5 famsize - family size (binary: ‘LE3’ - less or equal to 3 or ‘GT3’ - greater than 3)</li>
+<li>6 Pstatus - parent’s cohabitation status (binary: ‘T’ - (living) together or ‘A’ - apart)</li>
+<li>7 Medu - mother’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 (5th to 9th grade), 3 (secondary education) or 4 (higher education))</li>
+<li>8 Fedu - father’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 (5th to 9th grade), 3 (secondary education) or 4 (higher education))</li>
+<li>9 Mjob - mother’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)</li>
+<li>10 Fjob - father’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)</li>
+<li>11 reason - reason to choose this school (nominal: close to ‘home’, school ‘reputation’, ‘course’ preference or ‘other’)</li>
+<li>12 guardian - student’s guardian (nominal: ‘mother’, ‘father’ or ‘other’)</li>
+<li>13 traveltime - home to school travel time (numeric: 1 - &lt;15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - &gt;1 hour)</li>
+<li>14 studytime - weekly study time (numeric: 1 - &lt;2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - &gt;10 hours)</li>
+<li>15 failures - number of past class failures (numeric: n if 1&lt;=n&lt;3, else 4)</li>
+<li>16 schoolsup - extra educational support (binary: yes or no)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>17 famsup - family educational support (binary: yes or no)</li>
+<li>18 paid - extra paid classes within the course subject (Math or Portuguese) (binary: yes or no)</li>
+<li>19 activities - extra-curricular activities (binary: yes or no)</li>
+<li>20 nursery - attended nursery school (binary: yes or no)</li>
+<li>21 higher - wants to take higher education (binary: yes or no)</li>
+<li>22 internet - Internet access at home (binary: yes or no)</li>
+<li>23 romantic - with a romantic relationship (binary: yes or no)</li>
+<li>24 famrel - quality of family relationships (numeric: from 1 - very bad to 5 - excellent)</li>
+<li>25 freetime - free time after school (numeric: from 1 - very low to 5 - very high)</li>
+<li>26 goout - going out with friends (numeric: from 1 - very low to 5 - very high)</li>
+<li>27 Dalc - workday alcohol consumption (numeric: from 1 - very low to 5 - very high)</li>
+<li>28 Walc - weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)</li>
+<li>29 health - current health status (numeric: from 1 - very bad to 5 - very good)</li>
+<li>30 absences - number of school absences (numeric: from 0 to 93)</li>
+</ul>
+<div id="these-grades-are-related-with-the-course-subject-math-or-portuguese" class="section level6 hasAnchor" number="8.0.2.0.1.1">
+<h6><span class="header-section-number">8.0.2.0.1.1</span> <strong>These grades are related with the course subject, Math or Portuguese:</strong><a href="utilizing-the-linear-model-formula-in-r.html#these-grades-are-related-with-the-course-subject-math-or-portuguese" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<ul>
+<li>31 G1 - first period grade (numeric: from 0 to 20)</li>
+<li>31 G2 - second period grade (numeric: from 0 to 20)</li>
+<li>32 G3 - final grade (numeric: from 0 to 20, output target)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="look-at-the-structure-of-our-data" class="section level3 hasAnchor" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Look at the structure of our data<a href="utilizing-the-linear-model-formula-in-r.html#look-at-the-structure-of-our-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb41-1" tabindex="-1"></a><span class="fu">str</span>(student)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    395 obs. of  33 variables:
+##  $ school    : chr  &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; ...
+##  $ sex       : chr  &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; ...
+##  $ age       : int  18 17 15 15 16 16 16 17 15 15 ...
+##  $ address   : chr  &quot;U&quot; &quot;U&quot; &quot;U&quot; &quot;U&quot; ...
+##  $ famsize   : chr  &quot;GT3&quot; &quot;GT3&quot; &quot;LE3&quot; &quot;GT3&quot; ...
+##  $ Pstatus   : chr  &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;T&quot; ...
+##  $ Medu      : int  4 1 1 4 3 4 2 4 3 3 ...
+##  $ Fedu      : int  4 1 1 2 3 3 2 4 2 4 ...
+##  $ Mjob      : chr  &quot;at_home&quot; &quot;at_home&quot; &quot;at_home&quot; &quot;health&quot; ...
+##  $ Fjob      : chr  &quot;teacher&quot; &quot;other&quot; &quot;other&quot; &quot;services&quot; ...
+##  $ reason    : chr  &quot;course&quot; &quot;course&quot; &quot;other&quot; &quot;home&quot; ...
+##  $ guardian  : chr  &quot;mother&quot; &quot;father&quot; &quot;mother&quot; &quot;mother&quot; ...
+##  $ traveltime: int  2 1 1 1 1 1 1 2 1 1 ...
+##  $ studytime : int  2 2 2 3 2 2 2 2 2 2 ...
+##  $ failures  : int  0 0 3 0 0 0 0 0 0 0 ...
+##  $ schoolsup : chr  &quot;yes&quot; &quot;no&quot; &quot;yes&quot; &quot;no&quot; ...
+##  $ famsup    : chr  &quot;no&quot; &quot;yes&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ paid      : chr  &quot;no&quot; &quot;no&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ activities: chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ nursery   : chr  &quot;yes&quot; &quot;no&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ higher    : chr  &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ internet  : chr  &quot;no&quot; &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ romantic  : chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ famrel    : int  4 5 4 3 4 5 4 4 4 5 ...
+##  $ freetime  : int  3 3 3 2 3 4 4 1 2 5 ...
+##  $ goout     : int  4 3 2 2 2 2 4 4 2 1 ...
+##  $ Dalc      : int  1 1 2 1 1 1 1 1 1 1 ...
+##  $ Walc      : int  1 1 3 1 2 2 1 1 1 1 ...
+##  $ health    : int  3 3 3 5 5 5 3 1 1 5 ...
+##  $ absences  : int  6 4 10 2 4 10 0 6 0 0 ...
+##  $ G1        : int  5 5 7 15 6 15 12 6 16 14 ...
+##  $ G2        : int  6 5 8 14 10 15 12 5 18 15 ...
+##  $ G3        : int  6 6 10 15 10 15 11 6 19 15 ...</code></pre>
+<pre><code>## [1] &quot;There are  395  observations in our student data set.&quot;</code></pre>
+</div>
+<div id="chi-square" class="section level3 hasAnchor" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> Chi-square<a href="utilizing-the-linear-model-formula-in-r.html#chi-square" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+x^2\;=\;\sum\frac{(O_{i}\;-\;E_{i})^2}{E_{i}}
+\\
+\\
+\]</span>
+<span class="math display">\[
+x^2 = chi-squared\\
+O_{i}=\;observed\;value
+\\
+E_{i}=\;expected\;value
+\]</span></p>
+</div>
+<div id="chi-square-assumptions-1" class="section level3 hasAnchor" number="8.0.5">
+<h3><span class="header-section-number">8.0.5</span> Chi-square Assumptions<a href="utilizing-the-linear-model-formula-in-r.html#chi-square-assumptions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
+<br></li>
+<li>Used with Nominal or Categorical data.</li>
+</ul>
+</div>
+<div id="chi-square-test-of-association" class="section level3 hasAnchor" number="8.0.6">
+<h3><span class="header-section-number">8.0.6</span> Chi-Square Test of Association<a href="utilizing-the-linear-model-formula-in-r.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we want to investigate if there is an association between the type of job a mother has and access to the internet.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb44-1" tabindex="-1"></a>student_chi <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet)</span>
+<span id="cb44-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb44-2" tabindex="-1"></a><span class="fu">print</span>(student_chi)</span></code></pre></div>
+<pre><code>##           
+##             no yes
+##   at_home   22  37
+##   health     2  32
+##   other     27 114
+##   services  12  91
+##   teacher    3  55</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb46-1" tabindex="-1"></a><span class="fu">chisq.test</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  student$Mjob and student$internet
+## X-squared = 28.861, df = 4, p-value = 8.341e-06</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb48-1" tabindex="-1"></a>mjob_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>Mjob<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb48-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb48-2" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb48-3" tabindex="-1"></a>chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mjob_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb48-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb48-4" tabindex="-1"></a>chisq_result<span class="sc">$</span>observed</span></code></pre></div>
+<pre><code>##           internet
+## Mjob        no yes
+##   at_home   22  37
+##   health     2  32
+##   other     27 114
+##   services  12  91
+##   teacher    3  55</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb50-1" tabindex="-1"></a>chisq_result<span class="sc">$</span>expected</span></code></pre></div>
+<pre><code>##           internet
+## Mjob              no       yes
+##   at_home   9.858228  49.14177
+##   health    5.681013  28.31899
+##   other    23.559494 117.44051
+##   services 17.210127  85.78987
+##   teacher   9.691139  48.30886</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb52-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],total_observed)</span>
+<span id="cb52-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-4" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-5" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="utilizing-the-linear-model-formula-in-r.html#cb52-6" tabindex="-1"></a><span class="fu">colnames</span>(observed_expected) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb53-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb53-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb53-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-4" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-5" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-6" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb53-7"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-7" tabindex="-1"></a></span>
+<span id="cb53-8"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-8" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-9" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb53-10"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-10" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;at home&quot;</span>,<span class="st">&quot;health&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;services&quot;</span>,<span class="st">&quot;teacher&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb53-11"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-11" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb53-12"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-12" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-13"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-13" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-14"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-14" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot; p = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>p.value,<span class="at">digits =</span> <span class="dv">12</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-15"><a href="utilizing-the-linear-model-formula-in-r.html#cb53-15" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Guardian
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet No
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet Yes
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Total
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+at home
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+9.858
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+49.142
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+5.681
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+28.319
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+23.559
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+117.441
+</td>
+<td style="text-align:right;">
+141
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+services
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+17.210
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+85.790
+</td>
+<td style="text-align:right;">
+103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+teacher
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+9.691
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+48.309
+</td>
+<td style="text-align:right;">
+58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+67.000
+</td>
+<td style="text-align:right;">
+329
+</td>
+<td style="text-align:right;">
+328.000
+</td>
+<td style="text-align:right;">
+395
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> <span class="math inline">\(X^2\)</span> = (4, n = 395) = 28.861 p = 8.341138e-06
+</td>
+</tr>
+</tfoot>
+</table>
+<p>We can see that our <span class="math inline">\(X^2\)</span> value is 28.861 and the p-value is <span class="math inline">\(p&gt;.05\)</span>. We check our <span class="math inline">\(X^2\)</span> value against the critical table value of 9.488. Since our <span class="math inline">\(X^2\)</span> value 28.861 is above our critical table value of 9.488 we <strong>cannot</strong> reject our null hypothesis. Therefore there is no significant association between Mjob type and internet.</p>
+<ul>
+<li>In APA style, the proper reporting of chi-square test results is χ2 = (degrees of freedom, n = number of scores ) = chi-square score, p value.</li>
+<li><span class="math inline">\(X^2\)</span> (4, n = 395) = 28.86, p = 8.341e-06.
+<br>
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm" target="_blank">Chi-Square Critical Table</a></li>
+</ul>
+<hr />
+<p>Next we can investigate if there is an association between the type of guardian a student has and access to the internet.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb54-1" tabindex="-1"></a><span class="do">###Chi-square calculation</span></span>
+<span id="cb54-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb54-2" tabindex="-1"></a>guardian_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>guardian<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb54-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb54-3" tabindex="-1"></a>guard_int_chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(guardian_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb54-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb54-4" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="utilizing-the-linear-model-formula-in-r.html#cb54-5" tabindex="-1"></a>guard_int_chisq_result</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  guardian_internet
+## X-squared = 1.401, df = 2, p-value = 0.4963</code></pre>
+<div id="observed" class="section level5 hasAnchor" number="8.0.6.0.1">
+<h5><span class="header-section-number">8.0.6.0.1</span> Observed<a href="utilizing-the-linear-model-formula-in-r.html#observed" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+no
+</th>
+<th style="text-align:right;">
+yes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+78
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+226
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="expected" class="section level5 hasAnchor" number="8.0.6.0.2">
+<h5><span class="header-section-number">8.0.6.0.2</span> Expected<a href="utilizing-the-linear-model-formula-in-r.html#expected" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+no
+</th>
+<th style="text-align:right;">
+yes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+15.037975
+</td>
+<td style="text-align:right;">
+74.96203
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+45.615190
+</td>
+<td style="text-align:right;">
+227.38481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+5.346835
+</td>
+<td style="text-align:right;">
+26.65316
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb56-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb56-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb56-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-4" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-5" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-6" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb56-7"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-7" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-8" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-9" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb56-10"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-10" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;father&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;mother&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb56-11"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-11" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb56-12"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-12" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-13"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-13" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-14"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-14" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,guard_int_chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot;p =&quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>p.value,<span class="dv">4</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-15"><a href="utilizing-the-linear-model-formula-in-r.html#cb56-15" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Guardian
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet No
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet Yes
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Total
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+15.038
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+74.962
+</td>
+<td style="text-align:right;">
+90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+45.615
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+227.385
+</td>
+<td style="text-align:right;">
+273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+5.347
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+26.653
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+66.000
+</td>
+<td style="text-align:right;">
+329
+</td>
+<td style="text-align:right;">
+329.000
+</td>
+<td style="text-align:right;">
+395
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> <span class="math inline">\(X^2\)</span> = (2, n = 395) = 1.401p =0.4963
+</td>
+</tr>
+</tfoot>
+</table>
+<p>We can see that our <span class="math inline">\(X^2\)</span> value is 1.401 and the p-value is <span class="math inline">\(p&gt;.05\)</span>. We check our <span class="math inline">\(X^2\)</span> value against the critical table value of 5.991. Since our <span class="math inline">\(X^2\)</span> value 1.401 is below our critical table value of 5.991, therefore we <strong>cannot</strong> reject our null hypothesis. Therefore there is no significant relationship between guardian type and internet.</p>
+<ul>
+<li>In APA style, the proper reporting of chi-square test results is χ2 = (degrees of freedom, n = number of scores ) = chi-square score, p value.</li>
+<li><span class="math inline">\(X^2\)</span> (2, n = 395) = 1.401, p = 0.4963.
+<br>
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm" target="_blank">Chi-Square Critical Table</a></li>
+</ul>
+</div>
+</div>
+<div id="correlation" class="section level3 hasAnchor" number="8.0.7">
+<h3><span class="header-section-number">8.0.7</span> Correlation<a href="utilizing-the-linear-model-formula-in-r.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\Large
+r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\sum(y_{i}-\bar{y})^2}}\]</span></p>
+</div>
+<div id="correlation-assumptions" class="section level3 hasAnchor" number="8.0.8">
+<h3><span class="header-section-number">8.0.8</span> Correlation Assumptions<a href="utilizing-the-linear-model-formula-in-r.html#correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following assumptions are in place when utilizing the Pearson’s <span class="math inline">\(r\)</span> when calculating a correlation coefficient.
+<br></p>
+<ul>
+<li><strong>Interval or ratio scale</strong> – both variables should be quantitative variables. Both should be assessed on an interval or ratio scale.</li>
+<li><strong>Normally-distributed sampling distribution</strong> – sampling distribution of the statistic should be normally distributed. Likely to be met if the sample data are approximately normal or the sample is large.</li>
+<li><strong>Random Sample from bivariate normal distribution</strong> – the data points used to compute the Pearson <span class="math inline">\(r\)</span> are the pairs of scores on the predictor and criterion variables. The data points should be a random sample drawn from a bivariate normal distribution.</li>
+</ul>
+<div id="index-of-effect-size-table" class="section level5 hasAnchor" number="8.0.8.0.1">
+<h5><span class="header-section-number">8.0.8.0.1</span> Index of Effect Size Table<a href="utilizing-the-linear-model-formula-in-r.html#index-of-effect-size-table" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>Index of effect size – a statistic that conveys the strength of the association between a predictor variable and criterion variable.</li>
+<li><span class="math inline">\(r\)</span> – the larger the absolute value of the correlation coefficient the larger the “effect”.</li>
+</ul>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+Correlation Coefficient
+</th>
+<th onclick="sortTable(2)">
+Effect Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Small Effect
+</td>
+<td>
+r +/- .10
+</td>
+</tr>
+<tr>
+<td>
+Medium Effect
+</td>
+<td>
+r +/- .30
+</td>
+</tr>
+<tr>
+<td>
+Large Effect
+</td>
+<td>
+r +/- .50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="correlation-between-student-absences-and-first-period-grade" class="section level4 hasAnchor" number="8.0.8.1">
+<h4><span class="header-section-number">8.0.8.1</span> Correlation between student absences and first period grade<a href="utilizing-the-linear-model-formula-in-r.html#correlation-between-student-absences-and-first-period-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb57-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G1)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$absences and student$G1
+## t = -0.6149, df = 393, p-value = 0.539
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.12927845  0.06787576
+## sample estimates:
+##        cor 
+## -0.0310029</code></pre>
+<p>Here we can see that our correlation <span class="math inline">\(r\)</span> = -0.031 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G1\)</span>.</p>
+</div>
+<div id="correlation-between-student-absences-and-final-grade" class="section level4 hasAnchor" number="8.0.8.2">
+<h4><span class="header-section-number">8.0.8.2</span> Correlation between student absences and final grade<a href="utilizing-the-linear-model-formula-in-r.html#correlation-between-student-absences-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb59-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G3)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$absences and student$G3
+## t = 0.67933, df = 393, p-value = 0.4973
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.06464215  0.13247070
+## sample estimates:
+##        cor 
+## 0.03424732</code></pre>
+<p>Here we can see that our correlation <span class="math inline">\(r\)</span> = 0.034 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G3\)</span>.</p>
+</div>
+</div>
+<div id="point-biserial-correlation-assumptions" class="section level3 hasAnchor" number="8.0.9">
+<h3><span class="header-section-number">8.0.9</span> Point-biserial Correlation Assumptions<a href="utilizing-the-linear-model-formula-in-r.html#point-biserial-correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Point-biserial correlation coefficient</strong> – appropriate when one variable is a roughly continuous , multi-value variable assessed on an interval or ratio scale and the other variable is a dichotomous(2 values) variable.
+<br></li>
+<li><ul>
+<li>must have a true dichotomy e.g. sex (male vs female)</li>
+</ul></li>
+</ul>
+<div id="point-biserial-correlation-student-gender-and-final-grade" class="section level4 hasAnchor" number="8.0.9.1">
+<h4><span class="header-section-number">8.0.9.1</span> Point-biserial correlation: Student gender and final grade<a href="utilizing-the-linear-model-formula-in-r.html#point-biserial-correlation-student-gender-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we are looking at a true dichotomy sex (male vs female) and the association with final <span class="math inline">\(G3\)</span> grade. We need to recode the variable into a binary variable of <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span> with <span class="math inline">\(1\)</span> being <span class="math inline">\(Male\)</span> and <span class="math inline">\(0\)</span> being <span class="math inline">\(Female\)</span>.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb61-1" tabindex="-1"></a>student<span class="sc">$</span>sexrecoded<span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>sex<span class="sc">==</span><span class="st">&quot;M&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb61-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb61-2" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>sexrecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$sexrecoded
+## t = 2.062, df = 393, p-value = 0.03987
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.004833966 0.200084200
+## sample estimates:
+##       cor 
+## 0.1034556</code></pre>
+</div>
+</div>
+<div id="biserial-correlation" class="section level3 hasAnchor" number="8.0.10">
+<h3><span class="header-section-number">8.0.10</span> Biserial Correlation<a href="utilizing-the-linear-model-formula-in-r.html#biserial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Biserial correlation coefficient</strong> – appropriate in exactly the same situation where the point-biserial correlation would be used; one continuous variable and one dichotomous variable.
+<br></li>
+<li><ul>
+<li>appropriate when the dichotomous variable is not a true dichotomy e.g. pass/fail</li>
+</ul></li>
+</ul>
+<div id="biserial-correaltion-family-educational-support-and-final-grade" class="section level4 hasAnchor" number="8.0.10.1">
+<h4><span class="header-section-number">8.0.10.1</span> Biserial Correaltion: Family educational support and final grade<a href="utilizing-the-linear-model-formula-in-r.html#biserial-correaltion-family-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at whether there is an association between a students family support and their final grade. Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb63-1" tabindex="-1"></a><span class="do">###Recode the variable into a binary variable</span></span>
+<span id="cb63-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb63-2" tabindex="-1"></a>student<span class="sc">$</span>familysuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>famsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb63-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb63-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>familysuprecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$familysuprecoded
+## t = -0.77686, df = 393, p-value = 0.4377
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.13729770  0.05974472
+## sample estimates:
+##         cor 
+## -0.03915715</code></pre>
+</div>
+<div id="biserial-correaltion-extra-educational-support-and-final-grade" class="section level4 hasAnchor" number="8.0.10.2">
+<h4><span class="header-section-number">8.0.10.2</span> Biserial Correaltion: Extra educational support and final grade<a href="utilizing-the-linear-model-formula-in-r.html#biserial-correaltion-extra-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at if there is an association between <span class="math inline">\(extra\;educational\; support\)</span> <span class="math inline">\(schoolsup\)</span> and final grade <span class="math inline">\(G3\)</span>
++ Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb65-1" tabindex="-1"></a>student<span class="sc">$</span>schoolsuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>schoolsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb65-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb65-2" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb65-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>schoolsuprecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$schoolsuprecoded
+## t = -1.6469, df = 393, p-value = 0.1004
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.17998895  0.01601362
+## sample estimates:
+##         cor 
+## -0.08278821</code></pre>
+</div>
+<div id="biserial-correaltion-attended-nursery-school-and-final-grade" class="section level4 hasAnchor" number="8.0.10.3">
+<h4><span class="header-section-number">8.0.10.3</span> Biserial Correaltion: Attended nursery school and final grade<a href="utilizing-the-linear-model-formula-in-r.html#biserial-correaltion-attended-nursery-school-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at if there is an association between those who attended nursery school <span class="math inline">\(nursery\)</span> and final grade <span class="math inline">\(G3\)</span>
++ We need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb67-1" tabindex="-1"></a>student<span class="sc">$</span>nurseryrecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>nursery<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb67-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb67-2" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb67-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>nurseryrecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$nurseryrecoded
+## t = 1.0237, df = 393, p-value = 0.3066
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.04734402  0.14947834
+## sample estimates:
+##       cor 
+## 0.0515679</code></pre>
+</div>
+</div>
+<div id="spearman-correlation" class="section level3 hasAnchor" number="8.0.11">
+<h3><span class="header-section-number">8.0.11</span> Spearman Correlation<a href="utilizing-the-linear-model-formula-in-r.html#spearman-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spearman correlation coefficient for ranked data (Spearman’s Rho or <span class="math inline">\(r_s\)</span>) – displays the correlation between two variables whose values have been ranked.</p>
+<p>In the student data set we see that studytime and traveltime have been ranked. Therefore we can utilize the Spearman’s Rho <span class="math inline">\(r_s\)</span> to see the association between these variables and final grade <span class="math inline">\(G3\)</span>.</p>
+<div id="spearman-correlation-study-time-and-final-grade" class="section level5 hasAnchor" number="8.0.11.0.1">
+<h5><span class="header-section-number">8.0.11.0.1</span> Spearman Correlation: Study time and final grade<a href="utilizing-the-linear-model-formula-in-r.html#spearman-correlation-study-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb69-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>studytime,student<span class="sc">$</span>traveltime,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(student$studytime, student$traveltime, method =
+## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  student$studytime and student$traveltime
+## S = 11360053, p-value = 0.03526
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.1059694</code></pre>
+</div>
+<div id="spearman-correlation-travel-time-and-final-grade" class="section level5 hasAnchor" number="8.0.11.0.2">
+<h5><span class="header-section-number">8.0.11.0.2</span> Spearman Correlation: Travel time and final grade<a href="utilizing-the-linear-model-formula-in-r.html#spearman-correlation-travel-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb72-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>traveltime,student<span class="sc">$</span>G3,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(student$traveltime, student$G3, method =
+## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  student$traveltime and student$G3
+## S = 11509618, p-value = 0.01655
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.1205304</code></pre>
+</div>
+</div>
+<div id="phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables" class="section level3 hasAnchor" number="8.0.12">
+<h3><span class="header-section-number">8.0.12</span> Phi Coefficient - measurement of the degree of association between two binary variables<a href="utilizing-the-linear-model-formula-in-r.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Assumptions for phi <span class="math inline">\(\phi\)</span> coefficient:</p>
+<ul>
+<li><p>Phi coefficient (<span class="math inline">\(\phi\)</span>)– appropriate when both variables are true dichotomous variables</p></li>
+<li><p>E.g subject sex (males versus female) with sport-team status (team-member vs not a team-member)</p></li>
+</ul>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(y=1\)</span>
+</th>
+<th onclick="sortTable(0)">
+<span class="math inline">\(y=0\)</span>
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(total\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="math inline">\(x=1\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{11}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{10}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{1\cdot}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(x=0\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{01}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{00}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{0\cdot}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(total\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{\cdot1}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{\cdot0}\)</span>
+</td>
+<td>
+<span class="math inline">\(n\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><span class="math display">\[\Large Phi\;equation:
+\phi = \frac{n_{11} \cdot n_{00}\;-\;n_{10} \cdot n_{01}}{\sqrt{n_{1\cdot}n_{0\cdot} n_{\cdot0} n_{\cdot1}} }\]</span></p>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(y=1\)</span>
+</th>
+<th onclick="sortTable(0)">
+<span class="math inline">\(y=0\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="math inline">\(x=1\)</span>
+</td>
+<td>
+<span class="math inline">\(A\)</span>
+</td>
+<td>
+<span class="math inline">\(B\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(x=0\)</span>
+</td>
+<td>
+<span class="math inline">\(C\)</span>
+</td>
+<td>
+<span class="math inline">\(D\)</span>
+</td>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><span class="math display">\[Phi\;equation:
+\phi = \frac{A \cdot D\;-\;B \cdot C}{\sqrt{(A+B)(C+D)(A+C)(B+D)} }\]</span></p>
+</div>
+<div id="phi-coefficient" class="section level3 hasAnchor" number="8.0.13">
+<h3><span class="header-section-number">8.0.13</span> Phi coefficient:<a href="utilizing-the-linear-model-formula-in-r.html#phi-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First we will want to create a contingency of the table. We can do this in R simply by utilizing the <span class="math inline">\(table\)</span> function and specifying two columns of <span class="math inline">\(dichotomous\)</span> or <span class="math inline">\(binary\)</span> variables.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb75-1" tabindex="-1"></a>gender_internet <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>internet)</span>
+<span id="cb75-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb75-2" tabindex="-1"></a><span class="fu">print</span>(gender_internet)</span></code></pre></div>
+<pre><code>##    
+##      no yes
+##   F  38 170
+##   M  28 159</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb77-1" tabindex="-1"></a>gender_address <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>address)</span>
+<span id="cb77-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb77-2" tabindex="-1"></a><span class="fu">print</span>(gender_address)</span></code></pre></div>
+<pre><code>##    
+##       R   U
+##   F  44 164
+##   M  44 143</code></pre>
+<p>How to calculate a <span class="math inline">\(phi\)</span> coefficient manually for <span class="math inline">\(gender\)</span> and <span class="math inline">\(internet\)</span></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb79-1" tabindex="-1"></a><span class="co"># Φ = (AD-BC) / √(A+B)(C+D)(A+C)(B+D)</span></span>
+<span id="cb79-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb79-2" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb79-3" tabindex="-1"></a>phi_coefficient <span class="ot">=</span> ((<span class="dv">38</span><span class="sc">*</span><span class="dv">159</span>)<span class="sc">-</span>(<span class="dv">170</span><span class="sc">*</span><span class="dv">28</span>))<span class="sc">/</span><span class="fu">sqrt</span>((<span class="dv">38</span><span class="sc">+</span><span class="dv">170</span>)<span class="sc">*</span>(<span class="dv">28</span><span class="sc">+</span><span class="dv">159</span>)<span class="sc">*</span>(<span class="dv">38</span><span class="sc">+</span><span class="dv">28</span>)<span class="sc">*</span>(<span class="dv">170</span><span class="sc">+</span><span class="dv">159</span>))</span>
+<span id="cb79-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb79-4" tabindex="-1"></a><span class="fu">print</span>(phi_coefficient)</span></code></pre></div>
+<pre><code>## [1] 0.0441129</code></pre>
+<p>We can measure the <span class="math inline">\(Phi\)</span> coefficient similarly as to how we measure a Pearson’s <span class="math inline">\(r\)</span> correlation. The closer to <span class="math inline">\(0\)</span> there is no relationship. The closer to <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span> the stronger the relationship between the two dichotomous variables.</p>
+<p>Here we can utilize the <span class="math inline">\(psych\)</span> package to perform a <span class="math inline">\(Phi\)</span> <span class="math inline">\(\phi\)</span> coefficient analysis.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb81-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb81-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb81-2" tabindex="-1"></a><span class="fu">phi</span>(gender_internet,<span class="at">digits =</span> <span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0441129</code></pre>
+<center>
+<h2>
+References
+</h2>
+</center>
+<p>Hatcher, L. (2013). <em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></p>
+<p><strong><em>Student Peformance</em></strong> (2014). <a href="https://archive.ics.uci.edu/dataset/320/student+performance" class="uri">https://archive.ics.uci.edu/dataset/320/student+performance</a></p>
+<p><a href="https://www.r-bloggers.com/2021/07/how-to-calculate-phi-coefficient-in-r/" class="uri">https://www.r-bloggers.com/2021/07/how-to-calculate-phi-coefficient-in-r/</a></p>
+<p>William Revelle (2023). <em>psych: Procedures for Psychological,
+Psychometric, and Personality Research</em>. Northwestern University,
+Evanston, Illinois. R package version 2.3.9,
+<a href="https://CRAN.R-project.org/package=psych" class="uri">https://CRAN.R-project.org/package=psych</a></p>
+<p><a href="https://www.garyfisk.com/pspp/44ChiSquareGoodness.html" class="uri">https://www.garyfisk.com/pspp/44ChiSquareGoodness.html</a></p>
+
+</div>
+<div id="partial-correlation-formula" class="section level3 hasAnchor" number="8.0.14">
+<h3><span class="header-section-number">8.0.14</span> Partial Correlation Formula<a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+<p><span class="math display">\[\Huge
+r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_{yz}^2)}}\]</span></p>
+</div>
+<div id="partial-correlation-1" class="section level3 hasAnchor" number="8.0.15">
+<h3><span class="header-section-number">8.0.15</span> Partial Correlation<a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Partial correlation allows us to control for variables that may be confounding variables in a data set. This allows us to see what the correlation between two variables would be if we control for a single variable. We can also control for more than one variable.</p>
+<ul>
+<li><em>First order partial coefficient</em> – is a correlation between two variables with just <em>one</em> additional variable partialed out of both.</li>
+<li><em>Higher order partial correlation</em> – is a correlation between two variables with <em>more than one control variable</em> partialed out by both.</li>
+</ul>
+</div>
+<div id="partial-correlation-overview" class="section level3 hasAnchor" number="8.0.16">
+<h3><span class="header-section-number">8.0.16</span> Partial Correlation Overview<a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-overview" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When performing a single-order partial correlation we can simple do this by running a correlation on each variable in question. For our purposes we are utilizing the following variables horsepower (hp), mile pers gallon (mpg) and lastly cylinders (cy). If you would like to follow along we are utilizing the mtcars data set that is built into R.</p>
+<ul>
+<li>Predictor (X) (Independent Variable) = hp (horsepower)</li>
+<li>Criterition (Y) (Dependent Variable) = mpg (miles per gallon)</li>
+<li>Control (Z) (Control Variable) = cyl (cylinders)</li>
+</ul>
+<hr />
+<center>
+<div id="htmlwidget-585859acb1cccf0ed2e6" style="width:35%;height:35%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-585859acb1cccf0ed2e6">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"X (hp)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Y (mpg)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Z (cyl)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"3\"->\"1\" \n  \"3\"->\"2\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</center>
+<hr />
+</div>
+<div id="take-a-look-at-the-structure-of-the-mtcars-data-set" class="section level3 hasAnchor" number="8.0.17">
+<h3><span class="header-section-number">8.0.17</span> Take a look at the structure of the mtcars data set<a href="utilizing-the-linear-model-formula-in-r.html#take-a-look-at-the-structure-of-the-mtcars-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>## &#39;data.frame&#39;:    32 obs. of  11 variables:
+##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+##  $ disp: num  160 160 108 258 360 ...
+##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+##  $ qsec: num  16.5 17 18.6 19.4 17 ...
+##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+</div>
+<div id="description-of-the-variables-in-the-mtcars-data-set" class="section level3 hasAnchor" number="8.0.18">
+<h3><span class="header-section-number">8.0.18</span> Description of the variables in the mtcars data set<a href="utilizing-the-linear-model-formula-in-r.html#description-of-the-variables-in-the-mtcars-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A data frame with 32 observations on 11 (numeric) variables.</p>
+<ul>
+<li>Column 1 = mpg - Miles/(US) gallon</li>
+<li>Column 2 = cyl - Number of cylinders</li>
+<li>Column 3 = disp - Displacement (cu.in.)</li>
+<li>Column 4 = hp - Gross horsepower</li>
+<li>Column 5 = drat - Rear axle ratio</li>
+<li>Column 6 = wt - Weight (1000 lbs)</li>
+<li>Column 7 = qsec - 1/4 mile time</li>
+<li>Column 8 = vs - Engine (0 = V-shaped, 1 = straight)</li>
+<li>Column 9 = am - Transmission (0 = automatic, 1 = manual)</li>
+<li>Column 10 = gear - Number of forward gears</li>
+<li>Column 11 = carb - Number of carburetors</li>
+</ul>
+<div id="correlation-between-predictor-and-criterion-or-x-and-y" class="section level4 hasAnchor" number="8.0.18.1">
+<h4><span class="header-section-number">8.0.18.1</span> Correlation between Predictor and Criterion or X and Y<a href="utilizing-the-linear-model-formula-in-r.html#correlation-between-predictor-and-criterion-or-x-and-y" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we find the correlation between our mpg and hp</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb84-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>hp)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  mtcars$mpg and mtcars$hp
+## t = -6.7424, df = 30, p-value = 1.788e-07
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.8852686 -0.5860994
+## sample estimates:
+##        cor 
+## -0.7761684</code></pre>
+</div>
+<div id="correlation-between-predictor-and-control-or-x-and-z" class="section level4 hasAnchor" number="8.0.18.2">
+<h4><span class="header-section-number">8.0.18.2</span> Correlation between Predictor and Control or X and Z<a href="utilizing-the-linear-model-formula-in-r.html#correlation-between-predictor-and-control-or-x-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we find the correlation between our hp and cyl</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb86-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  mtcars$hp and mtcars$cyl
+## t = 8.2286, df = 30, p-value = 3.478e-09
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.6816016 0.9154223
+## sample estimates:
+##       cor 
+## 0.8324475</code></pre>
+</div>
+<div id="correlation-between-criterion-and-control-or-y-and-z" class="section level4 hasAnchor" number="8.0.18.3">
+<h4><span class="header-section-number">8.0.18.3</span> Correlation between Criterion and Control or Y and Z<a href="utilizing-the-linear-model-formula-in-r.html#correlation-between-criterion-and-control-or-y-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we find the correlation between our mpg and cyl</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb88-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  mtcars$mpg and mtcars$cyl
+## t = -8.9197, df = 30, p-value = 6.113e-10
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.9257694 -0.7163171
+## sample estimates:
+##       cor 
+## -0.852162</code></pre>
+</div>
+</div>
+<div id="partial-correlation-putting-it-altogether" class="section level3 hasAnchor" number="8.0.19">
+<h3><span class="header-section-number">8.0.19</span> Partial Correlation: Putting it altogether<a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
+<span id="cb90-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-2" tabindex="-1"></a><span class="do">###X is hp</span></span>
+<span id="cb90-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-3" tabindex="-1"></a><span class="do">###Y is mpg</span></span>
+<span id="cb90-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-4" tabindex="-1"></a><span class="do">###Z is cyl</span></span>
+<span id="cb90-5"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>hp)</span>
+<span id="cb90-6"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-6" tabindex="-1"></a>xz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb90-7"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-7" tabindex="-1"></a>yz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb90-8"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-8" tabindex="-1"></a></span>
+<span id="cb90-9"><a href="utilizing-the-linear-model-formula-in-r.html#cb90-9" tabindex="-1"></a><span class="fu">print</span>(xy)</span></code></pre></div>
+<pre><code>## [1] -0.7761684</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb92-1" tabindex="-1"></a><span class="fu">print</span>(xz)</span></code></pre></div>
+<pre><code>## [1] 0.8324475</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb94-1" tabindex="-1"></a><span class="fu">print</span>(yz)</span></code></pre></div>
+<pre><code>## [1] -0.852162</code></pre>
+</div>
+<div id="calculate-the-numerator-of-the-formula" class="section level3 hasAnchor" number="8.0.20">
+<h3><span class="header-section-number">8.0.20</span> Calculate the numerator of the formula<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-numerator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\large
+r_{xy} - r_{xz}  \cdot r_{yz}
+\]</span></p>
+<p><span class="math display">\[\large
+-0.7761684 - (0.8324475  \cdot -0.852162)
+\]</span></p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb96-1" tabindex="-1"></a><span class="do">###Top of the Formula</span></span>
+<span id="cb96-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb96-2" tabindex="-1"></a>top_of_formula<span class="ot">&lt;-</span> xy <span class="sc">-</span> (xz<span class="sc">*</span>yz)</span>
+<span id="cb96-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb96-3" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
+<pre><code>## [1] -0.06678832</code></pre>
+</div>
+<div id="calculate-the-denominator-of-the-formula" class="section level3 hasAnchor" number="8.0.21">
+<h3><span class="header-section-number">8.0.21</span> Calculate the denominator of the formula<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-denominator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\large
+\sqrt{(1-r_{xz}^2) \cdot (1 - r_{yz}^2)}
+\]</span></p>
+<p><span class="math display">\[\large
+\sqrt{(1-0.8324475^2) \cdot (1 - (-0.852162)^2)}
+\]</span></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb98-1" tabindex="-1"></a><span class="do">###Bottom of formula</span></span>
+<span id="cb98-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb98-2" tabindex="-1"></a>bottom_of_formula<span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">-</span>(xz<span class="sc">^</span><span class="dv">2</span>))<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>(yz<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb98-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb98-3" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
+<pre><code>## [1] 0.2899505</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb100-1" tabindex="-1"></a>final_answer<span class="ot">=</span> top_of_formula<span class="sc">/</span>bottom_of_formula</span>
+<span id="cb100-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb100-2" tabindex="-1"></a><span class="fu">print</span>(final_answer)</span></code></pre></div>
+<pre><code>## [1] -0.2303439</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb102-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(final_answer,<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] -0.23</code></pre>
+<p><b>Note: Round up at the very end of the calculation.</b></p>
+<p><span class="math display">\[\large
+r = \frac{-0.06678832}{0.2899505}
+\]</span>
+<span class="math display">\[\large
+r = -0.230439
+\]</span></p>
+</div>
+<div id="partial-correlation-utilizing-the-ppcor-package" class="section level3 hasAnchor" number="8.0.22">
+<h3><span class="header-section-number">8.0.22</span> Partial Correlation utilizing the ppcor package<a href="utilizing-the-linear-model-formula-in-r.html#partial-correlation-utilizing-the-ppcor-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>First order partial coefficient</strong> – is a correlation between two variables with just one additional variable partialed out of both.</p>
+<p>Here we can utilize the ppcor package as an easy button method to calculate the partial correlation. You will need to install the ppcor package via CRAN: <a href="https://cran.r-project.org/web/packages/ppcor/index.html">ppcor package</a></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb104-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
+<span id="cb104-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb104-2" tabindex="-1"></a><span class="do">##Load the ppcor library</span></span>
+<span id="cb104-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb104-3" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code></pre></div>
+<pre><code>## Loading required package: MASS</code></pre>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb108-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders in the mtcars dataset</span></span>
+<span id="cb108-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb108-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>)])</span></code></pre></div>
+<pre><code>##     estimate   p.value statistic  n gp  Method
+## 1 -0.2303439 0.2125285 -1.274718 32  1 pearson</code></pre>
+<div id="higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="section level4 hasAnchor" number="8.0.22.1">
+<h4><span class="header-section-number">8.0.22.1</span> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.<a href="utilizing-the-linear-model-formula-in-r.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb110-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders,displacement in the mtcars dataset</span></span>
+<span id="cb110-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb110-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>,<span class="st">&quot;disp&quot;</span>)])</span></code></pre></div>
+<pre><code>##     estimate   p.value statistic  n gp  Method
+## 1 -0.1860437 0.3249519 -1.001943 32  2 pearson</code></pre>
+</div>
+<div id="references" class="section level4 hasAnchor" number="8.0.22.2">
+<h4><span class="header-section-number">8.0.22.2</span> References<a href="utilizing-the-linear-model-formula-in-r.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hatcher, L. (2013). <em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></p>
+<p>Henderson and Velleman (1981), <em>Building multiple regression models interactively.</em> Biometrics, 37, 391–411.</p>
+<p>Kim S (2015). <em>ppcor: Partial and Semi-Partial (Part) Correlation</em>. R package version 1.1, <a href="https://CRAN.R-project.org/package=ppcor" class="uri">https://CRAN.R-project.org/package=ppcor</a>.</p>
+
+</div>
+</div>
+<div id="bivariate-regression-terminology" class="section level3 hasAnchor" number="8.0.23">
+<h3><span class="header-section-number">8.0.23</span> Bivariate Regression Terminology<a href="utilizing-the-linear-model-formula-in-r.html#bivariate-regression-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><strong>Regression</strong> – is the process of estimating a best-fitting line that summarizes the relationship between a predictor variable (Independent Variable) and a criterion variable (Dependent Variable).</p></li>
+<li><p><strong>Regression Analysis</strong> – researchers fit a regression line to a sample of data, estimate the parameters of the regression equation (i.e., the constant and regression coefficient), and use the resulting equation to predict scores on a criterion variable.</p></li>
+<li><p><strong>Bivariate</strong> – means that the analyses discussed include just 2 variables, a predictor variable (the X variable), and a criterion variable (the Y variable).</p></li>
+<li><p><strong>Linear</strong> – refers to the fact, when the Y scores are plotted against the X scores, it should be possible to fit a best-fitting straight line through the center of the scores, as opposed to a best-fitting curved line.</p></li>
+</ul>
+<div id="regression-generic-analysis-model" class="section level4 hasAnchor" number="8.0.23.1">
+<h4><span class="header-section-number">8.0.23.1</span> Regression: Generic Analysis Model<a href="utilizing-the-linear-model-formula-in-r.html#regression-generic-analysis-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<hr />
+<center>
+<div id="htmlwidget-f1a630402c4e8a6eaf2e" style="width:672px;height:200px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1a630402c4e8a6eaf2e">{"x":{"diagram":"\n  digraph graph2 {\n  \n  graph [layout = dot, rankdir = LR]\n  \n  # node definitions with substituted label text\n  node [shape = square]\n  Predictor [label = \"Predictor (IV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  Criterion [label = \"Criterion (DV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  \n  Predictor -> Criterion\n  }\n  \n  [1]: Interval\n  [2]: Ratio\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</center>
+<hr />
+<!-- <center> -->
+<!-- ### Bivariate Regression -->
+<!-- </center> -->
+</div>
+</div>
+<div id="assumptions-of-bivariate-regression" class="section level3 hasAnchor" number="8.0.24">
+<h3><span class="header-section-number">8.0.24</span> Assumptions of Bivariate Regression<a href="utilizing-the-linear-model-formula-in-r.html#assumptions-of-bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><strong>Linearity</strong> – should be able to fit a best-fitting straight line through the scatterplot.</p></li>
+<li><p><strong>Independence</strong> – each observation included in the sample should be drawn independently from the population of interest. Researchers should not have taken repeated measures on the same variable from the same participant.</p></li>
+<li><p><strong>Homogeneity of Variance (Homoscedasticity)</strong> – the variance of the Y scores should remain fairly constant at all values of X.</p></li>
+<li><p><strong>Normality</strong> – residuals of prediction should be normally distributed.
+Bivariate Normality – for any specific score on one of the variables, scores on the other variable should follow a normal distribution.</p></li>
+</ul>
+<center>
+</div>
+<div id="bivariate-regression-formula" class="section level3 hasAnchor" number="8.0.25">
+<h3><span class="header-section-number">8.0.25</span> Bivariate Regression Formula<a href="utilizing-the-linear-model-formula-in-r.html#bivariate-regression-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</center>
+<p>Here we have the formula for the bivariate regression equation.
+The regression equation takes the following form:
+<span class="math display">\[\Large
+Regression\;Equation:\;\;\;\hat{y} = a + \beta(X)
+\]</span>
+<span class="math display">\[
+\hat{y}\;\;–\;the\;predicted\;score\;on\;the\;criterion\;variable
+\]</span>
+<span class="math display">\[
+a\;–\;the\;constant\;or\;the\;intercept\;of\;the\;regression\;equation.
+\]</span>
+<span class="math display">\[
+\beta\;–\;the\;unstandardized\;regression\;coefficient.\\Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-unit\;change\;in\;X\;\\when\;both\;variables\;are\;in\;raw\;score\;form.\;Also\;known\;as\;the\;regression\;weight\;or\;slope.
+\]</span></p>
+<!-- $$\Large -->
+<!-- \hat{y} = a + \beta(X) -->
+<!-- $$ -->
+</div>
+<div id="scatterplot-of-the-data-set" class="section level3 hasAnchor" number="8.0.26">
+<h3><span class="header-section-number">8.0.26</span> Scatterplot of the data set<a href="utilizing-the-linear-model-formula-in-r.html#scatterplot-of-the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we plot our data to get a good look at the shape of the data set.</p>
+<ul>
+<li><strong>Scatterplot</strong> – a graph that illustrates the nature of the relationship between two quantitative variables.</li>
+<li><strong>X Axis</strong> – Predictor Variable - hp</li>
+<li><strong>Y Axis</strong> – Criterion Variable - mpg</li>
+</ul>
+<p>We can utilize the following plot function to create a basic scatterplot in R.
+<br></p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb112-1" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb112-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb112-2" tabindex="-1"></a><span class="fu">with</span>(<span class="at">data =</span> mtcars,<span class="fu">plot</span>(<span class="at">x =</span> hp,<span class="at">y =</span> mpg,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">main=</span><span class="st">&quot;Mtcars&quot;</span>))</span></code></pre></div>
+<p><br></p>
+<pre><code>## The following object is masked from package:ggplot2:
+## 
+##     mpg</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+<div id="calculate-the-residual" class="section level3 hasAnchor" number="8.0.27">
+<h3><span class="header-section-number">8.0.27</span> Calculate the Residual<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-residual" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we compute the residual by taking the actual y value and subtract the predicted y value. The residual for each observation is the difference between the predicted values of y and the actual values of y. Calculating the residual helps us to see if we have overpredicted or underpredicted for <span class="math inline">\(\hat{y}\)</span>.</p>
+<p><span class="math display">\[\Large
+Residual = actual\;y\;value - predicted\;y\;value
+\]</span></p>
+<p><span class="math display">\[\Large
+r_{1} = y_{i} - \hat{y_{i}}
+\]</span></p>
+<pre><code>## [1] &quot;Predicted y Values&quot;</code></pre>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##           22.593750           22.593750           23.753631           22.593750 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##           18.158912           22.934891           13.382932           25.868707 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##           23.617174           21.706782           21.706782           17.817770 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##           17.817770           17.817770           16.112064           15.429781 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##           14.406357           25.595794           26.550990           25.664022 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##           23.480718           19.864619           19.864619           13.382932 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##           18.158912           25.595794           23.890087           22.389065 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##           12.086595           18.158912            7.242387           22.661978</code></pre>
+<pre><code>## [1] &quot;Actual y Values&quot;</code></pre>
+<pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
+## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
+## [31] 15.0 21.4</code></pre>
+<pre><code>## [1] &quot;Manually Calculated Residuals&quot;</code></pre>
+<pre><code>##                     mtcars$mpg - mpg_prediction$fitted.values
+## Mazda RX4                                         -1.59374995
+## Mazda RX4 Wag                                     -1.59374995
+## Datsun 710                                        -0.95363068
+## Hornet 4 Drive                                    -1.19374995
+## Hornet Sportabout                                  0.54108812
+## Valiant                                           -4.83489134
+## Duster 360                                         0.91706759
+## Merc 240D                                         -1.46870730
+## Merc 230                                          -0.81717412
+## Merc 280                                          -2.50678234
+## Merc 280C                                         -3.90678234
+## Merc 450SE                                        -1.41777049
+## Merc 450SL                                        -0.51777049
+## Merc 450SLC                                       -2.61777049
+## Cadillac Fleetwood                                -5.71206353
+## Lincoln Continental                               -5.02978075
+## Chrysler Imperial                                  0.29364342
+## Fiat 128                                           6.80420581
+## Honda Civic                                        3.84900992
+## Toyota Corolla                                     8.23597754
+## Toyota Corona                                     -1.98071757
+## Dodge Challenger                                  -4.36461883
+## AMC Javelin                                       -4.66461883
+## Camaro Z28                                        -0.08293241
+## Pontiac Firebird                                   1.04108812
+## Fiat X1-9                                          1.70420581
+## Porsche 914-2                                      2.10991276
+## Lotus Europa                                       8.01093488
+## Ford Pantera L                                     3.71340487
+## Ferrari Dino                                       1.54108812
+## Maserati Bora                                      7.75761261
+## Volvo 142E                                        -1.26197823</code></pre>
+<pre><code>## [1] &quot;Residual Values&quot;</code></pre>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##         -1.59374995         -1.59374995         -0.95363068         -1.19374995 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##          0.54108812         -4.83489134          0.91706759         -1.46870730 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##         -0.81717412         -2.50678234         -3.90678234         -1.41777049 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##         -0.51777049         -2.61777049         -5.71206353         -5.02978075 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##          0.29364342          6.80420581          3.84900992          8.23597754 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##         -1.98071757         -4.36461883         -4.66461883         -0.08293241 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##          1.04108812          1.70420581          2.10991276          8.01093488 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
+</div>
+<div id="calculate-the-mean-of-the-y-values" class="section level3 hasAnchor" number="8.0.28">
+<h3><span class="header-section-number">8.0.28</span> Calculate the mean of the Y Values<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-mean-of-the-y-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we find the mean of our criterion (y) value of mpg.</p>
+<p><span class="math display">\[\Large
+\bar{y} = \frac{\sum{y}}{n}
+\]</span></p>
+<p>We can utilize the <strong><em>mean</em></strong> function to the calculate the mean of mpg (miles per gallon).</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb122-1" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<pre><code>## [1] 20.09062</code></pre>
+</div>
+<div id="coefficient-of-determination-or-r2" class="section level3 hasAnchor" number="8.0.29">
+<h3><span class="header-section-number">8.0.29</span> Coefficient of Determination or <span class="math inline">\({R^2}\)</span><a href="utilizing-the-linear-model-formula-in-r.html#coefficient-of-determination-or-r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Coefficient of Determination</strong> – indicates the percent of <strong>variance in the criterion</strong> variable <strong>that is accounted for by the predictor</strong> variable.</p>
+<hr />
+<p><span class="math display">\[
+Coefficient\;of\;Determination:\;\;R^2 =\;1-\; \frac{sum\;squared\;regression\;(SSR)}{sum\;squares\;total\;(SST)}
+\]</span></p>
+<p><span class="math display">\[
+=1- \frac{\sum(y_{i}\;-\;\hat{y_{i}})^2}{\sum(y_{i}\;-\;\overline{y})^2}
+\\
+\\
+y_{i} = actual\;y\;values
+\\
+\hat{y_i} = predicted\;y\;values
+\\
+\overline{y} = mean\;of\;y
+\\
+\sum\;or\;sigma = sum
+\]</span></p>
+<hr />
+</div>
+<div id="calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="section level3 hasAnchor" number="8.0.30">
+<h3><span class="header-section-number">8.0.30</span> Calculate the numerator of the formula - Sum Squared Regression (SSR)<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\sum(y_{i}\;-\;\hat{y_{i}})^2
+\]</span></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb124-1" tabindex="-1"></a>top_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>(mpg_prediction<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb124-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb124-2" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
+<pre><code>## [1] 447.6743</code></pre>
+</div>
+<div id="calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="section level3 hasAnchor" number="8.0.31">
+<h3><span class="header-section-number">8.0.31</span> Calculate the denominator of the formula - Sum Squares Total (SST)<a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+<p><span class="math display">\[
+\sum(y_{i}\;-\;\overline{y})^2
+\]</span></p>
+<hr />
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb126-1" tabindex="-1"></a>bottom_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>((mtcars<span class="sc">$</span>mpg<span class="sc">-</span><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb126-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb126-2" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
+<pre><code>## [1] 1126.047</code></pre>
+<hr />
+<p><span class="math display">\[
+R^2 = 1- \frac{447.6743}{1126.047}
+\]</span>
+<span class="math display">\[
+R^2 = 1- 0.3975627
+\]</span>
+<span class="math display">\[
+R^2 = 0.6024373
+\\
+R^2 = 0.6024
+\]</span></p>
+<hr />
+</div>
+<div id="calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="section level3 hasAnchor" number="8.0.32">
+<h3><span class="header-section-number">8.0.32</span> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span><a href="utilizing-the-linear-model-formula-in-r.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+<p><span class="math display">\[
+Adj.R^2\;or\;R^2_{adj} = 1 - (1-R^2)\;\cdot\;(n-1)/(n-p-1)
+\\
+Adj.R^2\;or\;R^2_{adj} = 1 - (1-0.6024373)\;\cdot\;(32-1)/(32-1-1)
+\\
+R^2 = coefficient\;of\;determination
+\\
+n = number\;of\;observations
+\\
+p=number\;of\;predictors
+\]</span></p>
+<hr />
+<hr />
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb128-1" tabindex="-1"></a>adj.r.squared <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.6024373</span>) <span class="sc">*</span> ((<span class="dv">32</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>(<span class="dv">32-1-1</span>))</span>
+<span id="cb128-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb128-2" tabindex="-1"></a><span class="fu">print</span>(adj.r.squared)</span></code></pre></div>
+<pre><code>## [1] 0.5891852</code></pre>
+</div>
+<div id="utilize-the-lm-function-in-r-to-automate-our-work" class="section level3 hasAnchor" number="8.0.33">
+<h3><span class="header-section-number">8.0.33</span> Utilize the lm function in R to automate our work<a href="utilizing-the-linear-model-formula-in-r.html#utilize-the-lm-function-in-r-to-automate-our-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we can utilize the <strong><em>lm</em></strong> function in R to perform our bivariate regression (simple linear regression). This will allow us to save the model to a variable and then utilize the <strong>$</strong> (dollar sign) operator in R. The <strong>$</strong> (dollar sign) operator allows us to pull out things we need such as the residuals and fitted values that are returned from the summary function.</p>
+<div id="print-the-residuals-of-the-model" class="section level4 hasAnchor" number="8.0.33.1">
+<h4><span class="header-section-number">8.0.33.1</span> Print the residuals of the model<a href="utilizing-the-linear-model-formula-in-r.html#print-the-residuals-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb130-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb130-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb130-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>residuals)</span></code></pre></div>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##         -1.59374995         -1.59374995         -0.95363068         -1.19374995 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##          0.54108812         -4.83489134          0.91706759         -1.46870730 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##         -0.81717412         -2.50678234         -3.90678234         -1.41777049 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##         -0.51777049         -2.61777049         -5.71206353         -5.02978075 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##          0.29364342          6.80420581          3.84900992          8.23597754 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##         -1.98071757         -4.36461883         -4.66461883         -0.08293241 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##          1.04108812          1.70420581          2.10991276          8.01093488 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
+</div>
+<div id="print-the-coefficients-of-the-model" class="section level4 hasAnchor" number="8.0.33.2">
+<h4><span class="header-section-number">8.0.33.2</span> Print the coefficients of the model<a href="utilizing-the-linear-model-formula-in-r.html#print-the-coefficients-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb132-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb132-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb132-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>coefficients)</span></code></pre></div>
+<pre><code>## (Intercept)          hp 
+## 30.09886054 -0.06822828</code></pre>
+</div>
+<div id="print-the-fitted-values-of-the-model" class="section level4 hasAnchor" number="8.0.33.3">
+<h4><span class="header-section-number">8.0.33.3</span> Print the fitted values of the model<a href="utilizing-the-linear-model-formula-in-r.html#print-the-fitted-values-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb134-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb134-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb134-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>fitted.values)</span></code></pre></div>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
+##           22.593750           22.593750           23.753631           22.593750 
+##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##           18.158912           22.934891           13.382932           25.868707 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE 
+##           23.617174           21.706782           21.706782           17.817770 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##           17.817770           17.817770           16.112064           15.429781 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
+##           14.406357           25.595794           26.550990           25.664022 
+##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##           23.480718           19.864619           19.864619           13.382932 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa 
+##           18.158912           25.595794           23.890087           22.389065 
+##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##           12.086595           18.158912            7.242387           22.661978</code></pre>
+</div>
+<div id="putting-it-altogether" class="section level4 hasAnchor" number="8.0.33.4">
+<h4><span class="header-section-number">8.0.33.4</span> Putting it altogether<a href="utilizing-the-linear-model-formula-in-r.html#putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can print out the summary of the model utilizing the <strong><em>summary</em></strong> function in R; <code>summary(mpg_hp_model)</code>. We can also plot the predicted y values with the actual y values. Then we can draw a line between each of the predicted values and the actual values.This helps us visualize the amount of variation that is present between the predicted vs the actual values of y.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb136-1" tabindex="-1"></a>mpg_hp_model <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb136-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb136-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(mpg_hp_model))</span></code></pre></div>
+</div>
+<div id="plot-our-residuals-and-a-best-fitting-line" class="section level4 hasAnchor" number="8.0.33.5">
+<h4><span class="header-section-number">8.0.33.5</span> Plot our residuals and a best fitting line<a href="utilizing-the-linear-model-formula-in-r.html#plot-our-residuals-and-a-best-fitting-line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can utilize the <code>ggplot2</code> package to plot our model. We can also plot the residuals along with a best fitting line.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb137-1" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(hp,mpg))<span class="sc">+</span></span>
+<span id="cb137-2"><a href="utilizing-the-linear-model-formula-in-r.html#cb137-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb137-3"><a href="utilizing-the-linear-model-formula-in-r.html#cb137-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb137-4"><a href="utilizing-the-linear-model-formula-in-r.html#cb137-4" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mpg, <span class="at">ymin =</span> mpg<span class="sc">-</span>resid),<span class="at">color=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ hp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7121 -2.1122 -0.8854  1.5819  8.2360 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 30.09886    1.63392  18.421  &lt; 2e-16 ***
+## hp          -0.06823    0.01012  -6.742 1.79e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.863 on 30 degrees of freedom
+## Multiple R-squared:  0.6024, Adjusted R-squared:  0.5892 
+## F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) wil be.</p>
+<p><span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-0.06823(X)
+\]</span></p>
+<p><span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-0.06823(335)
+\]</span>
+<span class="math display">\[
+\hat{y}\;=\;30.09886\;+\;-22.85705
+\]</span>
+<span class="math display">\[
+\hat{y} = 7.24
+\]</span></p>
+<hr />
+</div>
+</div>
+<div id="squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="section level3 hasAnchor" number="8.0.34">
+<h3><span class="header-section-number">8.0.34</span> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span><a href="utilizing-the-linear-model-formula-in-r.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>According to Hatcher (2013) we can simply square the correlation provided we are looking at only one predictor variable and one dependent variable. When we square the correlation coefficient this will give us the coefficient of determination.</p>
+</div>
+<div id="correlation-coefficient-of-hp-and-mpg" class="section level3 hasAnchor" number="8.0.35">
+<h3><span class="header-section-number">8.0.35</span> Correlation coefficient of hp and mpg<a href="utilizing-the-linear-model-formula-in-r.html#correlation-coefficient-of-hp-and-mpg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb140-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<pre><code>## [1] -0.7761684</code></pre>
+<p><span class="math inline">\({r} = -0.7761684\)</span></p>
+</div>
+<div id="squaring-the-correlation-coefficient" class="section level3 hasAnchor" number="8.0.36">
+<h3><span class="header-section-number">8.0.36</span> Squaring the correlation coefficient<a href="utilizing-the-linear-model-formula-in-r.html#squaring-the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we can square the correlation coefficient <span class="math inline">\({r}\)</span> and it will give us the coefficient of determination or <span class="math inline">\({R^2}\)</span></p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="utilizing-the-linear-model-formula-in-r.html#cb142-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.6024373</code></pre>
+<p><span class="math inline">\({R^2} = 0.6024373\)</span></p>
+<p>Here we can see we get the same value for the coefficient of determination <span class="math inline">\({R^2}\)</span> by squaring the correlation as if we had utilized the <strong><em>lm</em></strong> function. However the <strong><em>lm</em></strong> function has advantages as it provides us with our p-value, F-statistic, and the intercept and the unstandardized regression coefficient.</p>
+<center>
+</div>
+<div id="data-set-description" class="section level3 hasAnchor" number="8.0.37">
+<h3><span class="header-section-number">8.0.37</span> Data Set Description<a href="utilizing-the-linear-model-formula-in-r.html#data-set-description" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</center>
+<p>Motor Trend Car Road Tests</p>
+<p>Description:</p>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+<center>
+<h2>
+References
+</h2>
+</center>
+<p>Hatcher, L. (2013). <strong><em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></strong></p>
+<p>Henderson and Velleman (1981). dataset: Motor Trend Car Road Tests. R package version 4.3.1</p>
+<p>Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lower-bound-of-the-c.i.-for-a-sample-mean.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-Big-Three-Results.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

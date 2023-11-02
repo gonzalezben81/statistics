@@ -1,14 +1,6 @@
----
-title: "Bivariate Regression"
-author: "Ben Gonzalez"
-date: '2023-10-06'
-always_allow_html: true
-output:
-  html_document: default
----
+# Bivariate Regression
 
-```{r echo=FALSE,message=FALSE}
-
+```{r setup,echo=FALSE,message=FALSE}
 library(mathjaxr)
 library(latexpdf)
 library(ggplot2)
@@ -17,9 +9,8 @@ library(DiagrammeR)
 
 ```
 
-# Bivariate Regression {-}
 
-Bivariate Regression Terminology
+## Bivariate Regression Terminology {-}
 
 + **Regression** – is the process of estimating a best-fitting line that summarizes the relationship between a predictor variable (Independent Variable) and a criterion variable (Dependent Variable).
 
@@ -29,7 +20,7 @@ Bivariate Regression Terminology
 
 + **Linear** – refers to the fact, when the Y scores are plotted against the X scores, it should be possible to fit a best-fitting straight line through the center of the scores, as opposed to a best-fitting curved line. 
 
-Regression: Generic Analysis Model
+## Regression: Generic Analysis Model {-}
 
 ---
 
@@ -63,7 +54,7 @@ DiagrammeR::grViz("
 <!-- </center> -->
 
 
-## Assumptions of Bivariate Regression
+## Assumptions of Bivariate Regression {-}
 
 + **Linearity** – should be able to fit a best-fitting straight line through the scatterplot.
 
@@ -74,9 +65,8 @@ DiagrammeR::grViz("
 + **Normality** – residuals of prediction should be normally distributed.
 Bivariate Normality – for any specific score on one of the variables, scores on the other variable should follow a normal distribution.
 
-<center>
+
 ## Bivariate Regression Formula
-</center>
 
 Here we have the formula for the bivariate regression equation.
 The regression equation takes the following form:
@@ -90,7 +80,11 @@ $$
 a\;–\;the\;constant\;or\;the\;intercept\;of\;the\;regression\;equation.
 $$
 $$
-\beta\;–\;the\;unstandardized\;regression\;coefficient.\\Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-unit\;change\;in\;X\;\\when\;both\;variables\;are\;in\;raw\;score\;form.\;Also\;known\;as\;the\;regression\;weight\;or\;slope.
+\beta\;–\;the\;unstandardized\;regression\;coefficient.
+\newline
+\newline
+\newline
+Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-unit\;change\;in\;X\;\\when\;both\;variables\;are\;in\;raw\;score\;form.\;Also\;known\;as\;the\;regression\;weight\;or\;slope.
 $$
 
 
@@ -100,7 +94,7 @@ $$
 
 ## Scatterplot of the data set
 
-Here we plot our data to get a good look at the shape of the data set.
+Here we can plot our data to get a good look at the shape of the data set.
 
 + **Scatterplot** – a graph that illustrates the nature of the relationship between two quantitative variables. 
 + **X Axis** – Predictor Variable - hp
@@ -125,7 +119,7 @@ mpg_prediction <- lm(formula = mpg~hp,data = mtcars)
 
 ```
 
-## Calculate the Residual
+## Calculating the Residual
 
 Here we compute the residual by taking the actual y value and subtract the predicted y value. The residual for each observation is the difference between the predicted values of y and the actual values of y. Calculating the residual helps us to see if we have overpredicted or underpredicted for $\hat{y}$.
 
@@ -208,7 +202,7 @@ $$
 ---
 
 
-## Calculate the numerator of the formula - Sum Squared Regression (SSR)
+### Calculate the numerator of the formula - Sum Squared Regression (SSR)
 
 $$
 \sum(y_{i}\;-\;\hat{y_{i}})^2
@@ -217,7 +211,7 @@ $$
 top_of_formula <- sum(mpg_prediction$residuals^2)
 print(top_of_formula)
 ```
-Calculate the denominator of the formula - Sum Squares Total (SST)
+### Calculate the denominator of the formula - Sum Squares Total (SST)
 
 ---
 
@@ -270,33 +264,32 @@ $$
 ```{r}
 adj.r.squared = 1 - (1 - 0.6024373) * ((32 - 1)/(32-1-1))
 print(adj.r.squared)
-
 ```
 ## Utilize the lm function in R to automate our work
 
 Here we can utilize the ***lm*** function in R to perform our bivariate regression (simple linear regression). This will allow us to save the model to a variable and then utilize the **\$** (dollar sign) operator in R. The **\$** (dollar sign) operator allows us to pull out things we need such as the residuals and fitted values that are returned from the summary function.
 
-Print the residuals of the model
+### Print the residuals of the model
 
 ```{r}
 mpg_hp_model <- lm(mpg ~ hp, mtcars)
 print(mpg_hp_model$residuals)
 ```
 
-Print the coefficients of the model
+### Print the coefficients of the model
 
 ```{r}
 mpg_hp_model <- lm(mpg ~ hp, mtcars)
 print(mpg_hp_model$coefficients)
 ```
 
-Print the fitted values of the model
+#### Print the fitted values of the model
 ```{r}
 mpg_hp_model <- lm(mpg ~ hp, mtcars)
 print(mpg_hp_model$fitted.values)
 ```
 
-## Putting it altogether
+### Putting it altogether
 
 Here we can print out the summary of the model utilizing the ***summary*** function in R; `summary(mpg_hp_model)`. We can also plot the predicted y values with the actual y values. Then we can draw a line between each of the predicted values and the actual values.This helps us visualize the amount of variation that is present between the predicted vs the actual values of y.
 
@@ -356,7 +349,7 @@ $$
 
 According to Hatcher (2013) we can simply square the correlation provided we are looking at only one predictor variable and one dependent variable. When we square the correlation coefficient this will give us the coefficient of determination. 
 
-Correlation coefficient of hp and mpg
+### Correlation coefficient of hp and mpg
 ```{r}
 cor(x = mtcars$hp,mtcars$mpg)
 
@@ -364,7 +357,7 @@ cor(x = mtcars$hp,mtcars$mpg)
 
 ${r} = -0.7761684$
 
-## Squaring the correlation coefficient
+### Squaring the correlation coefficient
 
 Here we can square the correlation coefficient ${r}$ and it will give us the coefficient of determination or ${R^2}$
 
@@ -376,23 +369,4 @@ cor(x = mtcars$hp,mtcars$mpg)^2
 ${R^2} = 0.6024373$
 
 Here we can see we get the same value for the coefficient of determination ${R^2}$ by squaring the correlation as if we had utilized the ***lm*** function. However the ***lm*** function has advantages as it provides us with our p-value, F-statistic, and the intercept and the unstandardized regression coefficient.
-
-<center>
-Data Set Description
-</center>
-
-Motor Trend Car Road Tests
-
-Description:
-
-The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
-
-<center><h2>References</h2></center>
-
-Hatcher, L. (2013). ***Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.***
-
-Henderson and Velleman (1981). dataset: Motor Trend Car Road Tests. R package version 4.3.1
-
-Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.
-
 

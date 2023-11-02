@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Hello bookdown | Bivariate Regression</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Hello bookdown | Bivariate Regression" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Hello bookdown | Bivariate Regression" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Ben Gonzalez" />
+
+
+<meta name="date" content="2023-10-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cross.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>1.3.1</b> Computing Confidence Intervals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<ul>
+<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+<li class="chapter" data-level="2.1.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#chi-square-assumptions"><i class="fa fa-check"></i><b>2.1.1</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="hello-bookdown.html"><a href="hello-bookdown.html#student-peformance-data-set-information"><i class="fa fa-check"></i><b>2.1.2</b> Student Peformance Data Set Information</a></li>
+<li class="chapter" data-level="2.1.3" data-path="hello-bookdown.html"><a href="hello-bookdown.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i><b>2.1.3</b> Look at the structure of our data</a></li>
+<li class="chapter" data-level="2.1.4" data-path="hello-bookdown.html"><a href="hello-bookdown.html#chi-square"><i class="fa fa-check"></i><b>2.1.4</b> Chi-square</a></li>
+<li class="chapter" data-level="2.1.5" data-path="hello-bookdown.html"><a href="hello-bookdown.html#chi-square-assumptions-1"><i class="fa fa-check"></i><b>2.1.5</b> Chi-square Assumptions</a></li>
+<li class="chapter" data-level="2.1.6" data-path="hello-bookdown.html"><a href="hello-bookdown.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.1.6</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="2.1.7" data-path="hello-bookdown.html"><a href="hello-bookdown.html#correlation"><i class="fa fa-check"></i><b>2.1.7</b> Correlation</a></li>
+<li class="chapter" data-level="2.1.8" data-path="hello-bookdown.html"><a href="hello-bookdown.html#correlation-assumptions"><i class="fa fa-check"></i><b>2.1.8</b> Correlation Assumptions</a></li>
+<li class="chapter" data-level="2.1.9" data-path="hello-bookdown.html"><a href="hello-bookdown.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.1.9</b> Point-biserial Correlation Assumptions</a></li>
+<li class="chapter" data-level="2.1.10" data-path="hello-bookdown.html"><a href="hello-bookdown.html#biserial-correlation"><i class="fa fa-check"></i><b>2.1.10</b> Biserial Correlation</a></li>
+<li class="chapter" data-level="2.1.11" data-path="hello-bookdown.html"><a href="hello-bookdown.html#spearman-correlation"><i class="fa fa-check"></i><b>2.1.11</b> Spearman Correlation</a></li>
+<li class="chapter" data-level="2.1.12" data-path="hello-bookdown.html"><a href="hello-bookdown.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.1.12</b> Phi Coefficient - measurement of the degree of association between two binary variables</a></li>
+<li class="chapter" data-level="2.1.13" data-path="hello-bookdown.html"><a href="hello-bookdown.html#phi-coefficient"><i class="fa fa-check"></i><b>2.1.13</b> Phi coefficient:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="cross.html"><a href="cross.html#partial-correlation-formula"><i class="fa fa-check"></i><b>3.2.1</b> Partial Correlation Formula</a></li>
+<li class="chapter" data-level="3.2.2" data-path="cross.html"><a href="cross.html#partial-correlation"><i class="fa fa-check"></i><b>3.2.2</b> Partial Correlation</a></li>
+<li class="chapter" data-level="3.2.3" data-path="cross.html"><a href="cross.html#partial-correlation-overview"><i class="fa fa-check"></i><b>3.2.3</b> Partial Correlation Overview</a></li>
+<li class="chapter" data-level="3.2.4" data-path="cross.html"><a href="cross.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.2.4</b> Take a look at the structure of the mtcars data set</a></li>
+<li class="chapter" data-level="3.2.5" data-path="cross.html"><a href="cross.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.2.5</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="3.2.6" data-path="cross.html"><a href="cross.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.2.6</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="3.2.7" data-path="cross.html"><a href="cross.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.2.7</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="3.2.8" data-path="cross.html"><a href="cross.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.2.8</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="3.2.9" data-path="cross.html"><a href="cross.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.2.9</b> Partial Correlation utilizing the ppcor package</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="parts.html"><a href="parts.html#bivariate-regression-terminology"><i class="fa fa-check"></i><b>4.0.1</b> Bivariate Regression Terminology</a></li>
+<li class="chapter" data-level="4.0.2" data-path="parts.html"><a href="parts.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i><b>4.0.2</b> Assumptions of Bivariate Regression</a></li>
+<li class="chapter" data-level="4.0.3" data-path="parts.html"><a href="parts.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.0.3</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="4.0.4" data-path="parts.html"><a href="parts.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.0.4</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="4.0.5" data-path="parts.html"><a href="parts.html#calculate-the-residual"><i class="fa fa-check"></i><b>4.0.5</b> Calculate the Residual</a></li>
+<li class="chapter" data-level="4.0.6" data-path="parts.html"><a href="parts.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.0.6</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="4.0.7" data-path="parts.html"><a href="parts.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.0.7</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="4.0.8" data-path="parts.html"><a href="parts.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.0.8</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="4.0.9" data-path="parts.html"><a href="parts.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>4.0.9</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+<li class="chapter" data-level="4.0.10" data-path="parts.html"><a href="parts.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.0.10</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="4.0.11" data-path="parts.html"><a href="parts.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.0.11</b> Utilize the lm function in R to automate our work</a></li>
+<li class="chapter" data-level="4.0.12" data-path="parts.html"><a href="parts.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.0.12</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a></li>
+<li class="chapter" data-level="4.0.13" data-path="parts.html"><a href="parts.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>4.0.13</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="4.0.14" data-path="parts.html"><a href="parts.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.0.14</b> Squaring the correlation coefficient</a></li>
+<li class="chapter" data-level="4.0.15" data-path="parts.html"><a href="parts.html#data-set-description"><i class="fa fa-check"></i><b>4.0.15</b> Data Set Description</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bivariate Regression</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<div id="a-section" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> A section<a href="hello-bookdown.html#a-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
+<h3>An unnumbered section<a href="hello-bookdown.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+
+<!-- :::::::::::::: {.columns} -->
+<!-- ::: {.column width="30%"} -->
+<!-- ```{r} -->
+<!-- mtcars %>% -->
+<!--     select(disp, mpg) %>% -->
+<!--     sample_n(10) %>% -->
+<!--     kbl() %>% -->
+<!--     kable_styling() -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="5%"} -->
+<!-- \ -->
+<!-- ::: -->
+<!-- ::: {.column width="65%"} -->
+<!-- \ -->
+<!-- ```{r, fig.height=4, fig.width=7} -->
+<!-- mtcars %>% -->
+<!--     ggplot(aes(x=disp, y=mpg)) + -->
+<!--     geom_point() -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::::::::::::: -->
+</div>
+<div id="chi-square-assumptions" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Chi-square Assumptions<a href="hello-bookdown.html#chi-square-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
+<br></li>
+<li>Used with Nominal or Categorical data.
+<br></li>
+<li>We can utilize Steven’s four scales of measurements to check our data.</li>
+</ul>
+<div id="stevens-four-scales-of-measurement" class="section level4 hasAnchor" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Steven’s four scales of measurement<a href="hello-bookdown.html#stevens-four-scales-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 80%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+Characteristic of Scale
+</th>
+<th onclick="sortTable(2)">
+Nominal
+</th>
+<th onclick="sortTable(2)">
+Ordinal
+</th>
+<th onclick="sortTable(2)">
+Interval
+</th>
+<th onclick="sortTable(2)">
+Ratio
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">
+Applies names or numbers to categories?
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Orders categories according to quantity?
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Displays equal intervals between consecutive numbers?
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Diplays a “true zero point?”
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="student-peformance-data-set-information" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Student Peformance Data Set Information<a href="hello-bookdown.html#student-peformance-data-set-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="attributes-for-both-student-mat.csv-math-course-and-student-por.csv-portuguese-language-course-datasets" class="section level5 hasAnchor" number="2.1.2.0.1">
+<h5><span class="header-section-number">2.1.2.0.1</span> Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:<a href="hello-bookdown.html#attributes-for-both-student-mat.csv-math-course-and-student-por.csv-portuguese-language-course-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>1 school - student’s school (binary: ‘GP’ - Gabriel Pereira or ‘MS’ - Mousinho da Silveira)</li>
+<li>2 sex - student’s sex (binary: ‘F’ - female or ‘M’ - male)</li>
+<li>3 age - student’s age (numeric: from 15 to 22)</li>
+<li>4 address - student’s home address type (binary: ‘U’ - urban or ‘R’ - rural)</li>
+<li>5 famsize - family size (binary: ‘LE3’ - less or equal to 3 or ‘GT3’ - greater than 3)</li>
+<li>6 Pstatus - parent’s cohabitation status (binary: ‘T’ - (living) together or ‘A’ - apart)</li>
+<li>7 Medu - mother’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 (5th to 9th grade), 3 (secondary education) or 4 (higher education))</li>
+<li>8 Fedu - father’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 (5th to 9th grade), 3 (secondary education) or 4 (higher education))</li>
+<li>9 Mjob - mother’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)</li>
+<li>10 Fjob - father’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)</li>
+<li>11 reason - reason to choose this school (nominal: close to ‘home’, school ‘reputation’, ‘course’ preference or ‘other’)</li>
+<li>12 guardian - student’s guardian (nominal: ‘mother’, ‘father’ or ‘other’)</li>
+<li>13 traveltime - home to school travel time (numeric: 1 - &lt;15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - &gt;1 hour)</li>
+<li>14 studytime - weekly study time (numeric: 1 - &lt;2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - &gt;10 hours)</li>
+<li>15 failures - number of past class failures (numeric: n if 1&lt;=n&lt;3, else 4)</li>
+<li>16 schoolsup - extra educational support (binary: yes or no)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>17 famsup - family educational support (binary: yes or no)</li>
+<li>18 paid - extra paid classes within the course subject (Math or Portuguese) (binary: yes or no)</li>
+<li>19 activities - extra-curricular activities (binary: yes or no)</li>
+<li>20 nursery - attended nursery school (binary: yes or no)</li>
+<li>21 higher - wants to take higher education (binary: yes or no)</li>
+<li>22 internet - Internet access at home (binary: yes or no)</li>
+<li>23 romantic - with a romantic relationship (binary: yes or no)</li>
+<li>24 famrel - quality of family relationships (numeric: from 1 - very bad to 5 - excellent)</li>
+<li>25 freetime - free time after school (numeric: from 1 - very low to 5 - very high)</li>
+<li>26 goout - going out with friends (numeric: from 1 - very low to 5 - very high)</li>
+<li>27 Dalc - workday alcohol consumption (numeric: from 1 - very low to 5 - very high)</li>
+<li>28 Walc - weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)</li>
+<li>29 health - current health status (numeric: from 1 - very bad to 5 - very good)</li>
+<li>30 absences - number of school absences (numeric: from 0 to 93)</li>
+</ul>
+<div id="these-grades-are-related-with-the-course-subject-math-or-portuguese" class="section level6 hasAnchor" number="2.1.2.0.1.1">
+<h6><span class="header-section-number">2.1.2.0.1.1</span> <strong>These grades are related with the course subject, Math or Portuguese:</strong><a href="hello-bookdown.html#these-grades-are-related-with-the-course-subject-math-or-portuguese" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<ul>
+<li>31 G1 - first period grade (numeric: from 0 to 20)</li>
+<li>31 G2 - second period grade (numeric: from 0 to 20)</li>
+<li>32 G3 - final grade (numeric: from 0 to 20, output target)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="look-at-the-structure-of-our-data" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Look at the structure of our data<a href="hello-bookdown.html#look-at-the-structure-of-our-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="hello-bookdown.html#cb41-1" tabindex="-1"></a><span class="fu">str</span>(student)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    395 obs. of  33 variables:
+##  $ school    : chr  &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; ...
+##  $ sex       : chr  &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; ...
+##  $ age       : int  18 17 15 15 16 16 16 17 15 15 ...
+##  $ address   : chr  &quot;U&quot; &quot;U&quot; &quot;U&quot; &quot;U&quot; ...
+##  $ famsize   : chr  &quot;GT3&quot; &quot;GT3&quot; &quot;LE3&quot; &quot;GT3&quot; ...
+##  $ Pstatus   : chr  &quot;A&quot; &quot;T&quot; &quot;T&quot; &quot;T&quot; ...
+##  $ Medu      : int  4 1 1 4 3 4 2 4 3 3 ...
+##  $ Fedu      : int  4 1 1 2 3 3 2 4 2 4 ...
+##  $ Mjob      : chr  &quot;at_home&quot; &quot;at_home&quot; &quot;at_home&quot; &quot;health&quot; ...
+##  $ Fjob      : chr  &quot;teacher&quot; &quot;other&quot; &quot;other&quot; &quot;services&quot; ...
+##  $ reason    : chr  &quot;course&quot; &quot;course&quot; &quot;other&quot; &quot;home&quot; ...
+##  $ guardian  : chr  &quot;mother&quot; &quot;father&quot; &quot;mother&quot; &quot;mother&quot; ...
+##  $ traveltime: int  2 1 1 1 1 1 1 2 1 1 ...
+##  $ studytime : int  2 2 2 3 2 2 2 2 2 2 ...
+##  $ failures  : int  0 0 3 0 0 0 0 0 0 0 ...
+##  $ schoolsup : chr  &quot;yes&quot; &quot;no&quot; &quot;yes&quot; &quot;no&quot; ...
+##  $ famsup    : chr  &quot;no&quot; &quot;yes&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ paid      : chr  &quot;no&quot; &quot;no&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ activities: chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ nursery   : chr  &quot;yes&quot; &quot;no&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ higher    : chr  &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ internet  : chr  &quot;no&quot; &quot;yes&quot; &quot;yes&quot; &quot;yes&quot; ...
+##  $ romantic  : chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;yes&quot; ...
+##  $ famrel    : int  4 5 4 3 4 5 4 4 4 5 ...
+##  $ freetime  : int  3 3 3 2 3 4 4 1 2 5 ...
+##  $ goout     : int  4 3 2 2 2 2 4 4 2 1 ...
+##  $ Dalc      : int  1 1 2 1 1 1 1 1 1 1 ...
+##  $ Walc      : int  1 1 3 1 2 2 1 1 1 1 ...
+##  $ health    : int  3 3 3 5 5 5 3 1 1 5 ...
+##  $ absences  : int  6 4 10 2 4 10 0 6 0 0 ...
+##  $ G1        : int  5 5 7 15 6 15 12 6 16 14 ...
+##  $ G2        : int  6 5 8 14 10 15 12 5 18 15 ...
+##  $ G3        : int  6 6 10 15 10 15 11 6 19 15 ...</code></pre>
+<pre><code>## [1] &quot;There are  395  observations in our student data set.&quot;</code></pre>
+</div>
+<div id="chi-square" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Chi-square<a href="hello-bookdown.html#chi-square" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+x^2\;=\;\sum\frac{(O_{i}\;-\;E_{i})^2}{E_{i}}
+\\
+\\
+\]</span>
+<span class="math display">\[
+x^2 = chi-squared\\
+O_{i}=\;observed\;value
+\\
+E_{i}=\;expected\;value
+\]</span></p>
+</div>
+<div id="chi-square-assumptions-1" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Chi-square Assumptions<a href="hello-bookdown.html#chi-square-assumptions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
+<br></li>
+<li>Used with Nominal or Categorical data.</li>
+</ul>
+</div>
+<div id="chi-square-test-of-association" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Chi-Square Test of Association<a href="hello-bookdown.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we want to investigate if there is an association between the type of job a mother has and access to the internet.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="hello-bookdown.html#cb44-1" tabindex="-1"></a>student_chi <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet)</span>
+<span id="cb44-2"><a href="hello-bookdown.html#cb44-2" tabindex="-1"></a><span class="fu">print</span>(student_chi)</span></code></pre></div>
+<pre><code>##           
+##             no yes
+##   at_home   22  37
+##   health     2  32
+##   other     27 114
+##   services  12  91
+##   teacher    3  55</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="hello-bookdown.html#cb46-1" tabindex="-1"></a><span class="fu">chisq.test</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  student$Mjob and student$internet
+## X-squared = 28.861, df = 4, p-value = 8.341e-06</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="hello-bookdown.html#cb48-1" tabindex="-1"></a>mjob_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>Mjob<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb48-2"><a href="hello-bookdown.html#cb48-2" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="hello-bookdown.html#cb48-3" tabindex="-1"></a>chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mjob_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb48-4"><a href="hello-bookdown.html#cb48-4" tabindex="-1"></a>chisq_result<span class="sc">$</span>observed</span></code></pre></div>
+<pre><code>##           internet
+## Mjob        no yes
+##   at_home   22  37
+##   health     2  32
+##   other     27 114
+##   services  12  91
+##   teacher    3  55</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="hello-bookdown.html#cb50-1" tabindex="-1"></a>chisq_result<span class="sc">$</span>expected</span></code></pre></div>
+<pre><code>##           internet
+## Mjob              no       yes
+##   at_home   9.858228  49.14177
+##   health    5.681013  28.31899
+##   other    23.559494 117.44051
+##   services 17.210127  85.78987
+##   teacher   9.691139  48.30886</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="hello-bookdown.html#cb52-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb52-2"><a href="hello-bookdown.html#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="hello-bookdown.html#cb52-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],total_observed)</span>
+<span id="cb52-4"><a href="hello-bookdown.html#cb52-4" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="hello-bookdown.html#cb52-5" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="hello-bookdown.html#cb52-6" tabindex="-1"></a><span class="fu">colnames</span>(observed_expected) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="hello-bookdown.html#cb53-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb53-2"><a href="hello-bookdown.html#cb53-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb53-3"><a href="hello-bookdown.html#cb53-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb53-4"><a href="hello-bookdown.html#cb53-4" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="hello-bookdown.html#cb53-5" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="hello-bookdown.html#cb53-6" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb53-7"><a href="hello-bookdown.html#cb53-7" tabindex="-1"></a></span>
+<span id="cb53-8"><a href="hello-bookdown.html#cb53-8" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="hello-bookdown.html#cb53-9" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb53-10"><a href="hello-bookdown.html#cb53-10" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;at home&quot;</span>,<span class="st">&quot;health&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;services&quot;</span>,<span class="st">&quot;teacher&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb53-11"><a href="hello-bookdown.html#cb53-11" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb53-12"><a href="hello-bookdown.html#cb53-12" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-13"><a href="hello-bookdown.html#cb53-13" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-14"><a href="hello-bookdown.html#cb53-14" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot; p = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>p.value,<span class="at">digits =</span> <span class="dv">12</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-15"><a href="hello-bookdown.html#cb53-15" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Guardian
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet No
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet Yes
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Total
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+at home
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+9.858
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+49.142
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+5.681
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+28.319
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+23.559
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+117.441
+</td>
+<td style="text-align:right;">
+141
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+services
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+17.210
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+85.790
+</td>
+<td style="text-align:right;">
+103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+teacher
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+9.691
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+48.309
+</td>
+<td style="text-align:right;">
+58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+67.000
+</td>
+<td style="text-align:right;">
+329
+</td>
+<td style="text-align:right;">
+328.000
+</td>
+<td style="text-align:right;">
+395
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> <span class="math inline">\(X^2\)</span> = (4, n = 395) = 28.861 p = 8.341138e-06
+</td>
+</tr>
+</tfoot>
+</table>
+<p>We can see that our <span class="math inline">\(X^2\)</span> value is 28.861 and the p-value is <span class="math inline">\(p&gt;.05\)</span>. We check our <span class="math inline">\(X^2\)</span> value against the critical table value of 9.488. Since our <span class="math inline">\(X^2\)</span> value 28.861 is above our critical table value of 9.488 we <strong>cannot</strong> reject our null hypothesis. Therefore there is no significant association between Mjob type and internet.</p>
+<ul>
+<li>In APA style, the proper reporting of chi-square test results is χ2 = (degrees of freedom, n = number of scores ) = chi-square score, p value.</li>
+<li><span class="math inline">\(X^2\)</span> (4, n = 395) = 28.86, p = 8.341e-06.
+<br>
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm" target="_blank">Chi-Square Critical Table</a></li>
+</ul>
+<hr />
+<p>Next we can investigate if there is an association between the type of guardian a student has and access to the internet.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="hello-bookdown.html#cb54-1" tabindex="-1"></a><span class="do">###Chi-square calculation</span></span>
+<span id="cb54-2"><a href="hello-bookdown.html#cb54-2" tabindex="-1"></a>guardian_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>guardian<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb54-3"><a href="hello-bookdown.html#cb54-3" tabindex="-1"></a>guard_int_chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(guardian_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb54-4"><a href="hello-bookdown.html#cb54-4" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="hello-bookdown.html#cb54-5" tabindex="-1"></a>guard_int_chisq_result</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  guardian_internet
+## X-squared = 1.401, df = 2, p-value = 0.4963</code></pre>
+<div id="observed" class="section level5 hasAnchor" number="2.1.6.0.1">
+<h5><span class="header-section-number">2.1.6.0.1</span> Observed<a href="hello-bookdown.html#observed" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+no
+</th>
+<th style="text-align:right;">
+yes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+78
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+226
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="expected" class="section level5 hasAnchor" number="2.1.6.0.2">
+<h5><span class="header-section-number">2.1.6.0.2</span> Expected<a href="hello-bookdown.html#expected" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+no
+</th>
+<th style="text-align:right;">
+yes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+15.037975
+</td>
+<td style="text-align:right;">
+74.96203
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+45.615190
+</td>
+<td style="text-align:right;">
+227.38481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+5.346835
+</td>
+<td style="text-align:right;">
+26.65316
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="hello-bookdown.html#cb56-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb56-2"><a href="hello-bookdown.html#cb56-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb56-3"><a href="hello-bookdown.html#cb56-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb56-4"><a href="hello-bookdown.html#cb56-4" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="hello-bookdown.html#cb56-5" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="hello-bookdown.html#cb56-6" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb56-7"><a href="hello-bookdown.html#cb56-7" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="hello-bookdown.html#cb56-8" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="hello-bookdown.html#cb56-9" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb56-10"><a href="hello-bookdown.html#cb56-10" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;father&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;mother&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb56-11"><a href="hello-bookdown.html#cb56-11" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb56-12"><a href="hello-bookdown.html#cb56-12" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-13"><a href="hello-bookdown.html#cb56-13" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-14"><a href="hello-bookdown.html#cb56-14" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,guard_int_chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot;p =&quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>p.value,<span class="dv">4</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-15"><a href="hello-bookdown.html#cb56-15" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Guardian
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet No
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Internet Yes
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Total
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+Observed
+</th>
+<th style="text-align:right;">
+Expected
+</th>
+<th style="text-align:right;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+father
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+15.038
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+74.962
+</td>
+<td style="text-align:right;">
+90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+45.615
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+227.385
+</td>
+<td style="text-align:right;">
+273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mother
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+5.347
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+26.653
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+66.000
+</td>
+<td style="text-align:right;">
+329
+</td>
+<td style="text-align:right;">
+329.000
+</td>
+<td style="text-align:right;">
+395
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> <span class="math inline">\(X^2\)</span> = (2, n = 395) = 1.401p =0.4963
+</td>
+</tr>
+</tfoot>
+</table>
+<p>We can see that our <span class="math inline">\(X^2\)</span> value is 1.401 and the p-value is <span class="math inline">\(p&gt;.05\)</span>. We check our <span class="math inline">\(X^2\)</span> value against the critical table value of 5.991. Since our <span class="math inline">\(X^2\)</span> value 1.401 is below our critical table value of 5.991, therefore we <strong>cannot</strong> reject our null hypothesis. Therefore there is no significant relationship between guardian type and internet.</p>
+<ul>
+<li>In APA style, the proper reporting of chi-square test results is χ2 = (degrees of freedom, n = number of scores ) = chi-square score, p value.</li>
+<li><span class="math inline">\(X^2\)</span> (2, n = 395) = 1.401, p = 0.4963.
+<br>
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm" target="_blank">Chi-Square Critical Table</a></li>
+</ul>
+</div>
+</div>
+<div id="correlation" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Correlation<a href="hello-bookdown.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\Large
+r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\sum(y_{i}-\bar{y})^2}}\]</span></p>
+</div>
+<div id="correlation-assumptions" class="section level3 hasAnchor" number="2.1.8">
+<h3><span class="header-section-number">2.1.8</span> Correlation Assumptions<a href="hello-bookdown.html#correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following assumptions are in place when utilizing the Pearson’s <span class="math inline">\(r\)</span> when calculating a correlation coefficient.
+<br></p>
+<ul>
+<li><strong>Interval or ratio scale</strong> – both variables should be quantitative variables. Both should be assessed on an interval or ratio scale.</li>
+<li><strong>Normally-distributed sampling distribution</strong> – sampling distribution of the statistic should be normally distributed. Likely to be met if the sample data are approximately normal or the sample is large.</li>
+<li><strong>Random Sample from bivariate normal distribution</strong> – the data points used to compute the Pearson <span class="math inline">\(r\)</span> are the pairs of scores on the predictor and criterion variables. The data points should be a random sample drawn from a bivariate normal distribution.</li>
+</ul>
+<div id="index-of-effect-size-table" class="section level5 hasAnchor" number="2.1.8.0.1">
+<h5><span class="header-section-number">2.1.8.0.1</span> Index of Effect Size Table<a href="hello-bookdown.html#index-of-effect-size-table" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>Index of effect size – a statistic that conveys the strength of the association between a predictor variable and criterion variable.</li>
+<li><span class="math inline">\(r\)</span> – the larger the absolute value of the correlation coefficient the larger the “effect”.</li>
+</ul>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+Correlation Coefficient
+</th>
+<th onclick="sortTable(2)">
+Effect Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Small Effect
+</td>
+<td>
+r +/- .10
+</td>
+</tr>
+<tr>
+<td>
+Medium Effect
+</td>
+<td>
+r +/- .30
+</td>
+</tr>
+<tr>
+<td>
+Large Effect
+</td>
+<td>
+r +/- .50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="correlation-between-student-absences-and-first-period-grade" class="section level4 hasAnchor" number="2.1.8.1">
+<h4><span class="header-section-number">2.1.8.1</span> Correlation between student absences and first period grade<a href="hello-bookdown.html#correlation-between-student-absences-and-first-period-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="hello-bookdown.html#cb57-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G1)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$absences and student$G1
+## t = -0.6149, df = 393, p-value = 0.539
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.12927845  0.06787576
+## sample estimates:
+##        cor 
+## -0.0310029</code></pre>
+<p>Here we can see that our correlation <span class="math inline">\(r\)</span> = -0.031 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G1\)</span>.</p>
+</div>
+<div id="correlation-between-student-absences-and-final-grade" class="section level4 hasAnchor" number="2.1.8.2">
+<h4><span class="header-section-number">2.1.8.2</span> Correlation between student absences and final grade<a href="hello-bookdown.html#correlation-between-student-absences-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="hello-bookdown.html#cb59-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G3)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$absences and student$G3
+## t = 0.67933, df = 393, p-value = 0.4973
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.06464215  0.13247070
+## sample estimates:
+##        cor 
+## 0.03424732</code></pre>
+<p>Here we can see that our correlation <span class="math inline">\(r\)</span> = 0.034 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G3\)</span>.</p>
+</div>
+</div>
+<div id="point-biserial-correlation-assumptions" class="section level3 hasAnchor" number="2.1.9">
+<h3><span class="header-section-number">2.1.9</span> Point-biserial Correlation Assumptions<a href="hello-bookdown.html#point-biserial-correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Point-biserial correlation coefficient</strong> – appropriate when one variable is a roughly continuous , multi-value variable assessed on an interval or ratio scale and the other variable is a dichotomous(2 values) variable.
+<br></li>
+<li><ul>
+<li>must have a true dichotomy e.g. sex (male vs female)</li>
+</ul></li>
+</ul>
+<div id="point-biserial-correlation-student-gender-and-final-grade" class="section level4 hasAnchor" number="2.1.9.1">
+<h4><span class="header-section-number">2.1.9.1</span> Point-biserial correlation: Student gender and final grade<a href="hello-bookdown.html#point-biserial-correlation-student-gender-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we are looking at a true dichotomy sex (male vs female) and the association with final <span class="math inline">\(G3\)</span> grade. We need to recode the variable into a binary variable of <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span> with <span class="math inline">\(1\)</span> being <span class="math inline">\(Male\)</span> and <span class="math inline">\(0\)</span> being <span class="math inline">\(Female\)</span>.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="hello-bookdown.html#cb61-1" tabindex="-1"></a>student<span class="sc">$</span>sexrecoded<span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>sex<span class="sc">==</span><span class="st">&quot;M&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb61-2"><a href="hello-bookdown.html#cb61-2" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>sexrecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$sexrecoded
+## t = 2.062, df = 393, p-value = 0.03987
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.004833966 0.200084200
+## sample estimates:
+##       cor 
+## 0.1034556</code></pre>
+</div>
+</div>
+<div id="biserial-correlation" class="section level3 hasAnchor" number="2.1.10">
+<h3><span class="header-section-number">2.1.10</span> Biserial Correlation<a href="hello-bookdown.html#biserial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Biserial correlation coefficient</strong> – appropriate in exactly the same situation where the point-biserial correlation would be used; one continuous variable and one dichotomous variable.
+<br></li>
+<li><ul>
+<li>appropriate when the dichotomous variable is not a true dichotomy e.g. pass/fail</li>
+</ul></li>
+</ul>
+<div id="biserial-correaltion-family-educational-support-and-final-grade" class="section level4 hasAnchor" number="2.1.10.1">
+<h4><span class="header-section-number">2.1.10.1</span> Biserial Correaltion: Family educational support and final grade<a href="hello-bookdown.html#biserial-correaltion-family-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at whether there is an association between a students family support and their final grade. Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="hello-bookdown.html#cb63-1" tabindex="-1"></a><span class="do">###Recode the variable into a binary variable</span></span>
+<span id="cb63-2"><a href="hello-bookdown.html#cb63-2" tabindex="-1"></a>student<span class="sc">$</span>familysuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>famsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb63-3"><a href="hello-bookdown.html#cb63-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>familysuprecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$familysuprecoded
+## t = -0.77686, df = 393, p-value = 0.4377
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.13729770  0.05974472
+## sample estimates:
+##         cor 
+## -0.03915715</code></pre>
+</div>
+<div id="biserial-correaltion-extra-educational-support-and-final-grade" class="section level4 hasAnchor" number="2.1.10.2">
+<h4><span class="header-section-number">2.1.10.2</span> Biserial Correaltion: Extra educational support and final grade<a href="hello-bookdown.html#biserial-correaltion-extra-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at if there is an association between <span class="math inline">\(extra\;educational\; support\)</span> <span class="math inline">\(schoolsup\)</span> and final grade <span class="math inline">\(G3\)</span>
++ Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="hello-bookdown.html#cb65-1" tabindex="-1"></a>student<span class="sc">$</span>schoolsuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>schoolsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb65-2"><a href="hello-bookdown.html#cb65-2" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="hello-bookdown.html#cb65-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>schoolsuprecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$schoolsuprecoded
+## t = -1.6469, df = 393, p-value = 0.1004
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.17998895  0.01601362
+## sample estimates:
+##         cor 
+## -0.08278821</code></pre>
+</div>
+<div id="biserial-correaltion-attended-nursery-school-and-final-grade" class="section level4 hasAnchor" number="2.1.10.3">
+<h4><span class="header-section-number">2.1.10.3</span> Biserial Correaltion: Attended nursery school and final grade<a href="hello-bookdown.html#biserial-correaltion-attended-nursery-school-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we can look at if there is an association between those who attended nursery school <span class="math inline">\(nursery\)</span> and final grade <span class="math inline">\(G3\)</span>
++ We need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="hello-bookdown.html#cb67-1" tabindex="-1"></a>student<span class="sc">$</span>nurseryrecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>nursery<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb67-2"><a href="hello-bookdown.html#cb67-2" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="hello-bookdown.html#cb67-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>nurseryrecoded)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student$G3 and student$nurseryrecoded
+## t = 1.0237, df = 393, p-value = 0.3066
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.04734402  0.14947834
+## sample estimates:
+##       cor 
+## 0.0515679</code></pre>
+</div>
+</div>
+<div id="spearman-correlation" class="section level3 hasAnchor" number="2.1.11">
+<h3><span class="header-section-number">2.1.11</span> Spearman Correlation<a href="hello-bookdown.html#spearman-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spearman correlation coefficient for ranked data (Spearman’s Rho or <span class="math inline">\(r_s\)</span>) – displays the correlation between two variables whose values have been ranked.</p>
+<p>In the student data set we see that studytime and traveltime have been ranked. Therefore we can utilize the Spearman’s Rho <span class="math inline">\(r_s\)</span> to see the association between these variables and final grade <span class="math inline">\(G3\)</span>.</p>
+<div id="spearman-correlation-study-time-and-final-grade" class="section level5 hasAnchor" number="2.1.11.0.1">
+<h5><span class="header-section-number">2.1.11.0.1</span> Spearman Correlation: Study time and final grade<a href="hello-bookdown.html#spearman-correlation-study-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="hello-bookdown.html#cb69-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>studytime,student<span class="sc">$</span>traveltime,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(student$studytime, student$traveltime, method =
+## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  student$studytime and student$traveltime
+## S = 11360053, p-value = 0.03526
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.1059694</code></pre>
+</div>
+<div id="spearman-correlation-travel-time-and-final-grade" class="section level5 hasAnchor" number="2.1.11.0.2">
+<h5><span class="header-section-number">2.1.11.0.2</span> Spearman Correlation: Travel time and final grade<a href="hello-bookdown.html#spearman-correlation-travel-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="hello-bookdown.html#cb72-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>traveltime,student<span class="sc">$</span>G3,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(student$traveltime, student$G3, method =
+## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  student$traveltime and student$G3
+## S = 11509618, p-value = 0.01655
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.1205304</code></pre>
+</div>
+</div>
+<div id="phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables" class="section level3 hasAnchor" number="2.1.12">
+<h3><span class="header-section-number">2.1.12</span> Phi Coefficient - measurement of the degree of association between two binary variables<a href="hello-bookdown.html#phi-coefficient---measurement-of-the-degree-of-association-between-two-binary-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Assumptions for phi <span class="math inline">\(\phi\)</span> coefficient:</p>
+<ul>
+<li><p>Phi coefficient (<span class="math inline">\(\phi\)</span>)– appropriate when both variables are true dichotomous variables</p></li>
+<li><p>E.g subject sex (males versus female) with sport-team status (team-member vs not a team-member)</p></li>
+</ul>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(y=1\)</span>
+</th>
+<th onclick="sortTable(0)">
+<span class="math inline">\(y=0\)</span>
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(total\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="math inline">\(x=1\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{11}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{10}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{1\cdot}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(x=0\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{01}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{00}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{0\cdot}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(total\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{\cdot1}\)</span>
+</td>
+<td>
+<span class="math inline">\(n_{\cdot0}\)</span>
+</td>
+<td>
+<span class="math inline">\(n\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><span class="math display">\[\Large Phi\;equation:
+\phi = \frac{n_{11} \cdot n_{00}\;-\;n_{10} \cdot n_{01}}{\sqrt{n_{1\cdot}n_{0\cdot} n_{\cdot0} n_{\cdot1}} }\]</span></p>
+<p><br></p>
+<style>
+.container {
+  border: 0.5px outset black;
+  background-color: white;
+  text-align: center;
+  width: 70%;
+}
+</style>
+<div class="container">
+<style>
+table {
+  <!-- border-collapse: collapse; -->
+  width: 30%;
+}
+
+th {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+}
+
+tr {
+  background-color: #D6EEEE;
+  padding: 45px;
+}
+</style>
+<table class="table" id="myTable20">
+<thead>
+<tr>
+<th onclick="sortTable(0)">
+</th>
+<th onclick="sortTable(2)">
+<span class="math inline">\(y=1\)</span>
+</th>
+<th onclick="sortTable(0)">
+<span class="math inline">\(y=0\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="math inline">\(x=1\)</span>
+</td>
+<td>
+<span class="math inline">\(A\)</span>
+</td>
+<td>
+<span class="math inline">\(B\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(x=0\)</span>
+</td>
+<td>
+<span class="math inline">\(C\)</span>
+</td>
+<td>
+<span class="math inline">\(D\)</span>
+</td>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><span class="math display">\[Phi\;equation:
+\phi = \frac{A \cdot D\;-\;B \cdot C}{\sqrt{(A+B)(C+D)(A+C)(B+D)} }\]</span></p>
+</div>
+<div id="phi-coefficient" class="section level3 hasAnchor" number="2.1.13">
+<h3><span class="header-section-number">2.1.13</span> Phi coefficient:<a href="hello-bookdown.html#phi-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First we will want to create a contingency of the table. We can do this in R simply by utilizing the <span class="math inline">\(table\)</span> function and specifying two columns of <span class="math inline">\(dichotomous\)</span> or <span class="math inline">\(binary\)</span> variables.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="hello-bookdown.html#cb75-1" tabindex="-1"></a>gender_internet <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>internet)</span>
+<span id="cb75-2"><a href="hello-bookdown.html#cb75-2" tabindex="-1"></a><span class="fu">print</span>(gender_internet)</span></code></pre></div>
+<pre><code>##    
+##      no yes
+##   F  38 170
+##   M  28 159</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="hello-bookdown.html#cb77-1" tabindex="-1"></a>gender_address <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>address)</span>
+<span id="cb77-2"><a href="hello-bookdown.html#cb77-2" tabindex="-1"></a><span class="fu">print</span>(gender_address)</span></code></pre></div>
+<pre><code>##    
+##       R   U
+##   F  44 164
+##   M  44 143</code></pre>
+<p>How to calculate a <span class="math inline">\(phi\)</span> coefficient manually for <span class="math inline">\(gender\)</span> and <span class="math inline">\(internet\)</span></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="hello-bookdown.html#cb79-1" tabindex="-1"></a><span class="co"># Φ = (AD-BC) / √(A+B)(C+D)(A+C)(B+D)</span></span>
+<span id="cb79-2"><a href="hello-bookdown.html#cb79-2" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="hello-bookdown.html#cb79-3" tabindex="-1"></a>phi_coefficient <span class="ot">=</span> ((<span class="dv">38</span><span class="sc">*</span><span class="dv">159</span>)<span class="sc">-</span>(<span class="dv">170</span><span class="sc">*</span><span class="dv">28</span>))<span class="sc">/</span><span class="fu">sqrt</span>((<span class="dv">38</span><span class="sc">+</span><span class="dv">170</span>)<span class="sc">*</span>(<span class="dv">28</span><span class="sc">+</span><span class="dv">159</span>)<span class="sc">*</span>(<span class="dv">38</span><span class="sc">+</span><span class="dv">28</span>)<span class="sc">*</span>(<span class="dv">170</span><span class="sc">+</span><span class="dv">159</span>))</span>
+<span id="cb79-4"><a href="hello-bookdown.html#cb79-4" tabindex="-1"></a><span class="fu">print</span>(phi_coefficient)</span></code></pre></div>
+<pre><code>## [1] 0.0441129</code></pre>
+<p>We can measure the <span class="math inline">\(Phi\)</span> coefficient similarly as to how we measure a Pearson’s <span class="math inline">\(r\)</span> correlation. The closer to <span class="math inline">\(0\)</span> there is no relationship. The closer to <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span> the stronger the relationship between the two dichotomous variables.</p>
+<p>Here we can utilize the <span class="math inline">\(psych\)</span> package to perform a <span class="math inline">\(Phi\)</span> <span class="math inline">\(\phi\)</span> coefficient analysis.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="hello-bookdown.html#cb81-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb81-2"><a href="hello-bookdown.html#cb81-2" tabindex="-1"></a><span class="fu">phi</span>(gender_internet,<span class="at">digits =</span> <span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0441129</code></pre>
+<center>
+<h2>
+References
+</h2>
+</center>
+<p>Hatcher, L. (2013). <em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></p>
+<p><strong><em>Student Peformance</em></strong> (2014). <a href="https://archive.ics.uci.edu/dataset/320/student+performance" class="uri">https://archive.ics.uci.edu/dataset/320/student+performance</a></p>
+<p><a href="https://www.r-bloggers.com/2021/07/how-to-calculate-phi-coefficient-in-r/" class="uri">https://www.r-bloggers.com/2021/07/how-to-calculate-phi-coefficient-in-r/</a></p>
+<p>William Revelle (2023). <em>psych: Procedures for Psychological,
+Psychometric, and Personality Research</em>. Northwestern University,
+Evanston, Illinois. R package version 2.3.9,
+<a href="https://CRAN.R-project.org/package=psych" class="uri">https://CRAN.R-project.org/package=psych</a></p>
+<p><a href="https://www.garyfisk.com/pspp/44ChiSquareGoodness.html" class="uri">https://www.garyfisk.com/pspp/44ChiSquareGoodness.html</a></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
