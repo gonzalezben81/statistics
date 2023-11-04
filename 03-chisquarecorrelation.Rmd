@@ -1,6 +1,19 @@
 # Chi-square & Correlation
 
-In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to use
+In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the $Phi$ correlation can be used to test an association between two categorical variables. Pearson's $r$ allows us to see if there is an association between two interval variables. While Chi-square allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one's mentioned here. 
+
+---
+
+Statistical tests in this chapter:
+
++ Chi-Square $x^2$
++ Pearson's Correlation $r$
++ Spearman's Rho $r_s$
++ Point Biserial $r_{pb}$
++ Biserial $r_{b}$
++ Phi $\phi$
+
+---
 
 ```{r echo=FALSE, include=TRUE,message=FALSE}
 library(mathjaxr)
@@ -202,6 +215,8 @@ x^2 = chi-squared\\
 O_{i}=\;observed\;value
 \\
 E_{i}=\;expected\;value
+\\
+\sum\;=\;sum
 $$
 
 ### Chi-square Assumptions {-}
@@ -335,6 +350,8 @@ r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\s
 
 <br>
 
+<center>
+
 <style>
 .container {
   border: 0.5px outset black;
@@ -385,6 +402,7 @@ tr {
     </tbody>
      </table>
 </div>
+</center>
 
 <br>
 

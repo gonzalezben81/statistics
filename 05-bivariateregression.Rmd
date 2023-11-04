@@ -56,7 +56,7 @@ DiagrammeR::grViz("
 
 ## Assumptions of Bivariate Regression {-}
 
-+ **Linearity** – should be able to fit a best-fitting straight line through the scatterplot.
++ **Linearity** – fit a best-fitting straight line through the scatter plot.
 
 + **Independence** – each observation included in the sample should be drawn independently from the population of interest. Researchers should not have taken repeated measures on the same variable from the same participant. 
 

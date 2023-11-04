@@ -23,7 +23,7 @@
 <meta name="author" content="Ben Gonzalez" />
 
 
-<meta name="date" content="2023-11-02" />
+<meta name="date" content="2023-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -277,7 +277,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="chi-square-correlation" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Chi-square &amp; Correlation<a href="chi-square-correlation.html#chi-square-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to use</p>
+<p>In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the <span class="math inline">\(Phi\)</span> correlation can be used to test an association between two categorical variables. Pearson’s <span class="math inline">\(r\)</span> allows us to see if there is an association between two interval variables. While Chi-square allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one’s mentioned here.</p>
+<hr />
+<p>Statistical tests in this chapter:</p>
+<ul>
+<li>Chi-Square <span class="math inline">\(x^2\)</span></li>
+<li>Pearson’s Correlation <span class="math inline">\(r\)</span></li>
+<li>Spearman’s Rho <span class="math inline">\(r_s\)</span></li>
+<li>Point Biserial <span class="math inline">\(r_{pb}\)</span></li>
+<li>Biserial <span class="math inline">\(r_{b}\)</span></li>
+<li>Phi <span class="math inline">\(\phi\)</span></li>
+</ul>
+<hr />
 <!-- :::::::::::::: {.columns} -->
 <!-- ::: {.column width="30%"} -->
 <!-- ```{r} -->
@@ -671,6 +682,8 @@ x^2 = chi-squared\\
 O_{i}=\;observed\;value
 \\
 E_{i}=\;expected\;value
+\\
+\sum\;=\;sum
 \]</span></p>
 </div>
 <div id="chi-square-assumptions" class="section level3 unnumbered hasAnchor">
@@ -1222,6 +1235,7 @@ r_{xy} = \frac{\sum(x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum(x_{i}-\bar{x})^2\s
 <li><span class="math inline">\(r\)</span> – the larger the absolute value of the correlation coefficient the larger the “effect”.</li>
 </ul>
 <p><br></p>
+<center>
 <style>
 .container {
   border: 0.5px outset black;
@@ -1287,6 +1301,7 @@ r +/- .50
 </tbody>
 </table>
 </div>
+</center>
 <p><br></p>
 </div>
 <div id="correlation-between-student-absences-and-first-period-grade" class="section level3 hasAnchor" number="2.2.1">
