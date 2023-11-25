@@ -250,6 +250,8 @@ Adj.R^2\;or\;R^2_{adj} = 1 - (1-R^2)\;\cdot\;(n-1)/(n-p-1)
 \\
 Adj.R^2\;or\;R^2_{adj} = 1 - (1-0.6024373)\;\cdot\;(32-1)/(32-1-1)
 \\
+Adj.R^2\;or\;R^2_{adj} = 0.5891852
+\\
 R^2 = coefficient\;of\;determination
 \\
 n = number\;of\;observations
@@ -319,7 +321,7 @@ resid = mpg_hp_model$residuals
 mtcars %>% ggplot(aes(hp,mpg))+
   geom_point()+
   geom_smooth(method = "lm")+
-  geom_linerange(aes(ymax = mpg, ymin = mpg-resid),color="red")
+  geom_linerange(aes(ymax = mpg, ymin = mpg-resid),color="darkred")
 ```
 
 ```{r,echo=FALSE}
@@ -327,7 +329,7 @@ mpg_prediction <- lm(formula = mpg~hp,data = mtcars)
 
 ```
 
-Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) wil be.
+Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) will be.
 
 $$
 \hat{y}\;=\;30.09886\;+\;-0.06823(X)

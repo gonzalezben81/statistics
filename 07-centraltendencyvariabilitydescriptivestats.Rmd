@@ -1,0 +1,251 @@
+# Measures of Central Tendency - Mean, Median, Mode
+
+
+```{r,echo=FALSE}
+student <- read.csv('student/student.csv')
+```
+
+
+## Mean
+
+The mean or average or arithmetic mean of the variable we are interested in can be easily computed. This is one of the most commonly used/reported descriptive statistics. Reporting the mean is done easily and is easily interpreted and understood by most stakeholders and audiences. The mean can only be calculated on variables that are measured on an interval or ratio level. 
+
+$$\Large
+\bar{x}\;=\;\frac{\sum{X}}{N}
+$$
+
+```{r}
+###Manually calculate the mean
+sum(mtcars$hp)/length(mtcars$hp)
+###Utilizing the mean() function in R or the easy button method
+mean(mtcars$hp)
+```
+
+## Median
+
+"The $Median$ is the score at or below which 50% of the scores in a distribution fall" (Hatcher, p.64). For example if the median horsepower in the mtcars data set is 123. This means that $50\%$ of the cars in the mtcars data set have horsepower below 123.
+
+There are two different approaches for calculating the median. This depends on if the the number of observations are even or odd. Therefore we have two distinct formulas for calculating the median.
+
+
+### Median if number of observations is Odd
+
+$$
+If\;n\;(number\;of\;observations)\;is\;Odd
+\;
+\\
+\;
+median\;=\;\frac{(n+1)}{2}
+$$
+```{r}
+###Number of observations in the data set
+length(student$G3) 
+###Calculate the median by hand
+((length(student$G3)+1))/2
+###Utilize the median() formula in R
+median(student$G3)
+
+```
+
+***
+
+### Median if number of observations is Even
+
+$$
+If\;n\;(number\;of\;observations)\;is\;Even
+\;
+\\
+\;
+median\;=\;\frac{(\frac{n}{2})+(\frac{n}{2}+1)}{2}
+$$
+```{r}
+###Number of observations in the data set
+length(mtcars$hp) 
+###Calculate the median by hand
+((length(mtcars$hp)/2)+((length(mtcars$hp)/2)+1))/2
+###Utilize the median() formula in R
+median(mtcars$hp)
+```
+
+
+## Mode
+
+"The $mode$ $M_{o}$ is the most frequently-occurring value in a distribution." (Hatcher, p.66, 2015) For a particular data set the mode could be uni-modal (one mode) or bi-modal (two modes). This is dependent on the data that is present. Utilizing certain statistical techniques we can find the mode of a data set. The mode should be used with nominal data as it is most appropriate to use it at that time. Here we can use the mode with our student data set as there are several nominal (categorical) variables available in the data set.
+
+$$
+Mode
+$$
+
+```{r}
+###Load the ggplot2 library
+library(ggplot2)
+
+# ###Create table with frequency to help in finding the mode of a variable in a data set
+# mtcars_frequency_df<- as.data.frame(table(mtcars$hp))
+# 
+# ###Add column names to mtcars_frequency_df data frame
+# colnames(mtcars_frequency_df) <- c("HP","Frequency")
+# 
+# ###Order mtcars data set by frequency in HP
+# mtcars_frequency_df[order(mtcars_frequency_df$Frequency,decreasing = T),]
+
+###Working on best way to bin
+
+student_mjob<- table(student$Mjob)
+
+barplot(student_mjob)
+
+barplot( student_mjob,col="dodgerblue3",xlab = "Mother's Job",ylab = "Frequency")
+
+# Bar graph frequencies in hp using ggplot2 and geom_bar
+
+ggplot(data = student, aes(x = Mjob)) +
+    geom_bar(colour="blue",fill="darkgreen")
+
+```
+
+
+## Measures of Variability
+
+According to Hatcher (2013) the measure of variability is the amount of dispersion displayed by a set of observations (scores). We can see how spread out something such as horsepower is spread out in the mtcars data set by utilizing the following statistical tests. Using these techniques in turn gives us better insight into the variability of scores in our data set.
+
+Here we can see the range for the hp variable in the mtcars data set is $283$
+
+### Range
+
+```{r}
+###Find the range of hp in the mtcars data set
+###Maximum
+max_hp <- max(mtcars$hp)
+###Minimum
+min_hp <- min(mtcars$hp)
+
+###Range of hp in the mtcars data set
+mtcars_range <- max_hp-min_hp
+print(paste0("Range of hp in mtcars data set: ",mtcars_range))
+```
+
+
+Similar to what you would have learned in algebra we have two other types of ranges we will discuss. The interquartile range and the semi-interquartile range. 
+
+
+### Interquartile Range
+
+IQR (Interquartile Range):
+
++ Difference between the $Q_{3}$ (third quartile) versus the $Q_{1}$ (first quartile)
++ Two scores that capture the middle 50% of the distribution
+
+$$
+IQR\;=\;Q_{3}\;-\;Q_{1}
+$$
+
+Here we can utilize the built in $IQR()$ function in R to find the interquartile range.
+
+```{r}
+
+IQR(mtcars$hp,na.rm = T)
+
+```
+
+### Sum of Squares
+
+According to Hatcher (2013) the sum of squares or $SS$ is the sum of all of the deviations squared for all observations in a data set. We are simply adding together all the squared deviations of the observations in our variable of interest in our data set.
+
+$$
+SS\;=\;\sum(X-\overline{X})^2
+$$
+
+```{r}
+
+###Load our variable into a data farme
+ssq_hp_data_frame <- as.data.frame(mtcars$hp)
+
+###Apply the mean function to a column in our data frame
+ssq_hp_data_frame$avg <- apply(X = ssq_hp_data_frame,2,mean)
+
+###Get the standard deviation of our column 
+ssq_hp_data_frame$sd <- ssq_hp_data_frame$`mtcars$hp` - ssq_hp_data_frame$avg
+
+###Sum of squares column
+ssq_hp_data_frame$sum_of_square <- ssq_hp_data_frame$sd^2
+
+print(ssq_hp_data_frame)
+
+sum(ssq_hp_data_frame$sum_of_square)
+
+###Sum the standard deviation and square it
+sum(ssq_hp_data_frame$sd^2)
+
+###Take the sum of the vector (hp) and subtract the mean and square the sum of the vector
+
+sum((mtcars$hp-mean(mtcars$hp))^2)
+
+###Load the necesary R packages
+library(rMR)
+###Using the rmR package
+rMR::sumsq(mtcars$hp)
+
+rMR::sumsq(mtcars$mpg)/(32-1)
+var(mtcars$mpg)
+
+```
+
+### Variance
+
+"The variance is a measure of variability computed by taking the average of the squared deviations from the mean." (Hatcher, p. 77, 2015)
+
+#### Population Variance
+
+Population variance formula
+
+$$
+\sigma^2=\frac{\sum(X-\mu)^2}{N}
+$$
+$$
+\sigma^2=\;the\;population\;variance
+\\
+X\;=\;participant's\;score\;on\;the\;variable\;of\;interest
+\\
+\mu=population\;for\;the\;variable\;of\;interest
+\\
+N=\;the\;number\;of\;observations\;in\;the\;population
+$$
+
+#### Sample Variance
+
+"It is appropriate to compute a $sample variance$ $S^2$ when you have scores for just a sample and you wish to compute a $descriptive statistic$ to describe the variability of scores in just that sample." (Hatcher, 2013 p.79) The sample variance referred to here is sometimes referred to as the $biased\;estimate\;of\;population\;variance$. This result will be larger than the unbiased estimate.
+
+##### Biased estimate of population variance
+
+###Biased
+sum((mtcars$mpg-mean(mtcars$mpg))^2)/(32)
+
+$$
+S^2=\frac{\sum(X-\overline{X})^2}{N}\;also\;shown\;as\;\frac{1}{N}\sum_{i=1}^{n}(x_{i}-\mu)^2
+$$
+
+##### Unbiased estimate of population variance
+
+The statistic that will result from this is an $inferential$ statistic. "An $inferential\;statistic$ is a value computed by analyzing data from a sample for the purpose of estimating some characteristic of the larger population" (Hatcher, 2013, p.81)
+
+$$
+s^2=\frac{\sum(X-\overline{X})^2}{N-1}\;also\;shown\;as\;\frac{1}{n-1}\sum_{i=1}^{N}(x_{i}-\mu)^2
+$$
+
+```{r}
+###Calculating the variance by hand in R
+
+###Unbiased
+sum((mtcars$mpg-mean(mtcars$mpg))^2)/(32-1)
+
+###Variance using the var() function in R
+var(mtcars$mpg)
+
+###Load the necesary R packages
+library(rMR)
+###Using the rmR package
+rMR::sumsq(mtcars$mpg)/(32-1)
+
+
+```

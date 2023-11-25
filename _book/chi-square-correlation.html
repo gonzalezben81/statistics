@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Chi-square &amp; Correlation | Statistics</title>
+  <title>Chapter 3 Chi-square &amp; Correlation | Statistics</title>
   <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Chi-square &amp; Correlation | Statistics" />
+  <meta property="og:title" content="Chapter 3 Chi-square &amp; Correlation | Statistics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="github-repo" content="gonzalezben81/statistics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Chi-square &amp; Correlation | Statistics" />
+  <meta name="twitter:title" content="Chapter 3 Chi-square &amp; Correlation | Statistics" />
   
   <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Ben Gonzalez" />
 
 
-<meta name="date" content="2023-11-04" />
+<meta name="date" content="2023-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,109 +152,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="example-data-to-follow-along-with.html"><a href="example-data-to-follow-along-with.html"><i class="fa fa-check"></i>Example data to follow along with</a></li>
-<li class="chapter" data-level="1" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>1</b> Big Three Results</a>
+<li class="chapter" data-level="1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html"><i class="fa fa-check"></i><b>1</b> Measures of Central Tendency - Mean, Median, Mode</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i><b>1.1</b> Sample Standard Deviation Formula</a>
+<li class="chapter" data-level="1.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mean"><i class="fa fa-check"></i><b>1.1</b> Mean</a></li>
+<li class="chapter" data-level="1.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median"><i class="fa fa-check"></i><b>1.2</b> Median</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i><b>1.1.1</b> Standard Error Formula</a></li>
-<li class="chapter" data-level="1.1.2" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the standard error of a sample</a></li>
+<li class="chapter" data-level="1.2.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-odd"><i class="fa fa-check"></i><b>1.2.1</b> Median if number of observations is Odd</a></li>
+<li class="chapter" data-level="1.2.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-even"><i class="fa fa-check"></i><b>1.2.2</b> Median if number of observations is Even</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>1.2</b> Computing Confidence Intervals</a>
+<li class="chapter" data-level="1.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mode"><i class="fa fa-check"></i><b>1.3</b> Mode</a></li>
+<li class="chapter" data-level="1.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>1.2.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+<li class="chapter" data-level="1.4.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#range"><i class="fa fa-check"></i><b>1.4.1</b> Range</a></li>
+<li class="chapter" data-level="1.4.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#interquartile-range"><i class="fa fa-check"></i><b>1.4.2</b> Interquartile Range</a></li>
+<li class="chapter" data-level="1.4.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#sum-of-squares"><i class="fa fa-check"></i><b>1.4.3</b> Sum of Squares</a></li>
+<li class="chapter" data-level="1.4.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#variance"><i class="fa fa-check"></i><b>1.4.4</b> Variance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>1.3</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-square &amp; Correlation</a>
+<li class="chapter" data-level="2" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>2</b> Big Three Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i>Sample Standard Deviation Formula</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i>Standard Error Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i>How to calculate the standard error of a sample</a></li>
+</ul></li>
+<li class="chapter" data-level="2.1" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>2.1</b> Computing Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>2.1.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>2.2</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>3</b> Chi-square &amp; Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i>Steven’s four scales of measurement</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#student-peformance-data-set-information"><i class="fa fa-check"></i>Student Peformance Data Set Information</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i>Look at the structure of our data</a></li>
-<li class="chapter" data-level="2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>2.1</b> Chi-square</a>
+<li class="chapter" data-level="3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>3.1</b> Chi-Square</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-formula"><i class="fa fa-check"></i>Chi-Square Formula</a></li>
-<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
-<li class="chapter" data-level="2.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.1.1</b> Chi-Square Test of Association</a></li>
-<li class="chapter" data-level="2.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>2.1.2</b> Observed</a></li>
-<li class="chapter" data-level="2.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>2.1.3</b> Expected</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-Square Assumptions</a></li>
+<li class="chapter" data-level="3.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>3.1.1</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>3.1.2</b> Observed</a></li>
+<li class="chapter" data-level="3.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>3.1.3</b> Expected</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>2.2</b> Correlation</a>
+<li class="chapter" data-level="3.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>3.2</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-assumptions"><i class="fa fa-check"></i>Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-formula"><i class="fa fa-check"></i>Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#index-of-effect-size-table"><i class="fa fa-check"></i>Index of Effect Size Table</a></li>
-<li class="chapter" data-level="2.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>2.2.1</b> Correlation between student absences and first period grade</a></li>
-<li class="chapter" data-level="2.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>2.2.2</b> Correlation between student absences and final grade</a></li>
+<li class="chapter" data-level="3.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between student absences and first period grade</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between student absences and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.3</b> Point-biserial Correlation Assumptions</a>
+<li class="chapter" data-level="3.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>3.3</b> Point-biserial Correlation Assumptions</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>2.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
+<li class="chapter" data-level="3.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>3.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>2.4</b> Biserial Correlation</a>
+<li class="chapter" data-level="3.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>3.4</b> Biserial Correlation</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>2.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
+<li class="chapter" data-level="3.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>3.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5</b> Spearman Correlation</a>
+<li class="chapter" data-level="3.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>3.5</b> Spearman Correlation</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.1</b> Spearman Correlation: Study time and final grade</a></li>
-<li class="chapter" data-level="2.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
+<li class="chapter" data-level="3.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.1</b> Spearman Correlation: Study time and final grade</a></li>
+<li class="chapter" data-level="3.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.6</b> Phi - measurement of the degree of association between two binary variables</a>
+<li class="chapter" data-level="3.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>3.6</b> Phi - measurement of the degree of association between two binary variables</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>2.6.1</b> Phi coefficient:</a></li>
+<li class="chapter" data-level="3.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>3.6.1</b> Phi coefficient:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a>
+<li class="chapter" data-level="4" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>4</b> Partial Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-assumptions"><i class="fa fa-check"></i>Partial Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-formula"><i class="fa fa-check"></i>Partial Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-overview"><i class="fa fa-check"></i>Partial Correlation Overview</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i>Take a look at the structure of the mtcars data set</a></li>
-<li class="chapter" data-level="3.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.1</b> Description of the variables in the mtcars data set</a></li>
-<li class="chapter" data-level="3.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>3.2</b> Partial Correlation Calculation</a>
+<li class="chapter" data-level="4.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>4.1</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="4.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>4.2</b> Partial Correlation Calculation</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
-<li class="chapter" data-level="3.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
-<li class="chapter" data-level="3.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>3.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
-<li class="chapter" data-level="3.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.2.4</b> Partial Correlation: Putting it altogether</a></li>
-<li class="chapter" data-level="3.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.2.5</b> Calculate the numerator of the formula</a></li>
-<li class="chapter" data-level="3.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.2.6</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="4.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>4.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="4.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>4.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="4.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>4.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="4.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>4.2.4</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="4.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>4.2.5</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="4.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>4.2.6</b> Calculate the denominator of the formula</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.3</b> Partial Correlation utilizing the ppcor package</a></li>
-<li class="chapter" data-level="3.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>3.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
-<li class="chapter" data-level="3.5" data-path="partial-correlation.html"><a href="partial-correlation.html#references"><i class="fa fa-check"></i><b>3.5</b> References</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>4.3</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>4.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a>
+<li class="chapter" data-level="5" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>5</b> Bivariate Regression</a>
 <ul>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-terminology"><i class="fa fa-check"></i>Bivariate Regression Terminology</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#regression-generic-analysis-model"><i class="fa fa-check"></i>Regression: Generic Analysis Model</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i>Assumptions of Bivariate Regression</a></li>
-<li class="chapter" data-level="4.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.1</b> Bivariate Regression Formula</a></li>
-<li class="chapter" data-level="4.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.2</b> Scatterplot of the data set</a></li>
-<li class="chapter" data-level="4.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>4.3</b> Calculating the Residual</a></li>
-<li class="chapter" data-level="4.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.4</b> Calculate the mean of the Y Values</a></li>
-<li class="chapter" data-level="4.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>5.1</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>5.2</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="5.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>5.3</b> Calculating the Residual</a></li>
+<li class="chapter" data-level="5.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>5.4</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="5.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>5.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
-<li class="chapter" data-level="4.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>4.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+<li class="chapter" data-level="5.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>5.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>5.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
-<li class="chapter" data-level="4.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.7</b> Utilize the lm function in R to automate our work</a>
+<li class="chapter" data-level="5.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>5.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>5.7</b> Utilize the lm function in R to automate our work</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>4.7.1</b> Print the residuals of the model</a></li>
-<li class="chapter" data-level="4.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>4.7.2</b> Print the coefficients of the model</a></li>
-<li class="chapter" data-level="4.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>4.7.3</b> Putting it altogether</a></li>
+<li class="chapter" data-level="5.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>5.7.1</b> Print the residuals of the model</a></li>
+<li class="chapter" data-level="5.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>5.7.2</b> Print the coefficients of the model</a></li>
+<li class="chapter" data-level="5.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>5.7.3</b> Putting it altogether</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>4.8</b> Plot our residuals and a best fitting line</a></li>
-<li class="chapter" data-level="4.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>5.8</b> Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="5.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>5.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>4.9.1</b> Correlation coefficient of hp and mpg</a></li>
-<li class="chapter" data-level="4.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.9.2</b> Squaring the correlation coefficient</a></li>
+<li class="chapter" data-level="5.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>5.9.1</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="5.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>5.9.2</b> Squaring the correlation coefficient</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -275,9 +291,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chi-square-correlation" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Chi-square &amp; Correlation<a href="chi-square-correlation.html#chi-square-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the <span class="math inline">\(Phi\)</span> correlation can be used to test an association between two categorical variables. Pearson’s <span class="math inline">\(r\)</span> allows us to see if there is an association between two interval variables. While Chi-square allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one’s mentioned here.</p>
+<div id="chi-square-correlation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Chi-square &amp; Correlation<a href="chi-square-correlation.html#chi-square-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the <span class="math inline">\(Phi\)</span> correlation can be used to test an association between two categorical variables. Pearson’s <span class="math inline">\(r\)</span> allows us to see if there is an association between two interval variables. While Chi-square <span class="math inline">\(X^2\)</span> allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one’s mentioned above.</p>
 <hr />
 <p>Statistical tests in this chapter:</p>
 <ul>
@@ -631,7 +647,7 @@ Yes
 </div>
 <div id="look-at-the-structure-of-our-data" class="section level2 unnumbered hasAnchor">
 <h2>Look at the structure of our data<a href="chi-square-correlation.html#look-at-the-structure-of-our-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="chi-square-correlation.html#cb34-1" tabindex="-1"></a><span class="fu">str</span>(student)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="chi-square-correlation.html#cb80-1" tabindex="-1"></a><span class="fu">str</span>(student)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    395 obs. of  33 variables:
 ##  $ school    : chr  &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; &quot;GP&quot; ...
 ##  $ sex       : chr  &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; ...
@@ -668,8 +684,8 @@ Yes
 ##  $ G3        : int  6 6 10 15 10 15 11 6 19 15 ...</code></pre>
 <pre><code>## [1] &quot;There are  395  observations in our student data set.&quot;</code></pre>
 </div>
-<div id="chi-square" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Chi-square<a href="chi-square-correlation.html#chi-square" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chi-square" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Chi-Square<a href="chi-square-correlation.html#chi-square" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="chi-square-formula" class="section level3 unnumbered hasAnchor">
 <h3>Chi-Square Formula<a href="chi-square-correlation.html#chi-square-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[
@@ -687,18 +703,18 @@ E_{i}=\;expected\;value
 \]</span></p>
 </div>
 <div id="chi-square-assumptions" class="section level3 unnumbered hasAnchor">
-<h3>Chi-square Assumptions<a href="chi-square-correlation.html#chi-square-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>Chi-Square Assumptions<a href="chi-square-correlation.html#chi-square-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
 <br></li>
 <li>Used with Nominal or Categorical data.</li>
 </ul>
 </div>
-<div id="chi-square-test-of-association" class="section level3 hasAnchor" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Chi-Square Test of Association<a href="chi-square-correlation.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="chi-square-test-of-association" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Chi-Square Test of Association<a href="chi-square-correlation.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we want to investigate if there is an association between the type of job a mother has and a students access to the internet.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chi-square-correlation.html#cb37-1" tabindex="-1"></a>student_chi <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet)</span>
-<span id="cb37-2"><a href="chi-square-correlation.html#cb37-2" tabindex="-1"></a><span class="fu">print</span>(student_chi)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="chi-square-correlation.html#cb83-1" tabindex="-1"></a>student_chi <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet)</span>
+<span id="cb83-2"><a href="chi-square-correlation.html#cb83-2" tabindex="-1"></a><span class="fu">print</span>(student_chi)</span></code></pre></div>
 <pre><code>##           
 ##             no yes
 ##   at_home   22  37
@@ -706,16 +722,16 @@ E_{i}=\;expected\;value
 ##   other     27 114
 ##   services  12  91
 ##   teacher    3  55</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="chi-square-correlation.html#cb39-1" tabindex="-1"></a><span class="fu">chisq.test</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="chi-square-correlation.html#cb85-1" tabindex="-1"></a><span class="fu">chisq.test</span>(student<span class="sc">$</span>Mjob, student<span class="sc">$</span>internet, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  student$Mjob and student$internet
 ## X-squared = 28.861, df = 4, p-value = 8.341e-06</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chi-square-correlation.html#cb41-1" tabindex="-1"></a>mjob_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>Mjob<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
-<span id="cb41-2"><a href="chi-square-correlation.html#cb41-2" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="chi-square-correlation.html#cb41-3" tabindex="-1"></a>chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mjob_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb41-4"><a href="chi-square-correlation.html#cb41-4" tabindex="-1"></a>chisq_result<span class="sc">$</span>observed</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="chi-square-correlation.html#cb87-1" tabindex="-1"></a>mjob_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>Mjob<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb87-2"><a href="chi-square-correlation.html#cb87-2" tabindex="-1"></a></span>
+<span id="cb87-3"><a href="chi-square-correlation.html#cb87-3" tabindex="-1"></a>chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mjob_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb87-4"><a href="chi-square-correlation.html#cb87-4" tabindex="-1"></a>chisq_result<span class="sc">$</span>observed</span></code></pre></div>
 <pre><code>##           internet
 ## Mjob        no yes
 ##   at_home   22  37
@@ -723,7 +739,7 @@ E_{i}=\;expected\;value
 ##   other     27 114
 ##   services  12  91
 ##   teacher    3  55</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="chi-square-correlation.html#cb43-1" tabindex="-1"></a>chisq_result<span class="sc">$</span>expected</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="chi-square-correlation.html#cb89-1" tabindex="-1"></a>chisq_result<span class="sc">$</span>expected</span></code></pre></div>
 <pre><code>##           internet
 ## Mjob              no       yes
 ##   at_home   9.858228  49.14177
@@ -731,24 +747,24 @@ E_{i}=\;expected\;value
 ##   other    23.559494 117.44051
 ##   services 17.210127  85.78987
 ##   teacher   9.691139  48.30886</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="chi-square-correlation.html#cb45-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
-<span id="cb45-2"><a href="chi-square-correlation.html#cb45-2" tabindex="-1"></a></span>
-<span id="cb45-3"><a href="chi-square-correlation.html#cb45-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],total_observed)</span>
-<span id="cb45-4"><a href="chi-square-correlation.html#cb45-4" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="chi-square-correlation.html#cb45-5" tabindex="-1"></a><span class="fu">colnames</span>(observed_expected) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="chi-square-correlation.html#cb46-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
-<span id="cb46-2"><a href="chi-square-correlation.html#cb46-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
-<span id="cb46-3"><a href="chi-square-correlation.html#cb46-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
-<span id="cb46-4"><a href="chi-square-correlation.html#cb46-4" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="chi-square-correlation.html#cb46-5" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
-<span id="cb46-6"><a href="chi-square-correlation.html#cb46-6" tabindex="-1"></a></span>
-<span id="cb46-7"><a href="chi-square-correlation.html#cb46-7" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
-<span id="cb46-8"><a href="chi-square-correlation.html#cb46-8" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;at home&quot;</span>,<span class="st">&quot;health&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;services&quot;</span>,<span class="st">&quot;teacher&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb46-9"><a href="chi-square-correlation.html#cb46-9" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
-<span id="cb46-10"><a href="chi-square-correlation.html#cb46-10" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-11"><a href="chi-square-correlation.html#cb46-11" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-12"><a href="chi-square-correlation.html#cb46-12" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot; p = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>p.value,<span class="at">digits =</span> <span class="dv">12</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-13"><a href="chi-square-correlation.html#cb46-13" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="chi-square-correlation.html#cb91-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb91-2"><a href="chi-square-correlation.html#cb91-2" tabindex="-1"></a></span>
+<span id="cb91-3"><a href="chi-square-correlation.html#cb91-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],total_observed)</span>
+<span id="cb91-4"><a href="chi-square-correlation.html#cb91-4" tabindex="-1"></a></span>
+<span id="cb91-5"><a href="chi-square-correlation.html#cb91-5" tabindex="-1"></a><span class="fu">colnames</span>(observed_expected) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="chi-square-correlation.html#cb92-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb92-2"><a href="chi-square-correlation.html#cb92-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb92-3"><a href="chi-square-correlation.html#cb92-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb92-4"><a href="chi-square-correlation.html#cb92-4" tabindex="-1"></a></span>
+<span id="cb92-5"><a href="chi-square-correlation.html#cb92-5" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb92-6"><a href="chi-square-correlation.html#cb92-6" tabindex="-1"></a></span>
+<span id="cb92-7"><a href="chi-square-correlation.html#cb92-7" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb92-8"><a href="chi-square-correlation.html#cb92-8" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;at home&quot;</span>,<span class="st">&quot;health&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;services&quot;</span>,<span class="st">&quot;teacher&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb92-9"><a href="chi-square-correlation.html#cb92-9" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb92-10"><a href="chi-square-correlation.html#cb92-10" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb92-11"><a href="chi-square-correlation.html#cb92-11" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb92-12"><a href="chi-square-correlation.html#cb92-12" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot; p = &quot;</span>,<span class="fu">round</span>(chisq_result<span class="sc">$</span>p.value,<span class="at">digits =</span> <span class="dv">12</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb92-13"><a href="chi-square-correlation.html#cb92-13" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <thead>
 <tr>
@@ -936,19 +952,19 @@ Total
 </ul>
 <hr />
 <p>Next we can investigate if there is an association between the type of guardian a student has and as students access to the internet.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="chi-square-correlation.html#cb47-1" tabindex="-1"></a><span class="do">###Chi-square calculation</span></span>
-<span id="cb47-2"><a href="chi-square-correlation.html#cb47-2" tabindex="-1"></a>guardian_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>guardian<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
-<span id="cb47-3"><a href="chi-square-correlation.html#cb47-3" tabindex="-1"></a>guard_int_chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(guardian_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb47-4"><a href="chi-square-correlation.html#cb47-4" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="chi-square-correlation.html#cb47-5" tabindex="-1"></a>guard_int_chisq_result</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="chi-square-correlation.html#cb93-1" tabindex="-1"></a><span class="do">###Chi-square calculation</span></span>
+<span id="cb93-2"><a href="chi-square-correlation.html#cb93-2" tabindex="-1"></a>guardian_internet<span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">formula =</span> <span class="sc">~</span>guardian<span class="sc">+</span>internet,<span class="at">data =</span> student)</span>
+<span id="cb93-3"><a href="chi-square-correlation.html#cb93-3" tabindex="-1"></a>guard_int_chisq_result<span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(guardian_internet ,<span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb93-4"><a href="chi-square-correlation.html#cb93-4" tabindex="-1"></a></span>
+<span id="cb93-5"><a href="chi-square-correlation.html#cb93-5" tabindex="-1"></a>guard_int_chisq_result</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  guardian_internet
 ## X-squared = 1.401, df = 2, p-value = 0.4963</code></pre>
 </div>
-<div id="observed" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Observed<a href="chi-square-correlation.html#observed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="observed" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Observed<a href="chi-square-correlation.html#observed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -999,8 +1015,8 @@ other
 </tbody>
 </table>
 </div>
-<div id="expected" class="section level3 hasAnchor" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Expected<a href="chi-square-correlation.html#expected" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="expected" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Expected<a href="chi-square-correlation.html#expected" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1051,19 +1067,19 @@ other
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="chi-square-correlation.html#cb49-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
-<span id="cb49-2"><a href="chi-square-correlation.html#cb49-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
-<span id="cb49-3"><a href="chi-square-correlation.html#cb49-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
-<span id="cb49-4"><a href="chi-square-correlation.html#cb49-4" tabindex="-1"></a></span>
-<span id="cb49-5"><a href="chi-square-correlation.html#cb49-5" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
-<span id="cb49-6"><a href="chi-square-correlation.html#cb49-6" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="chi-square-correlation.html#cb49-7" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
-<span id="cb49-8"><a href="chi-square-correlation.html#cb49-8" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;father&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;mother&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb49-9"><a href="chi-square-correlation.html#cb49-9" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
-<span id="cb49-10"><a href="chi-square-correlation.html#cb49-10" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
-<span id="cb49-11"><a href="chi-square-correlation.html#cb49-11" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
-<span id="cb49-12"><a href="chi-square-correlation.html#cb49-12" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,guard_int_chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot;p =&quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>p.value,<span class="dv">4</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb49-13"><a href="chi-square-correlation.html#cb49-13" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="chi-square-correlation.html#cb95-1" tabindex="-1"></a>total_observed<span class="ot">&lt;-</span> guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>]<span class="sc">+</span>guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>]</span>
+<span id="cb95-2"><a href="chi-square-correlation.html#cb95-2" tabindex="-1"></a><span class="do">###Create data frame from chi-square results</span></span>
+<span id="cb95-3"><a href="chi-square-correlation.html#cb95-3" tabindex="-1"></a>observed_expected<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">1</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">1</span>],<span class="at">digits =</span> <span class="dv">3</span>),guard_int_chisq_result<span class="sc">$</span>observed[,<span class="dv">2</span>],<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>expected[,<span class="dv">2</span>],<span class="at">digits =</span> <span class="dv">3</span>),total_observed)</span>
+<span id="cb95-4"><a href="chi-square-correlation.html#cb95-4" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="chi-square-correlation.html#cb95-5" tabindex="-1"></a>overall_total<span class="ot">&lt;-</span> <span class="fu">rbind</span>(observed_expected, <span class="fu">c</span>(<span class="fu">colSums</span>(<span class="fu">round</span>(observed_expected[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]))))</span>
+<span id="cb95-6"><a href="chi-square-correlation.html#cb95-6" tabindex="-1"></a></span>
+<span id="cb95-7"><a href="chi-square-correlation.html#cb95-7" tabindex="-1"></a><span class="fu">colnames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;Observed&quot;</span>,<span class="st">&quot;Expected&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb95-8"><a href="chi-square-correlation.html#cb95-8" tabindex="-1"></a><span class="fu">rownames</span>(overall_total) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;father&quot;</span>,<span class="st">&quot;other&quot;</span>,<span class="st">&quot;mother&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb95-9"><a href="chi-square-correlation.html#cb95-9" tabindex="-1"></a><span class="do">###Create chi-square table</span></span>
+<span id="cb95-10"><a href="chi-square-correlation.html#cb95-10" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">x =</span> overall_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-11"><a href="chi-square-correlation.html#cb95-11" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">row_label_position =</span> <span class="st">&quot;l&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-12"><a href="chi-square-correlation.html#cb95-12" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="fu">paste0</span>(<span class="st">&quot;&quot;</span>,<span class="fu">sprintf</span>(r<span class="st">&#39;($X^2$)&#39;</span>),<span class="st">&quot; = (&quot;</span>,guard_int_chisq_result<span class="sc">$</span>parameter,<span class="st">&quot;, n = 395) = &quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>statistic,<span class="dv">3</span>),<span class="st">&quot;p =&quot;</span>,<span class="fu">round</span>(guard_int_chisq_result<span class="sc">$</span>p.value,<span class="dv">4</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-13"><a href="chi-square-correlation.html#cb95-13" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Guardian&quot;</span>, <span class="st">&quot;Internet No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Internet Yes&quot;</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">&quot;Total&quot;</span><span class="ot">=</span><span class="dv">1</span>))</span></code></pre></div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <thead>
 <tr>
@@ -1211,8 +1227,8 @@ Total
 </ul>
 </div>
 </div>
-<div id="correlation" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Correlation<a href="chi-square-correlation.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="correlation" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Correlation<a href="chi-square-correlation.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="correlation-assumptions" class="section level3 unnumbered hasAnchor">
 <h3>Correlation Assumptions<a href="chi-square-correlation.html#correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following assumptions are in place when utilizing the Pearson’s <span class="math inline">\(r\)</span> when calculating a correlation coefficient.
@@ -1304,9 +1320,9 @@ r +/- .50
 </center>
 <p><br></p>
 </div>
-<div id="correlation-between-student-absences-and-first-period-grade" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Correlation between student absences and first period grade<a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="chi-square-correlation.html#cb50-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G1)</span></code></pre></div>
+<div id="correlation-between-student-absences-and-first-period-grade" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Correlation between student absences and first period grade<a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="chi-square-correlation.html#cb96-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G1)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1320,9 +1336,9 @@ r +/- .50
 ## -0.0310029</code></pre>
 <p>Here we can see that our correlation <span class="math inline">\(r\)</span> = -0.031 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G1\)</span>.</p>
 </div>
-<div id="correlation-between-student-absences-and-final-grade" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Correlation between student absences and final grade<a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="chi-square-correlation.html#cb52-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G3)</span></code></pre></div>
+<div id="correlation-between-student-absences-and-final-grade" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Correlation between student absences and final grade<a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="chi-square-correlation.html#cb98-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>absences,student<span class="sc">$</span>G3)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1337,8 +1353,8 @@ r +/- .50
 <p>Here we can see that our correlation <span class="math inline">\(r\)</span> = 0.034 and our <span class="math inline">\(p&gt;.05\)</span>. Since our <span class="math inline">\(p-value\)</span> is greater than <span class="math inline">\(0.05\)</span> we can say there is no relationship between <span class="math inline">\(absences\)</span> and <span class="math inline">\(G3\)</span>.</p>
 </div>
 </div>
-<div id="point-biserial-correlation-assumptions" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Point-biserial Correlation Assumptions<a href="chi-square-correlation.html#point-biserial-correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="point-biserial-correlation-assumptions" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Point-biserial Correlation Assumptions<a href="chi-square-correlation.html#point-biserial-correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><strong>Point-biserial correlation coefficient</strong> – appropriate when one variable is a roughly continuous , multi-value variable assessed on an interval or ratio scale and the other variable is a dichotomous(2 values) variable.
 <br></li>
@@ -1346,11 +1362,11 @@ r +/- .50
 <li>must have a true dichotomy e.g. sex (male vs female)</li>
 </ul></li>
 </ul>
-<div id="point-biserial-correlation-student-gender-and-final-grade" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Point-biserial correlation: Student gender and final grade<a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="point-biserial-correlation-student-gender-and-final-grade" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Point-biserial correlation: Student gender and final grade<a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we are looking at a true dichotomy sex (male vs female) and the association with final <span class="math inline">\(G3\)</span> grade. We need to recode the variable into a binary variable of <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span> with <span class="math inline">\(1\)</span> being <span class="math inline">\(Male\)</span> and <span class="math inline">\(0\)</span> being <span class="math inline">\(Female\)</span>.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="chi-square-correlation.html#cb54-1" tabindex="-1"></a>student<span class="sc">$</span>sexrecoded<span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>sex<span class="sc">==</span><span class="st">&quot;M&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb54-2"><a href="chi-square-correlation.html#cb54-2" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>sexrecoded)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="chi-square-correlation.html#cb100-1" tabindex="-1"></a>student<span class="sc">$</span>sexrecoded<span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>sex<span class="sc">==</span><span class="st">&quot;M&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb100-2"><a href="chi-square-correlation.html#cb100-2" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>sexrecoded)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1364,8 +1380,8 @@ r +/- .50
 ## 0.1034556</code></pre>
 </div>
 </div>
-<div id="biserial-correlation" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biserial Correlation<a href="chi-square-correlation.html#biserial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="biserial-correlation" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Biserial Correlation<a href="chi-square-correlation.html#biserial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><strong>Biserial correlation coefficient</strong> – appropriate in exactly the same situation where the point-biserial correlation would be used; one continuous variable and one dichotomous variable.
 <br></li>
@@ -1373,12 +1389,12 @@ r +/- .50
 <li>appropriate when the dichotomous variable is not a true dichotomy e.g. pass/fail</li>
 </ul></li>
 </ul>
-<div id="biserial-correaltion-family-educational-support-and-final-grade" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Biserial Correaltion: Family educational support and final grade<a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="biserial-correaltion-family-educational-support-and-final-grade" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Biserial Correaltion: Family educational support and final grade<a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we can look at whether there is an association between a students family support and their final grade. Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="chi-square-correlation.html#cb56-1" tabindex="-1"></a><span class="do">###Recode the variable into a binary variable</span></span>
-<span id="cb56-2"><a href="chi-square-correlation.html#cb56-2" tabindex="-1"></a>student<span class="sc">$</span>familysuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>famsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb56-3"><a href="chi-square-correlation.html#cb56-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>familysuprecoded)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="chi-square-correlation.html#cb102-1" tabindex="-1"></a><span class="do">###Recode the variable into a binary variable</span></span>
+<span id="cb102-2"><a href="chi-square-correlation.html#cb102-2" tabindex="-1"></a>student<span class="sc">$</span>familysuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>famsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb102-3"><a href="chi-square-correlation.html#cb102-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>familysuprecoded)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1391,13 +1407,13 @@ r +/- .50
 ##         cor 
 ## -0.03915715</code></pre>
 </div>
-<div id="biserial-correaltion-extra-educational-support-and-final-grade" class="section level3 hasAnchor" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> Biserial Correaltion: Extra educational support and final grade<a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="biserial-correaltion-extra-educational-support-and-final-grade" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Biserial Correaltion: Extra educational support and final grade<a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we can look at if there is an association between <span class="math inline">\(extra\;educational\; support\)</span> <span class="math inline">\(schoolsup\)</span> and final grade <span class="math inline">\(G3\)</span>
 + Again we need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="chi-square-correlation.html#cb58-1" tabindex="-1"></a>student<span class="sc">$</span>schoolsuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>schoolsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb58-2"><a href="chi-square-correlation.html#cb58-2" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="chi-square-correlation.html#cb58-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>schoolsuprecoded)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="chi-square-correlation.html#cb104-1" tabindex="-1"></a>student<span class="sc">$</span>schoolsuprecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>schoolsup<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb104-2"><a href="chi-square-correlation.html#cb104-2" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="chi-square-correlation.html#cb104-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>schoolsuprecoded)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1410,13 +1426,13 @@ r +/- .50
 ##         cor 
 ## -0.08278821</code></pre>
 </div>
-<div id="biserial-correaltion-attended-nursery-school-and-final-grade" class="section level3 hasAnchor" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> Biserial Correaltion: Attended nursery school and final grade<a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="biserial-correaltion-attended-nursery-school-and-final-grade" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Biserial Correaltion: Attended nursery school and final grade<a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we can look at if there is an association between those who attended nursery school <span class="math inline">\(nursery\)</span> and final grade <span class="math inline">\(G3\)</span>
 + We need to re-code the variable so it is binary e.g. <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="chi-square-correlation.html#cb60-1" tabindex="-1"></a>student<span class="sc">$</span>nurseryrecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>nursery<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb60-2"><a href="chi-square-correlation.html#cb60-2" tabindex="-1"></a></span>
-<span id="cb60-3"><a href="chi-square-correlation.html#cb60-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>nurseryrecoded)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="chi-square-correlation.html#cb106-1" tabindex="-1"></a>student<span class="sc">$</span>nurseryrecoded <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(student<span class="sc">$</span>nursery<span class="sc">==</span><span class="st">&quot;yes&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb106-2"><a href="chi-square-correlation.html#cb106-2" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="chi-square-correlation.html#cb106-3" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>G3,student<span class="sc">$</span>nurseryrecoded)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -1430,13 +1446,13 @@ r +/- .50
 ## 0.0515679</code></pre>
 </div>
 </div>
-<div id="spearman-correlation" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Spearman Correlation<a href="chi-square-correlation.html#spearman-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="spearman-correlation" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Spearman Correlation<a href="chi-square-correlation.html#spearman-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Spearman correlation coefficient for ranked data (Spearman’s Rho or <span class="math inline">\(r_s\)</span>) – displays the correlation between two variables whose values have been ranked.</p>
 <p>In the student data set we see that studytime and traveltime have been ranked. Therefore we can utilize the Spearman’s Rho <span class="math inline">\(r_s\)</span> to see the association between these variables and final grade <span class="math inline">\(G3\)</span>.</p>
-<div id="spearman-correlation-study-time-and-final-grade" class="section level3 hasAnchor" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Spearman Correlation: Study time and final grade<a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="chi-square-correlation.html#cb62-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>studytime,student<span class="sc">$</span>traveltime,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div id="spearman-correlation-study-time-and-final-grade" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Spearman Correlation: Study time and final grade<a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="chi-square-correlation.html#cb108-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>studytime,student<span class="sc">$</span>traveltime,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in cor.test.default(student$studytime, student$traveltime, method =
 ## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
 <pre><code>## 
@@ -1449,9 +1465,9 @@ r +/- .50
 ##        rho 
 ## -0.1059694</code></pre>
 </div>
-<div id="spearman-correlation-travel-time-and-final-grade" class="section level3 hasAnchor" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> Spearman Correlation: Travel time and final grade<a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="chi-square-correlation.html#cb65-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>traveltime,student<span class="sc">$</span>G3,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div id="spearman-correlation-travel-time-and-final-grade" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Spearman Correlation: Travel time and final grade<a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="chi-square-correlation.html#cb111-1" tabindex="-1"></a><span class="fu">cor.test</span>(student<span class="sc">$</span>traveltime,student<span class="sc">$</span>G3,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in cor.test.default(student$traveltime, student$G3, method =
 ## &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
 <pre><code>## 
@@ -1465,8 +1481,8 @@ r +/- .50
 ## -0.1205304</code></pre>
 </div>
 </div>
-<div id="phi---measurement-of-the-degree-of-association-between-two-binary-variables" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Phi - measurement of the degree of association between two binary variables<a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="phi---measurement-of-the-degree-of-association-between-two-binary-variables" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Phi - measurement of the degree of association between two binary variables<a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Assumptions for phi <span class="math inline">\(\phi\)</span> coefficient:</p>
 <ul>
 <li><p>Phi coefficient (<span class="math inline">\(\phi\)</span>)– appropriate when both variables are <em>true dichotomous</em> variables</p></li>
@@ -1636,31 +1652,31 @@ tr {
 <p><br></p>
 <p><span class="math display">\[Phi\;equation:
 \phi = \frac{A \cdot D\;-\;B \cdot C}{\sqrt{(A+B)(C+D)(A+C)(B+D)} }\]</span></p>
-<div id="phi-coefficient" class="section level3 hasAnchor" number="2.6.1">
-<h3><span class="header-section-number">2.6.1</span> Phi coefficient:<a href="chi-square-correlation.html#phi-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="phi-coefficient" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Phi coefficient:<a href="chi-square-correlation.html#phi-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First we will want to create a contingency table for the data we want to investigate. We can do this in R simply by utilizing the <span class="math inline">\(table\)</span> function and specifying two columns of either <span class="math inline">\(dichotomous\)</span> or <span class="math inline">\(binary\)</span> variables.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="chi-square-correlation.html#cb68-1" tabindex="-1"></a>gender_internet <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>internet)</span>
-<span id="cb68-2"><a href="chi-square-correlation.html#cb68-2" tabindex="-1"></a><span class="fu">print</span>(gender_internet)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="chi-square-correlation.html#cb114-1" tabindex="-1"></a>gender_internet <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>internet)</span>
+<span id="cb114-2"><a href="chi-square-correlation.html#cb114-2" tabindex="-1"></a><span class="fu">print</span>(gender_internet)</span></code></pre></div>
 <pre><code>##    
 ##      no yes
 ##   F  38 170
 ##   M  28 159</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="chi-square-correlation.html#cb70-1" tabindex="-1"></a>gender_address <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>address)</span>
-<span id="cb70-2"><a href="chi-square-correlation.html#cb70-2" tabindex="-1"></a><span class="fu">print</span>(gender_address)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="chi-square-correlation.html#cb116-1" tabindex="-1"></a>gender_address <span class="ot">&lt;-</span> <span class="fu">table</span>(student<span class="sc">$</span>sex,student<span class="sc">$</span>address)</span>
+<span id="cb116-2"><a href="chi-square-correlation.html#cb116-2" tabindex="-1"></a><span class="fu">print</span>(gender_address)</span></code></pre></div>
 <pre><code>##    
 ##       R   U
 ##   F  44 164
 ##   M  44 143</code></pre>
 <p>How to calculate a <span class="math inline">\(phi\)</span> coefficient manually for <span class="math inline">\(gender\)</span> and <span class="math inline">\(internet\)</span></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="chi-square-correlation.html#cb72-1" tabindex="-1"></a><span class="co"># Φ = (AD-BC) / √(A+B)(C+D)(A+C)(B+D)</span></span>
-<span id="cb72-2"><a href="chi-square-correlation.html#cb72-2" tabindex="-1"></a></span>
-<span id="cb72-3"><a href="chi-square-correlation.html#cb72-3" tabindex="-1"></a>phi_coefficient <span class="ot">=</span> ((<span class="dv">38</span><span class="sc">*</span><span class="dv">159</span>)<span class="sc">-</span>(<span class="dv">170</span><span class="sc">*</span><span class="dv">28</span>))<span class="sc">/</span><span class="fu">sqrt</span>((<span class="dv">38</span><span class="sc">+</span><span class="dv">170</span>)<span class="sc">*</span>(<span class="dv">28</span><span class="sc">+</span><span class="dv">159</span>)<span class="sc">*</span>(<span class="dv">38</span><span class="sc">+</span><span class="dv">28</span>)<span class="sc">*</span>(<span class="dv">170</span><span class="sc">+</span><span class="dv">159</span>))</span>
-<span id="cb72-4"><a href="chi-square-correlation.html#cb72-4" tabindex="-1"></a><span class="fu">print</span>(phi_coefficient)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="chi-square-correlation.html#cb118-1" tabindex="-1"></a><span class="co"># Φ = (AD-BC) / √(A+B)(C+D)(A+C)(B+D)</span></span>
+<span id="cb118-2"><a href="chi-square-correlation.html#cb118-2" tabindex="-1"></a></span>
+<span id="cb118-3"><a href="chi-square-correlation.html#cb118-3" tabindex="-1"></a>phi_coefficient <span class="ot">=</span> ((<span class="dv">38</span><span class="sc">*</span><span class="dv">159</span>)<span class="sc">-</span>(<span class="dv">170</span><span class="sc">*</span><span class="dv">28</span>))<span class="sc">/</span><span class="fu">sqrt</span>((<span class="dv">38</span><span class="sc">+</span><span class="dv">170</span>)<span class="sc">*</span>(<span class="dv">28</span><span class="sc">+</span><span class="dv">159</span>)<span class="sc">*</span>(<span class="dv">38</span><span class="sc">+</span><span class="dv">28</span>)<span class="sc">*</span>(<span class="dv">170</span><span class="sc">+</span><span class="dv">159</span>))</span>
+<span id="cb118-4"><a href="chi-square-correlation.html#cb118-4" tabindex="-1"></a><span class="fu">print</span>(phi_coefficient)</span></code></pre></div>
 <pre><code>## [1] 0.0441129</code></pre>
 <p>We can measure the <span class="math inline">\(Phi\)</span> coefficient similarly as to how we measure a Pearson’s <span class="math inline">\(r\)</span> correlation. The closer to <span class="math inline">\(0\)</span> there is no relationship. The closer to <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span> the stronger the relationship between the two dichotomous variables.</p>
 <p>Here we can utilize the <span class="math inline">\(psych\)</span> package to perform a <span class="math inline">\(Phi\)</span> <span class="math inline">\(\phi\)</span> coefficient analysis.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="chi-square-correlation.html#cb74-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb74-2"><a href="chi-square-correlation.html#cb74-2" tabindex="-1"></a><span class="fu">phi</span>(gender_internet,<span class="at">digits =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="chi-square-correlation.html#cb120-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb120-2"><a href="chi-square-correlation.html#cb120-2" tabindex="-1"></a><span class="fu">phi</span>(gender_internet,<span class="at">digits =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0441129</code></pre>
 
 </div>

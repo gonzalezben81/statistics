@@ -1,6 +1,6 @@
 # Chi-square & Correlation
 
-In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the $Phi$ correlation can be used to test an association between two categorical variables. Pearson's $r$ allows us to see if there is an association between two interval variables. While Chi-square allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one's mentioned here. 
+In this chapter we will discuss chi-square and correlation. Both are statistical tests that test an association or relationship between variables. These tests allow us to see if a relationship exists between nominal, ordinal, and interval variables. Certain statistical test such as the $Phi$ correlation can be used to test an association between two categorical variables. Pearson's $r$ allows us to see if there is an association between two interval variables. While Chi-square $X^2$ allows us to see is there is an association between nominal variables. There are several other correlation tests that can be run in addition to the one's mentioned above. 
 
 ---
 
@@ -61,6 +61,8 @@ student <- student[,-c(1)]
 
 
 ## Steven's four scales of measurement {-}
+
+
 
 <br>
 
@@ -200,7 +202,7 @@ print(paste('There are ',nrow(student),' observations in our student data set.',
 ```
 
 
-## Chi-square
+## Chi-Square
 
 
 ### Chi-Square Formula {-}
@@ -219,7 +221,7 @@ E_{i}=\;expected\;value
 \sum\;=\;sum
 $$
 
-### Chi-square Assumptions {-}
+### Chi-Square Assumptions {-}
 
 + Chi-Square test – statistical test used to compare observed results with expected results. This is a test of association.
 <br>

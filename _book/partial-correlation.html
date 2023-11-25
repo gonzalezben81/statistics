@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Partial Correlation | Statistics</title>
+  <title>Chapter 4 Partial Correlation | Statistics</title>
   <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Partial Correlation | Statistics" />
+  <meta property="og:title" content="Chapter 4 Partial Correlation | Statistics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="github-repo" content="gonzalezben81/statistics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Partial Correlation | Statistics" />
+  <meta name="twitter:title" content="Chapter 4 Partial Correlation | Statistics" />
   
   <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Ben Gonzalez" />
 
 
-<meta name="date" content="2023-11-04" />
+<meta name="date" content="2023-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,109 +152,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="example-data-to-follow-along-with.html"><a href="example-data-to-follow-along-with.html"><i class="fa fa-check"></i>Example data to follow along with</a></li>
-<li class="chapter" data-level="1" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>1</b> Big Three Results</a>
+<li class="chapter" data-level="1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html"><i class="fa fa-check"></i><b>1</b> Measures of Central Tendency - Mean, Median, Mode</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i><b>1.1</b> Sample Standard Deviation Formula</a>
+<li class="chapter" data-level="1.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mean"><i class="fa fa-check"></i><b>1.1</b> Mean</a></li>
+<li class="chapter" data-level="1.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median"><i class="fa fa-check"></i><b>1.2</b> Median</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i><b>1.1.1</b> Standard Error Formula</a></li>
-<li class="chapter" data-level="1.1.2" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the standard error of a sample</a></li>
+<li class="chapter" data-level="1.2.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-odd"><i class="fa fa-check"></i><b>1.2.1</b> Median if number of observations is Odd</a></li>
+<li class="chapter" data-level="1.2.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-even"><i class="fa fa-check"></i><b>1.2.2</b> Median if number of observations is Even</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>1.2</b> Computing Confidence Intervals</a>
+<li class="chapter" data-level="1.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mode"><i class="fa fa-check"></i><b>1.3</b> Mode</a></li>
+<li class="chapter" data-level="1.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>1.2.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+<li class="chapter" data-level="1.4.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#range"><i class="fa fa-check"></i><b>1.4.1</b> Range</a></li>
+<li class="chapter" data-level="1.4.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#interquartile-range"><i class="fa fa-check"></i><b>1.4.2</b> Interquartile Range</a></li>
+<li class="chapter" data-level="1.4.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#sum-of-squares"><i class="fa fa-check"></i><b>1.4.3</b> Sum of Squares</a></li>
+<li class="chapter" data-level="1.4.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#variance"><i class="fa fa-check"></i><b>1.4.4</b> Variance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>1.3</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-square &amp; Correlation</a>
+<li class="chapter" data-level="2" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>2</b> Big Three Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i>Sample Standard Deviation Formula</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i>Standard Error Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i>How to calculate the standard error of a sample</a></li>
+</ul></li>
+<li class="chapter" data-level="2.1" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>2.1</b> Computing Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>2.1.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>2.2</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>3</b> Chi-square &amp; Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i>Steven’s four scales of measurement</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#student-peformance-data-set-information"><i class="fa fa-check"></i>Student Peformance Data Set Information</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i>Look at the structure of our data</a></li>
-<li class="chapter" data-level="2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>2.1</b> Chi-square</a>
+<li class="chapter" data-level="3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>3.1</b> Chi-Square</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-formula"><i class="fa fa-check"></i>Chi-Square Formula</a></li>
-<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
-<li class="chapter" data-level="2.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.1.1</b> Chi-Square Test of Association</a></li>
-<li class="chapter" data-level="2.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>2.1.2</b> Observed</a></li>
-<li class="chapter" data-level="2.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>2.1.3</b> Expected</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-Square Assumptions</a></li>
+<li class="chapter" data-level="3.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>3.1.1</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>3.1.2</b> Observed</a></li>
+<li class="chapter" data-level="3.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>3.1.3</b> Expected</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>2.2</b> Correlation</a>
+<li class="chapter" data-level="3.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>3.2</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-assumptions"><i class="fa fa-check"></i>Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-formula"><i class="fa fa-check"></i>Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#index-of-effect-size-table"><i class="fa fa-check"></i>Index of Effect Size Table</a></li>
-<li class="chapter" data-level="2.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>2.2.1</b> Correlation between student absences and first period grade</a></li>
-<li class="chapter" data-level="2.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>2.2.2</b> Correlation between student absences and final grade</a></li>
+<li class="chapter" data-level="3.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between student absences and first period grade</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between student absences and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.3</b> Point-biserial Correlation Assumptions</a>
+<li class="chapter" data-level="3.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>3.3</b> Point-biserial Correlation Assumptions</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>2.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
+<li class="chapter" data-level="3.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>3.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>2.4</b> Biserial Correlation</a>
+<li class="chapter" data-level="3.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>3.4</b> Biserial Correlation</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>2.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
+<li class="chapter" data-level="3.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>3.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5</b> Spearman Correlation</a>
+<li class="chapter" data-level="3.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>3.5</b> Spearman Correlation</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.1</b> Spearman Correlation: Study time and final grade</a></li>
-<li class="chapter" data-level="2.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
+<li class="chapter" data-level="3.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.1</b> Spearman Correlation: Study time and final grade</a></li>
+<li class="chapter" data-level="3.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.6</b> Phi - measurement of the degree of association between two binary variables</a>
+<li class="chapter" data-level="3.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>3.6</b> Phi - measurement of the degree of association between two binary variables</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>2.6.1</b> Phi coefficient:</a></li>
+<li class="chapter" data-level="3.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>3.6.1</b> Phi coefficient:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a>
+<li class="chapter" data-level="4" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>4</b> Partial Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-assumptions"><i class="fa fa-check"></i>Partial Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-formula"><i class="fa fa-check"></i>Partial Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-overview"><i class="fa fa-check"></i>Partial Correlation Overview</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i>Take a look at the structure of the mtcars data set</a></li>
-<li class="chapter" data-level="3.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.1</b> Description of the variables in the mtcars data set</a></li>
-<li class="chapter" data-level="3.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>3.2</b> Partial Correlation Calculation</a>
+<li class="chapter" data-level="4.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>4.1</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="4.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>4.2</b> Partial Correlation Calculation</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
-<li class="chapter" data-level="3.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
-<li class="chapter" data-level="3.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>3.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
-<li class="chapter" data-level="3.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.2.4</b> Partial Correlation: Putting it altogether</a></li>
-<li class="chapter" data-level="3.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.2.5</b> Calculate the numerator of the formula</a></li>
-<li class="chapter" data-level="3.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.2.6</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="4.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>4.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="4.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>4.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="4.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>4.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="4.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>4.2.4</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="4.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>4.2.5</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="4.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>4.2.6</b> Calculate the denominator of the formula</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.3</b> Partial Correlation utilizing the ppcor package</a></li>
-<li class="chapter" data-level="3.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>3.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
-<li class="chapter" data-level="3.5" data-path="partial-correlation.html"><a href="partial-correlation.html#references"><i class="fa fa-check"></i><b>3.5</b> References</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>4.3</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>4.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a>
+<li class="chapter" data-level="5" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>5</b> Bivariate Regression</a>
 <ul>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-terminology"><i class="fa fa-check"></i>Bivariate Regression Terminology</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#regression-generic-analysis-model"><i class="fa fa-check"></i>Regression: Generic Analysis Model</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i>Assumptions of Bivariate Regression</a></li>
-<li class="chapter" data-level="4.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.1</b> Bivariate Regression Formula</a></li>
-<li class="chapter" data-level="4.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.2</b> Scatterplot of the data set</a></li>
-<li class="chapter" data-level="4.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>4.3</b> Calculating the Residual</a></li>
-<li class="chapter" data-level="4.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.4</b> Calculate the mean of the Y Values</a></li>
-<li class="chapter" data-level="4.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>5.1</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>5.2</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="5.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>5.3</b> Calculating the Residual</a></li>
+<li class="chapter" data-level="5.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>5.4</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="5.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>5.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
-<li class="chapter" data-level="4.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>4.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+<li class="chapter" data-level="5.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>5.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>5.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
-<li class="chapter" data-level="4.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.7</b> Utilize the lm function in R to automate our work</a>
+<li class="chapter" data-level="5.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>5.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>5.7</b> Utilize the lm function in R to automate our work</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>4.7.1</b> Print the residuals of the model</a></li>
-<li class="chapter" data-level="4.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>4.7.2</b> Print the coefficients of the model</a></li>
-<li class="chapter" data-level="4.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>4.7.3</b> Putting it altogether</a></li>
+<li class="chapter" data-level="5.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>5.7.1</b> Print the residuals of the model</a></li>
+<li class="chapter" data-level="5.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>5.7.2</b> Print the coefficients of the model</a></li>
+<li class="chapter" data-level="5.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>5.7.3</b> Putting it altogether</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>4.8</b> Plot our residuals and a best fitting line</a></li>
-<li class="chapter" data-level="4.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>5.8</b> Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="5.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>5.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>4.9.1</b> Correlation coefficient of hp and mpg</a></li>
-<li class="chapter" data-level="4.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.9.2</b> Squaring the correlation coefficient</a></li>
+<li class="chapter" data-level="5.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>5.9.1</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="5.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>5.9.2</b> Squaring the correlation coefficient</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -275,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="partial-correlation" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Partial Correlation<a href="partial-correlation.html#partial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="partial-correlation" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Partial Correlation<a href="partial-correlation.html#partial-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <hr />
 <div id="partial-correlation-assumptions" class="section level2 unnumbered hasAnchor">
 <h2>Partial Correlation Assumptions<a href="partial-correlation.html#partial-correlation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -301,8 +317,8 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 </ul>
 <hr />
 <center>
-<div id="htmlwidget-cbd1fae6cb11a97310a8" style="width:35%;height:35%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cbd1fae6cb11a97310a8">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"X (hp)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Y (mpg)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Z (cyl)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"3\"->\"1\" \n  \"3\"->\"2\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-975ab5c2aad04b42864a" style="width:35%;height:35%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-975ab5c2aad04b42864a">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"X (hp)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Y (mpg)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Z (cyl)\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"3\"->\"1\" \n  \"3\"->\"2\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </center>
 <hr />
 </div>
@@ -321,8 +337,8 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
 ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
 </div>
-<div id="description-of-the-variables-in-the-mtcars-data-set" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Description of the variables in the mtcars data set<a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="description-of-the-variables-in-the-mtcars-data-set" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Description of the variables in the mtcars data set<a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A data frame with 32 observations on 11 (numeric) variables.</p>
 <ul>
 <li>Column 1 = mpg - Miles/(US) gallon</li>
@@ -338,12 +354,12 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 <li>Column 11 = carb - Number of carburetors</li>
 </ul>
 </div>
-<div id="partial-correlation-calculation" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Partial Correlation Calculation<a href="partial-correlation.html#partial-correlation-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="correlation-between-predictor-and-criterion-or-x-and-y" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Correlation between Predictor and Criterion or X and Y<a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="partial-correlation-calculation" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Partial Correlation Calculation<a href="partial-correlation.html#partial-correlation-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="correlation-between-predictor-and-criterion-or-x-and-y" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Correlation between Predictor and Criterion or X and Y<a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we find the correlation between our mpg and hp</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="partial-correlation.html#cb77-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>hp)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="partial-correlation.html#cb123-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>hp)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -356,10 +372,10 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 ##        cor 
 ## -0.7761684</code></pre>
 </div>
-<div id="correlation-between-predictor-and-control-or-x-and-z" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Correlation between Predictor and Control or X and Z<a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="correlation-between-predictor-and-control-or-x-and-z" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Correlation between Predictor and Control or X and Z<a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we find the correlation between our hp and cyl</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="partial-correlation.html#cb79-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="partial-correlation.html#cb125-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -372,10 +388,10 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 ##       cor 
 ## 0.8324475</code></pre>
 </div>
-<div id="correlation-between-criterion-and-control-or-y-and-z" class="section level3 hasAnchor" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Correlation between Criterion and Control or Y and Z<a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="correlation-between-criterion-and-control-or-y-and-z" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Correlation between Criterion and Control or Y and Z<a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we find the correlation between our mpg and cyl</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="partial-correlation.html#cb81-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="partial-correlation.html#cb127-1" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -388,52 +404,52 @@ r_{xy,z} = \frac{r_{xy} - r_{xz}  \cdot r_{yz}}{\sqrt{(1-r_{xz}^2) \cdot (1 - r_
 ##       cor 
 ## -0.852162</code></pre>
 </div>
-<div id="partial-correlation-putting-it-altogether" class="section level3 hasAnchor" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> Partial Correlation: Putting it altogether<a href="partial-correlation.html#partial-correlation-putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="partial-correlation.html#cb83-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
-<span id="cb83-2"><a href="partial-correlation.html#cb83-2" tabindex="-1"></a><span class="do">###X is hp</span></span>
-<span id="cb83-3"><a href="partial-correlation.html#cb83-3" tabindex="-1"></a><span class="do">###Y is mpg</span></span>
-<span id="cb83-4"><a href="partial-correlation.html#cb83-4" tabindex="-1"></a><span class="do">###Z is cyl</span></span>
-<span id="cb83-5"><a href="partial-correlation.html#cb83-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>hp)</span>
-<span id="cb83-6"><a href="partial-correlation.html#cb83-6" tabindex="-1"></a>xz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb83-7"><a href="partial-correlation.html#cb83-7" tabindex="-1"></a>yz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb83-8"><a href="partial-correlation.html#cb83-8" tabindex="-1"></a></span>
-<span id="cb83-9"><a href="partial-correlation.html#cb83-9" tabindex="-1"></a><span class="fu">print</span>(xy)</span></code></pre></div>
+<div id="partial-correlation-putting-it-altogether" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Partial Correlation: Putting it altogether<a href="partial-correlation.html#partial-correlation-putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="partial-correlation.html#cb129-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
+<span id="cb129-2"><a href="partial-correlation.html#cb129-2" tabindex="-1"></a><span class="do">###X is hp</span></span>
+<span id="cb129-3"><a href="partial-correlation.html#cb129-3" tabindex="-1"></a><span class="do">###Y is mpg</span></span>
+<span id="cb129-4"><a href="partial-correlation.html#cb129-4" tabindex="-1"></a><span class="do">###Z is cyl</span></span>
+<span id="cb129-5"><a href="partial-correlation.html#cb129-5" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb129-6"><a href="partial-correlation.html#cb129-6" tabindex="-1"></a>xz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb129-7"><a href="partial-correlation.html#cb129-7" tabindex="-1"></a>yz <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb129-8"><a href="partial-correlation.html#cb129-8" tabindex="-1"></a></span>
+<span id="cb129-9"><a href="partial-correlation.html#cb129-9" tabindex="-1"></a><span class="fu">print</span>(xy)</span></code></pre></div>
 <pre><code>## [1] -0.7761684</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="partial-correlation.html#cb85-1" tabindex="-1"></a><span class="fu">print</span>(xz)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="partial-correlation.html#cb131-1" tabindex="-1"></a><span class="fu">print</span>(xz)</span></code></pre></div>
 <pre><code>## [1] 0.8324475</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="partial-correlation.html#cb87-1" tabindex="-1"></a><span class="fu">print</span>(yz)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="partial-correlation.html#cb133-1" tabindex="-1"></a><span class="fu">print</span>(yz)</span></code></pre></div>
 <pre><code>## [1] -0.852162</code></pre>
 </div>
-<div id="calculate-the-numerator-of-the-formula" class="section level3 hasAnchor" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> Calculate the numerator of the formula<a href="partial-correlation.html#calculate-the-numerator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calculate-the-numerator-of-the-formula" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Calculate the numerator of the formula<a href="partial-correlation.html#calculate-the-numerator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\large
 r_{xy} - r_{xz}  \cdot r_{yz}
 \]</span></p>
 <p><span class="math display">\[\large
 -0.7761684 - (0.8324475  \cdot -0.852162)
 \]</span></p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="partial-correlation.html#cb89-1" tabindex="-1"></a><span class="do">###Top of the Formula</span></span>
-<span id="cb89-2"><a href="partial-correlation.html#cb89-2" tabindex="-1"></a>top_of_formula<span class="ot">&lt;-</span> xy <span class="sc">-</span> (xz<span class="sc">*</span>yz)</span>
-<span id="cb89-3"><a href="partial-correlation.html#cb89-3" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="partial-correlation.html#cb135-1" tabindex="-1"></a><span class="do">###Top of the Formula</span></span>
+<span id="cb135-2"><a href="partial-correlation.html#cb135-2" tabindex="-1"></a>top_of_formula<span class="ot">&lt;-</span> xy <span class="sc">-</span> (xz<span class="sc">*</span>yz)</span>
+<span id="cb135-3"><a href="partial-correlation.html#cb135-3" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
 <pre><code>## [1] -0.06678832</code></pre>
 </div>
-<div id="calculate-the-denominator-of-the-formula" class="section level3 hasAnchor" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> Calculate the denominator of the formula<a href="partial-correlation.html#calculate-the-denominator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calculate-the-denominator-of-the-formula" class="section level3 hasAnchor" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Calculate the denominator of the formula<a href="partial-correlation.html#calculate-the-denominator-of-the-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\large
 \sqrt{(1-r_{xz}^2) \cdot (1 - r_{yz}^2)}
 \]</span></p>
 <p><span class="math display">\[\large
 \sqrt{(1-0.8324475^2) \cdot (1 - (-0.852162)^2)}
 \]</span></p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="partial-correlation.html#cb91-1" tabindex="-1"></a><span class="do">###Bottom of formula</span></span>
-<span id="cb91-2"><a href="partial-correlation.html#cb91-2" tabindex="-1"></a>bottom_of_formula<span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">-</span>(xz<span class="sc">^</span><span class="dv">2</span>))<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>(yz<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb91-3"><a href="partial-correlation.html#cb91-3" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="partial-correlation.html#cb137-1" tabindex="-1"></a><span class="do">###Bottom of formula</span></span>
+<span id="cb137-2"><a href="partial-correlation.html#cb137-2" tabindex="-1"></a>bottom_of_formula<span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">-</span>(xz<span class="sc">^</span><span class="dv">2</span>))<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>(yz<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb137-3"><a href="partial-correlation.html#cb137-3" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
 <pre><code>## [1] 0.2899505</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="partial-correlation.html#cb93-1" tabindex="-1"></a>final_answer<span class="ot">=</span> top_of_formula<span class="sc">/</span>bottom_of_formula</span>
-<span id="cb93-2"><a href="partial-correlation.html#cb93-2" tabindex="-1"></a><span class="fu">print</span>(final_answer)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="partial-correlation.html#cb139-1" tabindex="-1"></a>final_answer<span class="ot">=</span> top_of_formula<span class="sc">/</span>bottom_of_formula</span>
+<span id="cb139-2"><a href="partial-correlation.html#cb139-2" tabindex="-1"></a><span class="fu">print</span>(final_answer)</span></code></pre></div>
 <pre><code>## [1] -0.2303439</code></pre>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="partial-correlation.html#cb95-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(final_answer,<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="partial-correlation.html#cb141-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(final_answer,<span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] -0.23</code></pre>
 <p><b>Note: Round up at the very end of the calculation.</b></p>
 <p><span class="math display">\[\large
@@ -444,36 +460,30 @@ r = -0.230439
 \]</span></p>
 </div>
 </div>
-<div id="partial-correlation-utilizing-the-ppcor-package" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Partial Correlation utilizing the ppcor package<a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="partial-correlation-utilizing-the-ppcor-package" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Partial Correlation utilizing the ppcor package<a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>First order partial coefficient</strong> – is a correlation between two variables with just one additional variable partialed out of both.</p>
 <p>Here we can utilize the ppcor package as an easy button method to calculate the partial correlation. You will need to install the ppcor package via CRAN: <a href="https://cran.r-project.org/web/packages/ppcor/index.html">ppcor package</a></p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="partial-correlation.html#cb97-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
-<span id="cb97-2"><a href="partial-correlation.html#cb97-2" tabindex="-1"></a><span class="do">##Load the ppcor library</span></span>
-<span id="cb97-3"><a href="partial-correlation.html#cb97-3" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="partial-correlation.html#cb143-1" tabindex="-1"></a><span class="do">###Partial Correlation when controlling for another variable</span></span>
+<span id="cb143-2"><a href="partial-correlation.html#cb143-2" tabindex="-1"></a><span class="do">##Load the ppcor library</span></span>
+<span id="cb143-3"><a href="partial-correlation.html#cb143-3" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code></pre></div>
 <pre><code>## Loading required package: MASS</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;MASS&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:
 ## 
 ##     select</code></pre>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="partial-correlation.html#cb101-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders in the mtcars dataset</span></span>
-<span id="cb101-2"><a href="partial-correlation.html#cb101-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="partial-correlation.html#cb147-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders in the mtcars dataset</span></span>
+<span id="cb147-2"><a href="partial-correlation.html#cb147-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>)])</span></code></pre></div>
 <pre><code>##     estimate   p.value statistic  n gp  Method
 ## 1 -0.2303439 0.2125285 -1.274718 32  1 pearson</code></pre>
 </div>
-<div id="higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.<a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="partial-correlation.html#cb103-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders,displacement in the mtcars dataset</span></span>
-<span id="cb103-2"><a href="partial-correlation.html#cb103-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>,<span class="st">&quot;disp&quot;</span>)])</span></code></pre></div>
+<div id="higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.<a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="partial-correlation.html#cb149-1" tabindex="-1"></a><span class="do">###ppcor function controlling for cylinders,displacement in the mtcars dataset</span></span>
+<span id="cb149-2"><a href="partial-correlation.html#cb149-2" tabindex="-1"></a>ppcor<span class="sc">::</span><span class="fu">pcor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp, mtcars[, <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>,<span class="st">&quot;disp&quot;</span>)])</span></code></pre></div>
 <pre><code>##     estimate   p.value statistic  n gp  Method
 ## 1 -0.1860437 0.3249519 -1.001943 32  2 pearson</code></pre>
-</div>
-<div id="references" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> References<a href="partial-correlation.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hatcher, L. (2013). <em>Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.</em></p>
-<p>Henderson and Velleman (1981), <em>Building multiple regression models interactively.</em> Biometrics, 37, 391–411.</p>
-<p>Kim S (2015). <em>ppcor: Partial and Semi-Partial (Part) Correlation</em>. R package version 1.1, <a href="https://CRAN.R-project.org/package=ppcor" class="uri">https://CRAN.R-project.org/package=ppcor</a>.</p>
 
 </div>
 </div>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Bivariate Regression | Statistics</title>
+  <title>Chapter 5 Bivariate Regression | Statistics</title>
   <meta name="description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Bivariate Regression | Statistics" />
+  <meta property="og:title" content="Chapter 5 Bivariate Regression | Statistics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   <meta name="github-repo" content="gonzalezben81/statistics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Bivariate Regression | Statistics" />
+  <meta name="twitter:title" content="Chapter 5 Bivariate Regression | Statistics" />
   
   <meta name="twitter:description" content="The following are tutorials and explanations for individuals who are beginners to statistics." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Ben Gonzalez" />
 
 
-<meta name="date" content="2023-11-04" />
+<meta name="date" content="2023-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="partial-correlation.html"/>
-<link rel="next" href="references-1.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -152,109 +152,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="example-data-to-follow-along-with.html"><a href="example-data-to-follow-along-with.html"><i class="fa fa-check"></i>Example data to follow along with</a></li>
-<li class="chapter" data-level="1" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>1</b> Big Three Results</a>
+<li class="chapter" data-level="1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html"><i class="fa fa-check"></i><b>1</b> Measures of Central Tendency - Mean, Median, Mode</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i><b>1.1</b> Sample Standard Deviation Formula</a>
+<li class="chapter" data-level="1.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mean"><i class="fa fa-check"></i><b>1.1</b> Mean</a></li>
+<li class="chapter" data-level="1.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median"><i class="fa fa-check"></i><b>1.2</b> Median</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i><b>1.1.1</b> Standard Error Formula</a></li>
-<li class="chapter" data-level="1.1.2" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i><b>1.1.2</b> How to calculate the standard error of a sample</a></li>
+<li class="chapter" data-level="1.2.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-odd"><i class="fa fa-check"></i><b>1.2.1</b> Median if number of observations is Odd</a></li>
+<li class="chapter" data-level="1.2.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#median-if-number-of-observations-is-even"><i class="fa fa-check"></i><b>1.2.2</b> Median if number of observations is Even</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>1.2</b> Computing Confidence Intervals</a>
+<li class="chapter" data-level="1.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#mode"><i class="fa fa-check"></i><b>1.3</b> Mode</a></li>
+<li class="chapter" data-level="1.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>1.2.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+<li class="chapter" data-level="1.4.1" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#range"><i class="fa fa-check"></i><b>1.4.1</b> Range</a></li>
+<li class="chapter" data-level="1.4.2" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#interquartile-range"><i class="fa fa-check"></i><b>1.4.2</b> Interquartile Range</a></li>
+<li class="chapter" data-level="1.4.3" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#sum-of-squares"><i class="fa fa-check"></i><b>1.4.3</b> Sum of Squares</a></li>
+<li class="chapter" data-level="1.4.4" data-path="measures-of-central-tendency---mean-median-mode.html"><a href="measures-of-central-tendency---mean-median-mode.html#variance"><i class="fa fa-check"></i><b>1.4.4</b> Variance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>1.3</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>2</b> Chi-square &amp; Correlation</a>
+<li class="chapter" data-level="2" data-path="big-three-results.html"><a href="big-three-results.html"><i class="fa fa-check"></i><b>2</b> Big Three Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#sample-standard-deviation-formula"><i class="fa fa-check"></i>Sample Standard Deviation Formula</a>
+<ul>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#standard-error-formula"><i class="fa fa-check"></i>Standard Error Formula</a></li>
+<li class="chapter" data-level="" data-path="big-three-results.html"><a href="big-three-results.html#how-to-calculate-the-standard-error-of-a-sample"><i class="fa fa-check"></i>How to calculate the standard error of a sample</a></li>
+</ul></li>
+<li class="chapter" data-level="2.1" data-path="big-three-results.html"><a href="big-three-results.html#computing-confidence-intervals"><i class="fa fa-check"></i><b>2.1</b> Computing Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="big-three-results.html"><a href="big-three-results.html#calculate-lower-and-upper-bound-of-the-c.i.-for-a-sample-mean"><i class="fa fa-check"></i><b>2.1.1</b> Calculate Lower and Upper bound of the C.I. for a Sample Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="big-three-results.html"><a href="big-three-results.html#computing-c.i.-using-the-the-lm-function-in-r"><i class="fa fa-check"></i><b>2.2</b> Computing C.I. using the the <span class="math inline">\(lm()\)</span> function in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html"><i class="fa fa-check"></i><b>3</b> Chi-square &amp; Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#stevens-four-scales-of-measurement"><i class="fa fa-check"></i>Steven’s four scales of measurement</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#student-peformance-data-set-information"><i class="fa fa-check"></i>Student Peformance Data Set Information</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#look-at-the-structure-of-our-data"><i class="fa fa-check"></i>Look at the structure of our data</a></li>
-<li class="chapter" data-level="2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>2.1</b> Chi-square</a>
+<li class="chapter" data-level="3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square"><i class="fa fa-check"></i><b>3.1</b> Chi-Square</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-formula"><i class="fa fa-check"></i>Chi-Square Formula</a></li>
-<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-square Assumptions</a></li>
-<li class="chapter" data-level="2.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>2.1.1</b> Chi-Square Test of Association</a></li>
-<li class="chapter" data-level="2.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>2.1.2</b> Observed</a></li>
-<li class="chapter" data-level="2.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>2.1.3</b> Expected</a></li>
+<li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-assumptions"><i class="fa fa-check"></i>Chi-Square Assumptions</a></li>
+<li class="chapter" data-level="3.1.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>3.1.1</b> Chi-Square Test of Association</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#observed"><i class="fa fa-check"></i><b>3.1.2</b> Observed</a></li>
+<li class="chapter" data-level="3.1.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#expected"><i class="fa fa-check"></i><b>3.1.3</b> Expected</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>2.2</b> Correlation</a>
+<li class="chapter" data-level="3.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation"><i class="fa fa-check"></i><b>3.2</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-assumptions"><i class="fa fa-check"></i>Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-formula"><i class="fa fa-check"></i>Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#index-of-effect-size-table"><i class="fa fa-check"></i>Index of Effect Size Table</a></li>
-<li class="chapter" data-level="2.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>2.2.1</b> Correlation between student absences and first period grade</a></li>
-<li class="chapter" data-level="2.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>2.2.2</b> Correlation between student absences and final grade</a></li>
+<li class="chapter" data-level="3.2.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-first-period-grade"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between student absences and first period grade</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#correlation-between-student-absences-and-final-grade"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between student absences and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>2.3</b> Point-biserial Correlation Assumptions</a>
+<li class="chapter" data-level="3.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-assumptions"><i class="fa fa-check"></i><b>3.3</b> Point-biserial Correlation Assumptions</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>2.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
+<li class="chapter" data-level="3.3.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#point-biserial-correlation-student-gender-and-final-grade"><i class="fa fa-check"></i><b>3.3.1</b> Point-biserial correlation: Student gender and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>2.4</b> Biserial Correlation</a>
+<li class="chapter" data-level="3.4" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correlation"><i class="fa fa-check"></i><b>3.4</b> Biserial Correlation</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>2.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
-<li class="chapter" data-level="2.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>2.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
+<li class="chapter" data-level="3.4.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-family-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.1</b> Biserial Correaltion: Family educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-extra-educational-support-and-final-grade"><i class="fa fa-check"></i><b>3.4.2</b> Biserial Correaltion: Extra educational support and final grade</a></li>
+<li class="chapter" data-level="3.4.3" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#biserial-correaltion-attended-nursery-school-and-final-grade"><i class="fa fa-check"></i><b>3.4.3</b> Biserial Correaltion: Attended nursery school and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5</b> Spearman Correlation</a>
+<li class="chapter" data-level="3.5" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation"><i class="fa fa-check"></i><b>3.5</b> Spearman Correlation</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.1</b> Spearman Correlation: Study time and final grade</a></li>
-<li class="chapter" data-level="2.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>2.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
+<li class="chapter" data-level="3.5.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-study-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.1</b> Spearman Correlation: Study time and final grade</a></li>
+<li class="chapter" data-level="3.5.2" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#spearman-correlation-travel-time-and-final-grade"><i class="fa fa-check"></i><b>3.5.2</b> Spearman Correlation: Travel time and final grade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>2.6</b> Phi - measurement of the degree of association between two binary variables</a>
+<li class="chapter" data-level="3.6" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi---measurement-of-the-degree-of-association-between-two-binary-variables"><i class="fa fa-check"></i><b>3.6</b> Phi - measurement of the degree of association between two binary variables</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>2.6.1</b> Phi coefficient:</a></li>
+<li class="chapter" data-level="3.6.1" data-path="chi-square-correlation.html"><a href="chi-square-correlation.html#phi-coefficient"><i class="fa fa-check"></i><b>3.6.1</b> Phi coefficient:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>3</b> Partial Correlation</a>
+<li class="chapter" data-level="4" data-path="partial-correlation.html"><a href="partial-correlation.html"><i class="fa fa-check"></i><b>4</b> Partial Correlation</a>
 <ul>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-assumptions"><i class="fa fa-check"></i>Partial Correlation Assumptions</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-formula"><i class="fa fa-check"></i>Partial Correlation Formula</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-overview"><i class="fa fa-check"></i>Partial Correlation Overview</a></li>
 <li class="chapter" data-level="" data-path="partial-correlation.html"><a href="partial-correlation.html#take-a-look-at-the-structure-of-the-mtcars-data-set"><i class="fa fa-check"></i>Take a look at the structure of the mtcars data set</a></li>
-<li class="chapter" data-level="3.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>3.1</b> Description of the variables in the mtcars data set</a></li>
-<li class="chapter" data-level="3.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>3.2</b> Partial Correlation Calculation</a>
+<li class="chapter" data-level="4.1" data-path="partial-correlation.html"><a href="partial-correlation.html#description-of-the-variables-in-the-mtcars-data-set"><i class="fa fa-check"></i><b>4.1</b> Description of the variables in the mtcars data set</a></li>
+<li class="chapter" data-level="4.2" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-calculation"><i class="fa fa-check"></i><b>4.2</b> Partial Correlation Calculation</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>3.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
-<li class="chapter" data-level="3.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
-<li class="chapter" data-level="3.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>3.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
-<li class="chapter" data-level="3.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>3.2.4</b> Partial Correlation: Putting it altogether</a></li>
-<li class="chapter" data-level="3.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>3.2.5</b> Calculate the numerator of the formula</a></li>
-<li class="chapter" data-level="3.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>3.2.6</b> Calculate the denominator of the formula</a></li>
+<li class="chapter" data-level="4.2.1" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-criterion-or-x-and-y"><i class="fa fa-check"></i><b>4.2.1</b> Correlation between Predictor and Criterion or X and Y</a></li>
+<li class="chapter" data-level="4.2.2" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-predictor-and-control-or-x-and-z"><i class="fa fa-check"></i><b>4.2.2</b> Correlation between Predictor and Control or X and Z</a></li>
+<li class="chapter" data-level="4.2.3" data-path="partial-correlation.html"><a href="partial-correlation.html#correlation-between-criterion-and-control-or-y-and-z"><i class="fa fa-check"></i><b>4.2.3</b> Correlation between Criterion and Control or Y and Z</a></li>
+<li class="chapter" data-level="4.2.4" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-putting-it-altogether"><i class="fa fa-check"></i><b>4.2.4</b> Partial Correlation: Putting it altogether</a></li>
+<li class="chapter" data-level="4.2.5" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-numerator-of-the-formula"><i class="fa fa-check"></i><b>4.2.5</b> Calculate the numerator of the formula</a></li>
+<li class="chapter" data-level="4.2.6" data-path="partial-correlation.html"><a href="partial-correlation.html#calculate-the-denominator-of-the-formula"><i class="fa fa-check"></i><b>4.2.6</b> Calculate the denominator of the formula</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>3.3</b> Partial Correlation utilizing the ppcor package</a></li>
-<li class="chapter" data-level="3.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>3.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
-<li class="chapter" data-level="3.5" data-path="partial-correlation.html"><a href="partial-correlation.html#references"><i class="fa fa-check"></i><b>3.5</b> References</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-correlation.html"><a href="partial-correlation.html#partial-correlation-utilizing-the-ppcor-package"><i class="fa fa-check"></i><b>4.3</b> Partial Correlation utilizing the ppcor package</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-correlation.html"><a href="partial-correlation.html#higher-order-partial-correlation-is-a-correlation-between-two-variables-with-more-than-one-control-variable-partialed-out-by-both."><i class="fa fa-check"></i><b>4.4</b> Higher order partial correlation – is a correlation between two variables with more than one control variable partialed out by both.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>4</b> Bivariate Regression</a>
+<li class="chapter" data-level="5" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i><b>5</b> Bivariate Regression</a>
 <ul>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-terminology"><i class="fa fa-check"></i>Bivariate Regression Terminology</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#regression-generic-analysis-model"><i class="fa fa-check"></i>Regression: Generic Analysis Model</a></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#assumptions-of-bivariate-regression"><i class="fa fa-check"></i>Assumptions of Bivariate Regression</a></li>
-<li class="chapter" data-level="4.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>4.1</b> Bivariate Regression Formula</a></li>
-<li class="chapter" data-level="4.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>4.2</b> Scatterplot of the data set</a></li>
-<li class="chapter" data-level="4.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>4.3</b> Calculating the Residual</a></li>
-<li class="chapter" data-level="4.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>4.4</b> Calculate the mean of the Y Values</a></li>
-<li class="chapter" data-level="4.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>4.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#bivariate-regression-formula"><i class="fa fa-check"></i><b>5.1</b> Bivariate Regression Formula</a></li>
+<li class="chapter" data-level="5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#scatterplot-of-the-data-set"><i class="fa fa-check"></i><b>5.2</b> Scatterplot of the data set</a></li>
+<li class="chapter" data-level="5.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculating-the-residual"><i class="fa fa-check"></i><b>5.3</b> Calculating the Residual</a></li>
+<li class="chapter" data-level="5.4" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-mean-of-the-y-values"><i class="fa fa-check"></i><b>5.4</b> Calculate the mean of the Y Values</a></li>
+<li class="chapter" data-level="5.5" data-path="bivariate-regression.html"><a href="bivariate-regression.html#coefficient-of-determination-or-r2"><i class="fa fa-check"></i><b>5.5</b> Coefficient of Determination or <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>4.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
-<li class="chapter" data-level="4.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>4.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
+<li class="chapter" data-level="5.5.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr"><i class="fa fa-check"></i><b>5.5.1</b> Calculate the numerator of the formula - Sum Squared Regression (SSR)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst"><i class="fa fa-check"></i><b>5.5.2</b> Calculate the denominator of the formula - Sum Squares Total (SST)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>4.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
-<li class="chapter" data-level="4.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>4.7</b> Utilize the lm function in R to automate our work</a>
+<li class="chapter" data-level="5.6" data-path="bivariate-regression.html"><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj"><i class="fa fa-check"></i><b>5.6</b> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="bivariate-regression.html"><a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work"><i class="fa fa-check"></i><b>5.7</b> Utilize the lm function in R to automate our work</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>4.7.1</b> Print the residuals of the model</a></li>
-<li class="chapter" data-level="4.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>4.7.2</b> Print the coefficients of the model</a></li>
-<li class="chapter" data-level="4.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>4.7.3</b> Putting it altogether</a></li>
+<li class="chapter" data-level="5.7.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-residuals-of-the-model"><i class="fa fa-check"></i><b>5.7.1</b> Print the residuals of the model</a></li>
+<li class="chapter" data-level="5.7.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#print-the-coefficients-of-the-model"><i class="fa fa-check"></i><b>5.7.2</b> Print the coefficients of the model</a></li>
+<li class="chapter" data-level="5.7.3" data-path="bivariate-regression.html"><a href="bivariate-regression.html#putting-it-altogether"><i class="fa fa-check"></i><b>5.7.3</b> Putting it altogether</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>4.8</b> Plot our residuals and a best fitting line</a></li>
-<li class="chapter" data-level="4.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>4.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
+<li class="chapter" data-level="5.8" data-path="bivariate-regression.html"><a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line"><i class="fa fa-check"></i><b>5.8</b> Plot our residuals and a best fitting line</a></li>
+<li class="chapter" data-level="5.9" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>5.9</b> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span></a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>4.9.1</b> Correlation coefficient of hp and mpg</a></li>
-<li class="chapter" data-level="4.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>4.9.2</b> Squaring the correlation coefficient</a></li>
+<li class="chapter" data-level="5.9.1" data-path="bivariate-regression.html"><a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg"><i class="fa fa-check"></i><b>5.9.1</b> Correlation coefficient of hp and mpg</a></li>
+<li class="chapter" data-level="5.9.2" data-path="bivariate-regression.html"><a href="bivariate-regression.html#squaring-the-correlation-coefficient"><i class="fa fa-check"></i><b>5.9.2</b> Squaring the correlation coefficient</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -275,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bivariate-regression" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Bivariate Regression<a href="bivariate-regression.html#bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bivariate-regression" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Bivariate Regression<a href="bivariate-regression.html#bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="bivariate-regression-terminology" class="section level2 unnumbered hasAnchor">
 <h2>Bivariate Regression Terminology<a href="bivariate-regression.html#bivariate-regression-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
@@ -290,8 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Regression: Generic Analysis Model<a href="bivariate-regression.html#regression-generic-analysis-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <center>
-<div id="htmlwidget-0add03387809ed55d2ba" style="width:672px;height:200px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0add03387809ed55d2ba">{"x":{"diagram":"\n  digraph graph2 {\n  \n  graph [layout = dot, rankdir = LR]\n  \n  # node definitions with substituted label text\n  node [shape = square]\n  Predictor [label = \"Predictor (IV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  Criterion [label = \"Criterion (DV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  \n  Predictor -> Criterion\n  }\n  \n  [1]: Interval\n  [2]: Ratio\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0302797ededc7a732538" style="width:672px;height:200px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0302797ededc7a732538">{"x":{"diagram":"\n  digraph graph2 {\n  \n  graph [layout = dot, rankdir = LR]\n  \n  # node definitions with substituted label text\n  node [shape = square]\n  Predictor [label = \"Predictor (IV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  Criterion [label = \"Criterion (DV):\n - Multi Value \n - Interval or Ratio Scale\"]\n  \n  Predictor -> Criterion\n  }\n  \n  [1]: Interval\n  [2]: Ratio\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </center>
 <hr />
 <!-- <center> -->
@@ -308,8 +324,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Bivariate Normality – for any specific score on one of the variables, scores on the other variable should follow a normal distribution.</p></li>
 </ul>
 </div>
-<div id="bivariate-regression-formula" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Bivariate Regression Formula<a href="bivariate-regression.html#bivariate-regression-formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bivariate-regression-formula" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Bivariate Regression Formula<a href="bivariate-regression.html#bivariate-regression-formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we have the formula for the bivariate regression equation.
 The regression equation takes the following form:
 <span class="math display">\[\Large
@@ -332,8 +348,8 @@ Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-
 <!-- \hat{y} = a + \beta(X) -->
 <!-- $$ -->
 </div>
-<div id="scatterplot-of-the-data-set" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Scatterplot of the data set<a href="bivariate-regression.html#scatterplot-of-the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="scatterplot-of-the-data-set" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Scatterplot of the data set<a href="bivariate-regression.html#scatterplot-of-the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we can plot our data to get a good look at the shape of the data set.</p>
 <ul>
 <li><strong>Scatterplot</strong> – a graph that illustrates the nature of the relationship between two quantitative variables.</li>
@@ -342,16 +358,16 @@ Represents\;the\;amount\;of\;change\;in\;Y\;that\;is \;associated\;with\;a\;one-
 </ul>
 <p>We can utilize the following plot function to create a basic scatterplot in R.
 <br></p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="bivariate-regression.html#cb105-1" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
-<span id="cb105-2"><a href="bivariate-regression.html#cb105-2" tabindex="-1"></a><span class="fu">with</span>(<span class="at">data =</span> mtcars,<span class="fu">plot</span>(<span class="at">x =</span> hp,<span class="at">y =</span> mpg,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">main=</span><span class="st">&quot;Mtcars&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="bivariate-regression.html#cb151-1" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb151-2"><a href="bivariate-regression.html#cb151-2" tabindex="-1"></a><span class="fu">with</span>(<span class="at">data =</span> mtcars,<span class="fu">plot</span>(<span class="at">x =</span> hp,<span class="at">y =</span> mpg,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">main=</span><span class="st">&quot;Mtcars&quot;</span>))</span></code></pre></div>
 <p><br></p>
 <pre><code>## The following object is masked from package:ggplot2:
 ## 
 ##     mpg</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
-<div id="calculating-the-residual" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Calculating the Residual<a href="bivariate-regression.html#calculating-the-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculating-the-residual" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Calculating the Residual<a href="bivariate-regression.html#calculating-the-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we compute the residual by taking the actual y value and subtract the predicted y value. The residual for each observation is the difference between the predicted values of y and the actual values of y. Calculating the residual helps us to see if we have overpredicted or underpredicted for <span class="math inline">\(\hat{y}\)</span>.</p>
 <p><span class="math display">\[\Large
 Residual = actual\;y\;value - predicted\;y\;value
@@ -432,18 +448,18 @@ r_{1} = y_{i} - \hat{y_{i}}
 ##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
 ##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
 </div>
-<div id="calculate-the-mean-of-the-y-values" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Calculate the mean of the Y Values<a href="bivariate-regression.html#calculate-the-mean-of-the-y-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculate-the-mean-of-the-y-values" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Calculate the mean of the Y Values<a href="bivariate-regression.html#calculate-the-mean-of-the-y-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we find the mean of our criterion (y) value of mpg.</p>
 <p><span class="math display">\[\Large
 \bar{y} = \frac{\sum{y}}{n}
 \]</span></p>
 <p>We can utilize the <strong><em>mean</em></strong> function to the calculate the mean of mpg (miles per gallon).</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="bivariate-regression.html#cb115-1" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="bivariate-regression.html#cb161-1" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
 <pre><code>## [1] 20.09062</code></pre>
 </div>
-<div id="coefficient-of-determination-or-r2" class="section level2 hasAnchor" number="4.5">
-<h2><span class="header-section-number">4.5</span> Coefficient of Determination or <span class="math inline">\({R^2}\)</span><a href="bivariate-regression.html#coefficient-of-determination-or-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="coefficient-of-determination-or-r2" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Coefficient of Determination or <span class="math inline">\({R^2}\)</span><a href="bivariate-regression.html#coefficient-of-determination-or-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Coefficient of Determination</strong> – indicates the percent of <strong>variance in the criterion</strong> variable <strong>that is accounted for by the predictor</strong> variable.</p>
 <hr />
 <p><span class="math display">\[
@@ -462,24 +478,24 @@ y_{i} = actual\;y\;values
 \sum\;or\;sigma = sum
 \]</span></p>
 <hr />
-<div id="calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="section level3 hasAnchor" number="4.5.1">
-<h3><span class="header-section-number">4.5.1</span> Calculate the numerator of the formula - Sum Squared Regression (SSR)<a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Calculate the numerator of the formula - Sum Squared Regression (SSR)<a href="bivariate-regression.html#calculate-the-numerator-of-the-formula---sum-squared-regression-ssr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[
 \sum(y_{i}\;-\;\hat{y_{i}})^2
 \]</span></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="bivariate-regression.html#cb117-1" tabindex="-1"></a>top_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>(mpg_prediction<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb117-2"><a href="bivariate-regression.html#cb117-2" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="bivariate-regression.html#cb163-1" tabindex="-1"></a>top_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>(mpg_prediction<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb163-2"><a href="bivariate-regression.html#cb163-2" tabindex="-1"></a><span class="fu">print</span>(top_of_formula)</span></code></pre></div>
 <pre><code>## [1] 447.6743</code></pre>
 </div>
-<div id="calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="section level3 hasAnchor" number="4.5.2">
-<h3><span class="header-section-number">4.5.2</span> Calculate the denominator of the formula - Sum Squares Total (SST)<a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Calculate the denominator of the formula - Sum Squares Total (SST)<a href="bivariate-regression.html#calculate-the-denominator-of-the-formula---sum-squares-total-sst" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <hr />
 <p><span class="math display">\[
 \sum(y_{i}\;-\;\overline{y})^2
 \]</span></p>
 <hr />
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="bivariate-regression.html#cb119-1" tabindex="-1"></a>bottom_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>((mtcars<span class="sc">$</span>mpg<span class="sc">-</span><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg))<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb119-2"><a href="bivariate-regression.html#cb119-2" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="bivariate-regression.html#cb165-1" tabindex="-1"></a>bottom_of_formula <span class="ot">&lt;-</span> <span class="fu">sum</span>((mtcars<span class="sc">$</span>mpg<span class="sc">-</span><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb165-2"><a href="bivariate-regression.html#cb165-2" tabindex="-1"></a><span class="fu">print</span>(bottom_of_formula)</span></code></pre></div>
 <pre><code>## [1] 1126.047</code></pre>
 <hr />
 <p><span class="math display">\[
@@ -496,13 +512,15 @@ R^2 = 0.6024
 <hr />
 </div>
 </div>
-<div id="calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="section level2 hasAnchor" number="4.6">
-<h2><span class="header-section-number">4.6</span> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Calculate the Adjusted-R Squared <span class="math inline">\(Adj.R^2\;or\;R^2_{adj}\)</span><a href="bivariate-regression.html#calculate-the-adjusted-r-squared-adj.r2orr2_adj" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <p><span class="math display">\[
 Adj.R^2\;or\;R^2_{adj} = 1 - (1-R^2)\;\cdot\;(n-1)/(n-p-1)
 \\
 Adj.R^2\;or\;R^2_{adj} = 1 - (1-0.6024373)\;\cdot\;(32-1)/(32-1-1)
+\\
+Adj.R^2\;or\;R^2_{adj} = 0.5891852
 \\
 R^2 = coefficient\;of\;determination
 \\
@@ -512,17 +530,17 @@ p=number\;of\;predictors
 \]</span></p>
 <hr />
 <hr />
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="bivariate-regression.html#cb121-1" tabindex="-1"></a>adj.r.squared <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.6024373</span>) <span class="sc">*</span> ((<span class="dv">32</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>(<span class="dv">32-1-1</span>))</span>
-<span id="cb121-2"><a href="bivariate-regression.html#cb121-2" tabindex="-1"></a><span class="fu">print</span>(adj.r.squared)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="bivariate-regression.html#cb167-1" tabindex="-1"></a>adj.r.squared <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.6024373</span>) <span class="sc">*</span> ((<span class="dv">32</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>(<span class="dv">32-1-1</span>))</span>
+<span id="cb167-2"><a href="bivariate-regression.html#cb167-2" tabindex="-1"></a><span class="fu">print</span>(adj.r.squared)</span></code></pre></div>
 <pre><code>## [1] 0.5891852</code></pre>
 </div>
-<div id="utilize-the-lm-function-in-r-to-automate-our-work" class="section level2 hasAnchor" number="4.7">
-<h2><span class="header-section-number">4.7</span> Utilize the lm function in R to automate our work<a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="utilize-the-lm-function-in-r-to-automate-our-work" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Utilize the lm function in R to automate our work<a href="bivariate-regression.html#utilize-the-lm-function-in-r-to-automate-our-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we can utilize the <strong><em>lm</em></strong> function in R to perform our bivariate regression (simple linear regression). This will allow us to save the model to a variable and then utilize the <strong>$</strong> (dollar sign) operator in R. The <strong>$</strong> (dollar sign) operator allows us to pull out things we need such as the residuals and fitted values that are returned from the summary function.</p>
-<div id="print-the-residuals-of-the-model" class="section level3 hasAnchor" number="4.7.1">
-<h3><span class="header-section-number">4.7.1</span> Print the residuals of the model<a href="bivariate-regression.html#print-the-residuals-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="bivariate-regression.html#cb123-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
-<span id="cb123-2"><a href="bivariate-regression.html#cb123-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>residuals)</span></code></pre></div>
+<div id="print-the-residuals-of-the-model" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Print the residuals of the model<a href="bivariate-regression.html#print-the-residuals-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="bivariate-regression.html#cb169-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb169-2"><a href="bivariate-regression.html#cb169-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>residuals)</span></code></pre></div>
 <pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
 ##         -1.59374995         -1.59374995         -0.95363068         -1.19374995 
 ##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
@@ -540,16 +558,16 @@ p=number\;of\;predictors
 ##      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
 ##          3.71340487          1.54108812          7.75761261         -1.26197823</code></pre>
 </div>
-<div id="print-the-coefficients-of-the-model" class="section level3 hasAnchor" number="4.7.2">
-<h3><span class="header-section-number">4.7.2</span> Print the coefficients of the model<a href="bivariate-regression.html#print-the-coefficients-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="bivariate-regression.html#cb125-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
-<span id="cb125-2"><a href="bivariate-regression.html#cb125-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>coefficients)</span></code></pre></div>
+<div id="print-the-coefficients-of-the-model" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Print the coefficients of the model<a href="bivariate-regression.html#print-the-coefficients-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="bivariate-regression.html#cb171-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb171-2"><a href="bivariate-regression.html#cb171-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>coefficients)</span></code></pre></div>
 <pre><code>## (Intercept)          hp 
 ## 30.09886054 -0.06822828</code></pre>
-<div id="print-the-fitted-values-of-the-model" class="section level4 hasAnchor" number="4.7.2.1">
-<h4><span class="header-section-number">4.7.2.1</span> Print the fitted values of the model<a href="bivariate-regression.html#print-the-fitted-values-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="bivariate-regression.html#cb127-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
-<span id="cb127-2"><a href="bivariate-regression.html#cb127-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>fitted.values)</span></code></pre></div>
+<div id="print-the-fitted-values-of-the-model" class="section level4 hasAnchor" number="5.7.2.1">
+<h4><span class="header-section-number">5.7.2.1</span> Print the fitted values of the model<a href="bivariate-regression.html#print-the-fitted-values-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="bivariate-regression.html#cb173-1" tabindex="-1"></a>mpg_hp_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb173-2"><a href="bivariate-regression.html#cb173-2" tabindex="-1"></a><span class="fu">print</span>(mpg_hp_model<span class="sc">$</span>fitted.values)</span></code></pre></div>
 <pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive 
 ##           22.593750           22.593750           23.753631           22.593750 
 ##   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
@@ -568,20 +586,20 @@ p=number\;of\;predictors
 ##           12.086595           18.158912            7.242387           22.661978</code></pre>
 </div>
 </div>
-<div id="putting-it-altogether" class="section level3 hasAnchor" number="4.7.3">
-<h3><span class="header-section-number">4.7.3</span> Putting it altogether<a href="bivariate-regression.html#putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="putting-it-altogether" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> Putting it altogether<a href="bivariate-regression.html#putting-it-altogether" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we can print out the summary of the model utilizing the <strong><em>summary</em></strong> function in R; <code>summary(mpg_hp_model)</code>. We can also plot the predicted y values with the actual y values. Then we can draw a line between each of the predicted values and the actual values.This helps us visualize the amount of variation that is present between the predicted vs the actual values of y.</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="bivariate-regression.html#cb129-1" tabindex="-1"></a>mpg_hp_model <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
-<span id="cb129-2"><a href="bivariate-regression.html#cb129-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(mpg_hp_model))</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="bivariate-regression.html#cb175-1" tabindex="-1"></a>mpg_hp_model <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, mtcars)</span>
+<span id="cb175-2"><a href="bivariate-regression.html#cb175-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(mpg_hp_model))</span></code></pre></div>
 </div>
 </div>
-<div id="plot-our-residuals-and-a-best-fitting-line" class="section level2 hasAnchor" number="4.8">
-<h2><span class="header-section-number">4.8</span> Plot our residuals and a best fitting line<a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="plot-our-residuals-and-a-best-fitting-line" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Plot our residuals and a best fitting line<a href="bivariate-regression.html#plot-our-residuals-and-a-best-fitting-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we can utilize the <code>ggplot2</code> package to plot our model. We can also plot the residuals along with a best fitting line.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="bivariate-regression.html#cb130-1" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(hp,mpg))<span class="sc">+</span></span>
-<span id="cb130-2"><a href="bivariate-regression.html#cb130-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb130-3"><a href="bivariate-regression.html#cb130-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
-<span id="cb130-4"><a href="bivariate-regression.html#cb130-4" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mpg, <span class="at">ymin =</span> mpg<span class="sc">-</span>resid),<span class="at">color=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="bivariate-regression.html#cb176-1" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(hp,mpg))<span class="sc">+</span></span>
+<span id="cb176-2"><a href="bivariate-regression.html#cb176-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb176-3"><a href="bivariate-regression.html#cb176-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb176-4"><a href="bivariate-regression.html#cb176-4" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mpg, <span class="at">ymin =</span> mpg<span class="sc">-</span>resid),<span class="at">color=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ hp, data = mtcars)
@@ -601,8 +619,8 @@ p=number\;of\;predictors
 ## Multiple R-squared:  0.6024, Adjusted R-squared:  0.5892 
 ## F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07</code></pre>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-<p>Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) wil be.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p>Now we can take a predictor value (X) and plug it in. We then are able to predict where our criterion value (Y) will be.</p>
 <p><span class="math display">\[
 \hat{y}\;=\;30.09886\;+\;-0.06823(X)
 \]</span></p>
@@ -617,19 +635,19 @@ p=number\;of\;predictors
 \]</span></p>
 <hr />
 </div>
-<div id="squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="section level2 hasAnchor" number="4.9">
-<h2><span class="header-section-number">4.9</span> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Squaring the correlation <span class="math inline">\({r}\)</span> to find the coefficient of determination <span class="math inline">\({R^2}\)</span><a href="bivariate-regression.html#squaring-the-correlation-r-to-find-the-coefficient-of-determination-r2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>According to Hatcher (2013) we can simply square the correlation provided we are looking at only one predictor variable and one dependent variable. When we square the correlation coefficient this will give us the coefficient of determination.</p>
-<div id="correlation-coefficient-of-hp-and-mpg" class="section level3 hasAnchor" number="4.9.1">
-<h3><span class="header-section-number">4.9.1</span> Correlation coefficient of hp and mpg<a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="bivariate-regression.html#cb133-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<div id="correlation-coefficient-of-hp-and-mpg" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Correlation coefficient of hp and mpg<a href="bivariate-regression.html#correlation-coefficient-of-hp-and-mpg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="bivariate-regression.html#cb179-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
 <pre><code>## [1] -0.7761684</code></pre>
 <p><span class="math inline">\({r} = -0.7761684\)</span></p>
 </div>
-<div id="squaring-the-correlation-coefficient" class="section level3 hasAnchor" number="4.9.2">
-<h3><span class="header-section-number">4.9.2</span> Squaring the correlation coefficient<a href="bivariate-regression.html#squaring-the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="squaring-the-correlation-coefficient" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> Squaring the correlation coefficient<a href="bivariate-regression.html#squaring-the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we can square the correlation coefficient <span class="math inline">\({r}\)</span> and it will give us the coefficient of determination or <span class="math inline">\({R^2}\)</span></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="bivariate-regression.html#cb135-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="bivariate-regression.html#cb181-1" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 0.6024373</code></pre>
 <p><span class="math inline">\({R^2} = 0.6024373\)</span></p>
 <p>Here we can see we get the same value for the coefficient of determination <span class="math inline">\({R^2}\)</span> by squaring the correlation as if we had utilized the <strong><em>lm</em></strong> function. However the <strong><em>lm</em></strong> function has advantages as it provides us with our p-value, F-statistic, and the intercept and the unstandardized regression coefficient.</p>
@@ -643,7 +661,7 @@ p=number\;of\;predictors
         </div>
       </div>
 <a href="partial-correlation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

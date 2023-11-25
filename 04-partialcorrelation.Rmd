@@ -122,7 +122,7 @@ cor.test(mtcars$mpg,mtcars$cyl)
 ###X is hp
 ###Y is mpg
 ###Z is cyl
-xy <- cor(mtcars$mpg,mtcars$hp)
+xy <- cor(mtcars$hp,mtcars$mpg)
 xz <- cor(mtcars$hp,mtcars$cyl)
 yz <- cor(mtcars$mpg,mtcars$cyl)
 
@@ -208,10 +208,3 @@ ppcor::pcor.test(mtcars$mpg, mtcars$hp, mtcars[, c("cyl")])
 ###ppcor function controlling for cylinders,displacement in the mtcars dataset
 ppcor::pcor.test(mtcars$mpg, mtcars$hp, mtcars[, c("cyl","disp")])
 ```
-## References
-
-Hatcher, L. (2013). *Advanced statistics in research: Reading, understanding, and writing up data analysis results. Shadow Finch Media.*
-
-Henderson and Velleman (1981), *Building multiple regression models interactively.* Biometrics, 37, 391–411.
-
-Kim S (2015). _ppcor: Partial and Semi-Partial (Part) Correlation_. R package version 1.1, <https://CRAN.R-project.org/package=ppcor>.

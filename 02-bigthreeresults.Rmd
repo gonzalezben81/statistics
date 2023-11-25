@@ -16,7 +16,7 @@ library(dplyr)
 # knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Sample Standard Deviation Formula
+## Sample Standard Deviation Formula {-}
 
 Here we have the sample standard deviation formula. This allows us to see how far away from the mean our observations are.
 
@@ -25,24 +25,28 @@ S\;=\;\sqrt{\frac{\sum(X\;-\;{\overline{X}})^2}{N\;-1}}
 $$
 
 ```{r}
-
+###Number of observations
 N <- length(mtcars$hp)
+###Calculate the deviation
 deviations <- mtcars$hp-mean(mtcars$hp)
-
+###Square the deviation
 s <- deviations^2
-
+###Divide the square deviation by the number of observations minus 1
 m_plus<- sum(s)/(N-1)
-
+###Take the square toot
 sd_plus <- sqrt(m_plus)
+
 print(sd_plus)
 
+###Put it all together via the equation in long form
 sqrt((sum((mtcars$hp-mean(mtcars$hp))^2))/(length(mtcars$hp)-1))
 
+###Utilize the standard deviation function in R
 sd(mtcars$hp)
 ```
 
 
-### Standard Error Formula
+### Standard Error Formula {-}
 
 
 $$\large
@@ -56,7 +60,7 @@ SE\;=Standard\;Error
 n\;=number\;of\;samples
 $$
 
-### How to calculate the standard error of a sample
+### How to calculate the standard error of a sample {-}
 
 ```{r}
 #standard deviation/squareroot(n)

@@ -1,4 +1,9 @@
 delete_merged_file: true
+chapter_name: "Chapter "
+###Reorder chapters
+rmd_files: ["index.Rmd", "01-introduction.Rmd", "07-centraltendencyvariabilitydescriptivestats.Rmd",
+            "02-bigthreeresults.Rmd","03-chisquarecorrelation.Rmd","04-partialcorrelation.Rmd",
+            "05-bivariateregression.Rmd","06-references.Rmd"]
 language:
   ui:
-    chapter_name: "Chapter "
+
